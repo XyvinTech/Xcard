@@ -5,7 +5,7 @@ import StyledButton from "../../ui/StyledButton";
 
 const GetInTouch = () => {
   return (
-    <Box mt={10} padding={10}>
+    <Box mt={10} padding={10}pb={20}>
       <Typography fontSize={"44px"} fontWeight={700} textAlign={"center"}>
         Get in touch
       </Typography>

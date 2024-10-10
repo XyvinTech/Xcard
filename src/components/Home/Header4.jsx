@@ -1,6 +1,6 @@
 import { Grid, Stack, Typography } from "@mui/material";
 import React from "react";
-import image from "../../assets/images/Header4.png";
+import image from "../../assets/images/Header4.webp";
 import img1 from "../../assets/images/img1.png";
 import img2 from "../../assets/images/img2.png";
 import Custom from "../../ui/Custom";
@@ -39,11 +39,8 @@ const Header4 = () => {
 
       <Grid item md={7}>
         <Stack spacing={4} alignItems="center">
-          {/* Arrange the sliders vertically */}
           <Custom />
           <Custom />
-
-          {/* Savings information arranged in a row */}
           <Stack
             spacing={10}
             direction="row"

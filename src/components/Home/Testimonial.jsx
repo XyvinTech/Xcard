@@ -1,7 +1,8 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, Skeleton } from "@mui/material";
 import React from "react";
 import HomeCard from "../../ui/HomeCard";
 import img1 from "../../assets/images/img1.png";
+
 const testimonials = [
   {
     title: "“The Future of Business Cards”",
@@ -12,7 +13,7 @@ const testimonials = [
     role: "CEO, Farrell",
   },
   {
-    title: "“A Quick Win for Networking ”",
+    title: "“A Quick Win for Networking”",
     description:
       "The ease of sharing contact information and generating leads has significantly boosted my business.",
     img: img1,
@@ -20,7 +21,7 @@ const testimonials = [
     role: "CEO, Grady and Sons",
   },
   {
-    title: "“A Must-Have for Modern Professionals ”",
+    title: "“A Must-Have for Modern Professionals”",
     description:
       "The customizable landing pages and lead generation features are top-notch.",
     img: img1,
@@ -37,7 +38,7 @@ const testimonials = [
   },
 ];
 
-const Testimonial = () => {
+const Testimonial = ({ loading }) => {
   return (
     <Box padding={10} mt={10}>
       <Typography
@@ -58,11 +59,19 @@ const Testimonial = () => {
         Discover the impact our NFC business cards can have on your business.
       </Typography>
       <Grid container padding={10} spacing={3}>
-        {testimonials?.map((testimonial, index) => (
-          <Grid item md={3} key={index}>
-            <HomeCard data={testimonial} />
-          </Grid>
-        ))}
+        {loading ? (
+          Array.from({ length: 4 }).map((_, index) => (
+            <Grid item md={3} key={index}>
+              <HomeCard loading={true} />
+            </Grid>
+          ))
+        ) : (
+          testimonials.map((testimonial, index) => (
+            <Grid item md={3} key={index}>
+              <HomeCard data={testimonial} loading={false} />
+            </Grid>
+          ))
+        )}
       </Grid>
     </Box>
   );
