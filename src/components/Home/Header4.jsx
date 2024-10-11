@@ -9,8 +9,8 @@ const Header4 = () => {
   return (
     <Grid
       container
-      padding={{ xs: 5, md: 10}}
-       height={{ xs: "auto", md: "750px" }} 
+      padding={{ xs: 5, md: 10 }}
+      height={{ xs: "auto", md: "750px" }}
       // bgcolor={"#000000"}
       style={{
         backgroundImage: `url(${image})`,
@@ -19,9 +19,9 @@ const Header4 = () => {
         objectFit: "fill",
       }}
     >
-      <Grid item md={5} paddingTop={15} justifyContent={'flex-start'}>
+      <Grid item md={5} paddingTop={15} justifyContent={"flex-start"}>
         <Stack spacing={2}>
-          <Typography fontSize={{xs:"40px", md:"50px"}} fontWeight={700}>
+          <Typography fontSize={{ xs: "40px", md: "50px" }} fontWeight={700}>
             Green Your Network. Plant a Tree with Every Order.
           </Typography>
           <Typography variant="h4">
@@ -39,10 +39,14 @@ const Header4 = () => {
 
       <Grid item md={7}>
         <Stack spacing={4} alignItems="center">
-          <Custom />
-          <Custom />
+          <Stack spacing={2} pt={2}>
+            {" "}
+            <Custom />
+            <Custom />
+          </Stack>
+
           <Stack
-            spacing={{ xs: 2, md: 10}}
+            spacing={{ xs: 2, md: 10 }}
             direction="row"
             justifyContent="center"
             alignItems="center"
@@ -56,7 +60,10 @@ const Header4 = () => {
                 height={"140px"}
               />
               <Typography variant="h3">Bottom Line</Typography>
-              <Typography fontSize={"32px"} fontWeight={700}>
+              <Typography
+                fontSize={{ xs: "24px", md: "32px" }}
+                fontWeight={700}
+              >
                 Rs. 25000
               </Typography>
               <Typography variant="h6">Savings per year</Typography>
@@ -70,7 +77,10 @@ const Header4 = () => {
                 height={"140px"}
               />
               <Typography variant="h3">Bottom Line</Typography>
-              <Typography fontSize={"32px"} fontWeight={700}>
+              <Typography
+                fontSize={{ xs: "24px", md: "32px" }}
+                fontWeight={700}
+              >
                 Rs. 25000
               </Typography>
               <Typography variant="h6">Savings per year</Typography>

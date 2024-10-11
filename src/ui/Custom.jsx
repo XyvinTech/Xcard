@@ -18,13 +18,21 @@ const Custom = () => {
         gap: 2,
       }}
     >
-      <Box sx={{ width: 400, position: "relative" }}>
+      <Box
+        sx={{
+          width: {
+            xs: 200, // width for extra-small screens
+            md: 400, // width for medium and larger screens
+          },
+          position: "relative",
+        }}
+      >
         <Slider
           value={value}
           onChange={handleChange}
           aria-labelledby="custom-slider"
           sx={{
-            color: "transparent", 
+            color: "transparent",
             "& .MuiSlider-track": {
               height: 13,
               background: "linear-gradient(182deg, #575142 0%, #FBF19A 100%)",
@@ -53,7 +61,10 @@ const Custom = () => {
       </Box>
       <Box
         sx={{
-          width: 100,
+          width: {
+            xs: 60, // width for extra-small screens
+            md: 100, // width for medium and larger screens
+          },
           height: 46,
           pt: 1.5,
           pb: 1.5,
@@ -64,7 +75,7 @@ const Custom = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "flex-start",
-          marginLeft: 2, 
+          marginLeft: 2,
         }}
       >
         <Typography
