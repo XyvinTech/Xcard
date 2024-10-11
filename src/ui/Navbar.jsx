@@ -80,11 +80,11 @@ function Navbar() {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ display: { xs: "block", md: "none" } }}
+              sx={{ display: { xs: "block", md: "none" }, }}
             >
               {pages.map((page) => (
                 <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                  <Typography>{page.name}</Typography>
+                  <Typography color="text.secondary">{page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>

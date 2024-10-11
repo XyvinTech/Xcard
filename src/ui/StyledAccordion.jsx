@@ -15,9 +15,9 @@ const StyledAccordion = ({ data }) => {
             backgroundColor: "transparent",
             boxShadow: "none",
             border: "none",
-            margin: 0, // Remove margin between Accordions
+            margin: 0,
             "&::before": {
-              display: "none", // Remove the default border that appears before the Accordion
+              display: "none",
             },
           }}
         >
@@ -26,17 +26,24 @@ const StyledAccordion = ({ data }) => {
             aria-controls={`${item.id}-content`}
             id={`${item.id}-header`}
             sx={{
-              border: "none", // Ensure there's no border
-              boxShadow: "none", // Remove any box shadow
-              outline: "none", // Remove any outline
+              border: "none",
+              boxShadow: "none",
+              outline: "none",
             }}
           >
             <Button
               sx={{
                 color: "white",
-                fontSize: "24px",
+                fontSize: {
+                  xs: "20px",
+                  md: "24px",
+                },
                 fontWeight: "600",
                 textTransform: "none",
+                padding: {
+                  xs: "10px 20px",
+                  md: "12px 24px",
+                },
               }}
             >
               {item.title}

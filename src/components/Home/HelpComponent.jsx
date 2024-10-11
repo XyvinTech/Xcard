@@ -29,11 +29,11 @@ const accordionData = [
 ];
 const HelpComponent = () => {
   return (
-    <Box  padding={10}>
-      <Typography fontSize={"44px"} fontWeight={700} textAlign={"center"}>
+    <Box  padding={{ xs: 5, md: 10 }} >
+      <Typography fontSize={{xs: "32px", md: "44px"}} lineHeight={"44px"} fontWeight={700} textAlign={"center"}>
         Need Help? We've Got You Covered
       </Typography>
-      <Typography variant="h5" width={"50%"} mx={"auto"} textAlign={"center"}>
+      <Typography variant="h5" width={{ xs: "100%", md: "50%" }} mt={2} mx={"auto"} textAlign={"center"}>
         We've compiled a list of frequently asked questions to help you get
         started.
       </Typography>{" "}

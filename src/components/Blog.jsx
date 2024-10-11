@@ -3,12 +3,31 @@ import React from "react";
 import BlogCard from "../ui/BlogCard";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
+import image1 from "../assets/images/blog1.webp";
+import image2 from "../assets/images/blog2.webp";
+import image3 from "../assets/images/blog3.webp";
 const blogData = [
-  { id: 1, image: "image1.jpg", title: "The Benefits of Using a Digital Business Card", subtitle: "This simply dummy text of the printing and typesetting industry and typesetting industry...." },
-  { id: 2, image: "image2.jpg", title: "How to Use Digital Business Cards", subtitle: "This simply dummy text of the printing and typesetting industry and typesetting industry...." },
-  { id: 3, image: "image3.jpg", title: "The Role of Networking in Industry", subtitle: "This simply dummy text of the printing and typesetting industry and typesetting industry...." },
-  
+  {
+    id: 1,
+    image: image1,
+    title: "The Benefits of Using a Digital Business Card",
+    subtitle:
+      "This simply dummy text of the printing and typesetting industry and typesetting industry....",
+  },
+  {
+    id: 2,
+    image: image2,
+    title: "How to Use Digital Business Cards",
+    subtitle:
+      "This simply dummy text of the printing and typesetting industry and typesetting industry....",
+  },
+  {
+    id: 3,
+    image: image3,
+    title: "The Role of Networking in Industry",
+    subtitle:
+      "This simply dummy text of the printing and typesetting industry and typesetting industry....",
+  },
 ];
 
 const Blog = () => {
@@ -32,13 +51,23 @@ const Blog = () => {
   };
 
   return (
-    <Box padding={10} mt={10}>
+    <Box padding={{ xs: 5, md: 10 }} mt={10}>
       <>
-        <Typography fontSize={"44px"} fontWeight={700} textAlign={"center"}>
+        <Typography
+          fontSize={{ xs: "32px", md: "44px" }}
+          fontWeight={700}
+          textAlign={"center"}
+        >
           Blog
         </Typography>
 
-        <Typography variant="h5" width={"50%"} mx={"auto"} textAlign={"center"}>
+        <Typography
+          variant="h5"
+          width={{ xs: "100%", md: "50%" }}
+          mb={10}
+          mx={"auto"}
+          textAlign={"center"}
+        >
           Please feel free to send us any questions, feedback or suggestions you
           might have.
         </Typography>
@@ -51,8 +80,8 @@ const Blog = () => {
         autoPlaySpeed={3000}
         itemClass="carousel-item-padding-20-px"
       >
-        {blogData.map((content) => (
-          <div key={content.id} style={{ padding: "0 10px" }}>
+        {blogData?.map((content) => (
+          <div key={content.id} style={{ padding: "0 45px" }} >
             <BlogCard content={content} />
           </div>
         ))}

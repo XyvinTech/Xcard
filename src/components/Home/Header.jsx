@@ -1,4 +1,4 @@
-import { Grid, Stack, Typography, Skeleton } from "@mui/material";
+import { Grid, Stack, Typography, Skeleton, Box } from "@mui/material";
 import React from "react";
 import StyledButton from "../../ui/StyledButton";
 import App from "../../assets/images/AppStore.webp";
@@ -11,7 +11,7 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
     <Grid
       container
       spacing={2}
-      padding={10}
+      padding={{ xs: 5, md: 10 }}
       display={"flex"}
       justifyContent="center"
       alignItems="center"
@@ -20,8 +20,8 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
         <Stack spacing={2}>
           {title ? (
             <Typography
-              fontSize={isHome ? "84px" : "50px"}
-              lineHeight={isHome ? "100px" : "60px"}
+              fontSize={{ xs: "32px", md: isHome ? "84px" : "50px" }}
+              lineHeight={{ xs: "40px", md: isHome ? "100px" : "60px" }}
               fontWeight={700}
             >
               {title}
@@ -38,22 +38,36 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
           {des && <Typography variant="h4">{des}</Typography>}
           {isMobile ? (
             <Stack direction={"row"} spacing={2} pt={2}>
-              <img
+              <Box
+                component="img"
                 src={App}
                 alt="logo"
-                style={{
+                sx={{
                   objectFit: "fill",
-                  width: "180px",
-                  height: "52px",
+                  width: {
+                    xs: "150px",
+                    md: "180px",
+                  },
+                  height: {
+                    xs: "44px",
+                    md: "52px",
+                  },
                 }}
               />
-              <img
+              <Box
+                component="img"
                 src={Play}
                 alt="logo"
-                style={{
+                sx={{
                   objectFit: "fill",
-                  width: "180px",
-                  height: "52px",
+                  width: {
+                    xs: "150px",
+                    md: "180px",
+                  },
+                  height: {
+                    xs: "44px",
+                    md: "52px",
+                  },
                 }}
               />
             </Stack>
@@ -74,7 +88,7 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
                     }}
                     src={buttonimage}
                   />
-                  <Typography variant="h4"mt={2}>
+                  <Typography variant="h4" mt={2}mb={{xs:2,md:0}}>
                     To empower professionals to connect, collaborate, and
                     succeed in today's digital world.
                   </Typography>
@@ -101,12 +115,21 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
 
       <Grid item md={6} display={"flex"} justifyContent={"center"}>
         {image ? (
-          <img
+          <Box
+            component="img"
             src={image}
             alt="background"
-            objectFit="fill"
-            width={shop ? "337px" : "539px"}
-            height={shop ? "414px" : "514px"}
+            sx={{
+              objectFit: "fill",
+              width: {
+                xs: shop ? "100%" : "100%",
+                md: shop ? "337px" : "539px",
+              },
+              height: {
+                xs: shop ? "auto" : "auto",
+                md: shop ? "414px" : "514px",
+              },
+            }}
           />
         ) : (
           <Skeleton variant="rectangular" width={539} height={514} />

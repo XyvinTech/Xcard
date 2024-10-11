@@ -1,4 +1,4 @@
-import { Grid, Stack, Typography, Skeleton } from "@mui/material";
+import { Grid, Stack, Typography, Skeleton, Box } from "@mui/material";
 import React from "react";
 import StyledButton from "../../ui/StyledButton";
 
@@ -10,19 +10,28 @@ const Header2 = ({ content = {}, white }) => {
       <Grid
         container
         spacing={2}
-        padding={10}
+        padding={{ xs: 5, md: 10}}
         mt={10}
         justifyContent="center"
         alignItems="center"
       >
         <Grid item md={6} display={"flex"} justifyContent={"flex-start"}>
           {image ? (
-            <img
+            <Box
+              component="img"
               src={image}
               alt="background"
-              objectFit="fill"
-              width={"539px"}
-              height={"514px"}
+              sx={{
+                objectFit: "fill",
+                width: {
+                  xs: "100%",
+                  md: "539px",
+                },
+                height: {
+                  xs: "auto",
+                  md: "514px",
+                },
+              }}
             />
           ) : (
             <Skeleton variant="rectangular" width={539} height={514} />
@@ -33,8 +42,8 @@ const Header2 = ({ content = {}, white }) => {
           <Stack spacing={2} alignContent={"center"}>
             {title ? (
               <Typography
-                fontSize={"50px"}
-                lineHeight={"60px"}
+                fontSize={{ xs: "32px", md: "50px" }}
+                lineHeight={{xs : "40px" ,md: "60px"}}
                 fontWeight={700}
                 color={white && "#000"}
               >

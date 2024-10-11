@@ -6,6 +6,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Box,
 } from "@mui/material";
 import React from "react";
 import headerImage2 from "../assets/images/Header7.webp";
@@ -44,18 +45,18 @@ const WhyXcard = () => {
     <Grid
       container
       spacing={2}
-      padding={10} mt={10}
+      padding={{ xs: 5, md: 10}} mt={10}
       justifyContent="center"
       alignItems="center"
     >
       <Grid item md={6} display={"flex"} justifyContent={"center"}>
         <Stack spacing={2}>
-          <Typography fontSize={"44px"} fontWeight={700}>
+          <Typography fontSize={{xs: "32px", md: "44px"}}  fontWeight={700}>
             Why Choose Xcard?
           </Typography>
 
           <List>
-            {features.map((feature, index) => (
+            {features?.map((feature, index) => (
               <ListItem alignItems="flex-start" key={index}>
                 <ListItemIcon sx={{ minWidth: 24, marginTop: 1.5 }}>
                   <img
@@ -71,16 +72,16 @@ const WhyXcard = () => {
                 <ListItemText
                   primary={
                     <Typography variant="h6" fontWeight={600}>
-                      {feature.title}
+                      {feature?.title}
                     </Typography>
                   }
                   secondary={
                     <>
                       <Typography variant="h5" mt={1} color="text.secondary">
-                        {feature.description1}
+                        {feature?.description1}
                       </Typography>
                       <Typography variant="h5" mt={1} color="text.secondary">
-                        {feature.description2}
+                        {feature?.description2}
                       </Typography>
                     </>
                   }
@@ -91,12 +92,21 @@ const WhyXcard = () => {
         </Stack>
       </Grid>{" "}
       <Grid item md={6} display={"flex"} justifyContent={"flex-start"}>
-        <img
+      <Box
+          component="img"
           src={headerImage2}
           alt="background"
-          objectFit="fill"
-          width={"539px"}
-          height={"514px"}
+          sx={{
+            objectFit: "fill",
+            width: {
+              xs: "100%",
+              md: "539px",
+            },
+            height: {
+              xs: "auto",
+              md: "514px",
+            },
+          }}
         />
       </Grid>
     </Grid>

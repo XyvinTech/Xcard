@@ -16,12 +16,12 @@ const clientLogos = [
 
 const ClientsPage = ({ isLoading }) => {
   return (
-    <Box padding={10} mt={10}>
+    <Box padding={{ xs: 5, md: 10 }} mt={10}>
       {isLoading ? (
         <Skeleton variant="text" width={400} height={50} sx={{ mx: "auto" }} />
       ) : (
         <Typography
-          fontSize={"44px"}
+          fontSize={{xs: "32px", md: "44px"}} 
           fontWeight={700}
           textAlign={"center"}
           color="#000"
@@ -44,9 +44,9 @@ const ClientsPage = ({ isLoading }) => {
         </Typography>
       )}
 
-      <Grid container padding={10} paddingBottom={0} spacing={3}>
+      <Grid container pt={10} paddingBottom={0} spacing={3}>
         {clientLogos?.map((logo, index) => (
-          <Grid item md={2.4} key={index}>
+          <Grid item md={2.4} xs={6} key={index}>
             {isLoading ? (
               <Skeleton
                 variant="rectangular"
@@ -54,13 +54,22 @@ const ClientsPage = ({ isLoading }) => {
                 height={64}
               />
             ) : (
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                width={"180px"}
-                height={"64px"}
-                style={{ objectFit: "fill" }}
-              />
+              <Box
+              component="img"
+              src={logo.src}
+              alt={logo.alt}
+              sx={{
+                width: {
+                  xs: "100%", 
+                  md: "180px",
+                },
+                height: {
+                  xs: "100%",  
+                  md: "64px",  
+                },
+                objectFit: "fill",  
+              }}
+            />
             )}
           </Grid>
         ))}

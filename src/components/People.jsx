@@ -29,13 +29,13 @@ const People = () => {
     },
   ];
   return (
-    <Box padding={10} mt={10}>
+    <Box padding={{ xs: 5, md: 10 }}  mt={10}>
       <>
-        <Typography fontSize={"44px"} fontWeight={700} textAlign={"center"}>
+        <Typography fontSize={{xs: "32px", md: "44px"}} fontWeight={700} textAlign={"center"}>
           The People Behind Xcard
         </Typography>
 
-        <Typography variant="h5" width={"50%"} mx={"auto"} textAlign={"center"}>
+        <Typography variant="h5" width={{ xs: "100%", md: "50%" }} mt={2}  mx={"auto"} textAlign={"center"}>
           Discover the passionate individuals driving Xcard's mission to
           revolutionize networking.
         </Typography>

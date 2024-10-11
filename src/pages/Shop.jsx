@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import React from "react";
 import GetInTouch from "../components/Home/GetInTouch";
 import Header from "../components/Home/Header";
-import header from "../assets/images/Header6.webp";
+import header from "../assets/images/Header9.webp";
 import Header3 from "../components/Home/Header3";
 import img1 from "../assets/images/img11.webp";
 import img2 from "../assets/images/img12.webp";

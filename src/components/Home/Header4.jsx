@@ -9,8 +9,8 @@ const Header4 = () => {
   return (
     <Grid
       container
-      padding={10}
-       height={"750px"}
+      padding={{ xs: 5, md: 10}}
+       height={{ xs: "auto", md: "750px" }} 
       // bgcolor={"#000000"}
       style={{
         backgroundImage: `url(${image})`,
@@ -21,7 +21,7 @@ const Header4 = () => {
     >
       <Grid item md={5} paddingTop={15} justifyContent={'flex-start'}>
         <Stack spacing={2}>
-          <Typography fontSize={"50px"} fontWeight={700}>
+          <Typography fontSize={{xs:"40px", md:"50px"}} fontWeight={700}>
             Green Your Network. Plant a Tree with Every Order.
           </Typography>
           <Typography variant="h4">
@@ -42,7 +42,7 @@ const Header4 = () => {
           <Custom />
           <Custom />
           <Stack
-            spacing={10}
+            spacing={{ xs: 2, md: 10}}
             direction="row"
             justifyContent="center"
             alignItems="center"

@@ -5,6 +5,10 @@ import GetInTouch from "../components/Home/GetInTouch";
 import Header4 from "../components/Home/Header4";
 import Header from "../components/Home/Header";
 import header from "../assets/images/Header5.webp";
+import img1 from "../assets/images/team1.webp";
+import img2 from "../assets/images/team2.webp";
+import img3 from "../assets/images/team3.webp";
+import img4 from "../assets/images/team4.webp";
 import Header3 from "../components/Home/Header3";
 import XcardTeams from "../components/XcardTeams";
 const Team = () => {
@@ -16,25 +20,25 @@ const Team = () => {
   };
   const data = [
     {
-      image: header,
+      image: img1,
       title: "Centralized Management",
       subtitle:
         "Manage your team's digital business cards from a single dashboard.",
     },
     {
-      image: header,
+      image: img2,
       title: "Enhanced Collaboration",
       subtitle:
         "Share contacts, leads, and collaborate seamlessly within your team.",
     },
     {
-      image: header,
+      image: img3,
       title: "Advanced Analytics",
       subtitle:
         "Track team performance, identify trends, and optimize your strategy.",
     },
     {
-      image: header,
+      image: img4,
       title: "Offline access",
       subtitle:
         "Access your digital business cards and network even without an internet connection.",

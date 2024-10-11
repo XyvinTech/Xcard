@@ -86,7 +86,8 @@ const Home = () => {
         {" "}
         <Header2 content={headerData} white />
         <ClientsPage />
-        <Testimonial /> <Header4 />{" "}
+        <Testimonial /> 
+        {/* <Header4 />{" "} */}
       </Box>
       <Box
         sx={{

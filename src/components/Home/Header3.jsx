@@ -3,10 +3,10 @@ import React from "react";
 
 const Header3 = ({ data, title, subtitle }) => {
   return (
-    <Box padding={10} mt={10}>
+    <Box padding={{xs: 5, md:10}} mt={10}>
       <>
         {title ? (
-          <Typography fontSize={"44px"} fontWeight={700} textAlign={"center"}>
+          <Typography fontSize={{ xs: "32px", md: "44px" }} lineHeight={"44px"} fontWeight={700} textAlign={"center"}>
             {title}
           </Typography>
         ) : (
@@ -16,8 +16,8 @@ const Header3 = ({ data, title, subtitle }) => {
         {subtitle ? (
           <Typography
             variant="h5"
-            width={"50%"}
-            mx={"auto"}
+            width={{ xs: "100%", md: "50%" }} 
+            mx={"auto"} mt={2}
             textAlign={"center"}
           >
             {subtitle}
