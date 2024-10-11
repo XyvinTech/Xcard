@@ -16,7 +16,7 @@ const clientLogos = [
 
 const ClientsPage = ({ isLoading }) => {
   return (
-    <Box padding={{ xs: 5, md: 10 }} mt={10}>
+    <Box padding={{ xs: 5, md: 10 ,sm:5}} mt={10}>
       {isLoading ? (
         <Skeleton variant="text" width={400} height={50} sx={{ mx: "auto" }} />
       ) : (
@@ -46,7 +46,7 @@ const ClientsPage = ({ isLoading }) => {
 
       <Grid container pt={10} paddingBottom={0} spacing={3}>
         {clientLogos?.map((logo, index) => (
-          <Grid item md={2.4} xs={6} key={index}>
+          <Grid item md={2.4} xs={6} sm={4} key={index}>
             {isLoading ? (
               <Skeleton
                 variant="rectangular"

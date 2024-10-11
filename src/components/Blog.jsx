@@ -81,9 +81,18 @@ const Blog = () => {
         itemClass="carousel-item-padding-20-px"
       >
         {blogData?.map((content) => (
-          <div key={content.id} style={{ padding: "0 45px" }} >
+           <Box
+           key={content.id}
+           sx={{
+             padding: {
+               xs: "0 10px", 
+               sm: "0 30px", 
+               md: "0 45px", 
+             },
+           }}
+         >
             <BlogCard content={content} />
-          </div>
+          </Box>
         ))}
       </Carousel>
     </Box>

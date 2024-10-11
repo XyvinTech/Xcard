@@ -8,7 +8,7 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
-import { Link, useLocation } from "react-router-dom"; 
+import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/images/Logo.png";
 import StyledButton from "./StyledButton";
 
@@ -23,7 +23,7 @@ const pages = [
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const location = useLocation(); // Get current location
+  const location = useLocation();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -38,7 +38,10 @@ function Navbar() {
       position="fixed"
       sx={{
         background: `linear-gradient(127deg, black 0%, #1E1E1E 100%)`,
-        paddingTop: "30px",paddingBottom: "30px",boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",borderBottom: "1px #2D2D2D solid",
+        paddingTop: "30px",
+        paddingBottom: "30px",
+        boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+        borderBottom: "1px #2D2D2D solid",
       }}
     >
       <Container maxWidth="xl">
@@ -80,11 +83,53 @@ function Navbar() {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ display: { xs: "block", md: "none" }, }}
+              sx={{
+                display: { xs: "block", md: "none" },
+                "& .MuiPaper-root": {
+                  backgroundColor: "#1E1E1E",
+                  borderRadius: "10px",
+                  boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.3)",
+                  width: "100%",
+                  margin: "0 auto",
+                },
+              }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                  <Typography color="text.secondary">{page.name}</Typography>
+                <MenuItem
+                  key={page.name}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    padding: "12px 20px",
+                    transition: "background-color 0.3s ease, color 0.3s ease",
+                    backgroundColor:
+                      location.pathname === page.path
+                        ? "#333333"
+                        : "transparent",
+                    "&:hover": {
+                      backgroundColor: "#444444",
+                    },
+                  }}
+                >
+                  <Link
+                    to={page.path}
+                    style={{
+                      textDecoration: "none",
+                      color:
+                        location.pathname === page.path ? "#A6A074" : "#8E8E8E",
+                      fontWeight:
+                        location.pathname === page.path ? "bold" : "normal",
+                      width: "100%",
+                      display: "flex",
+                      alignItems: "center",
+                      fontSize: "16px",
+                    }}
+                  >
+                    <Typography
+                      sx={{ marginLeft: "8px", letterSpacing: "0.5px" }}
+                    >
+                      {page.name}
+                    </Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -116,7 +161,7 @@ function Navbar() {
                 style={{
                   textTransform: "none",
                   color:
-                    location.pathname === page.path ? "#A6A074" : "#8E8E8E", // Active color
+                    location.pathname === page.path ? "#A6A074" : "#8E8E8E", 
                   display: "block",
                   fontSize: "16px",
                   borderRadius: "0px",
@@ -125,7 +170,7 @@ function Navbar() {
                   borderBottom:
                     location.pathname === page.path
                       ? "2px solid #A6A074"
-                      : "none", // Active border
+                      : "none", 
                   margin: "0 16px",
                 }}
               >

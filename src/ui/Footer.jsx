@@ -13,8 +13,8 @@ const companyItems = [
 const quickLinks = ["Features", "Team", "Mobile App", "Shop"];
 const Footer = () => {
   return (
-    <Grid container bgcolor={"#000000"}  spacing={2} padding={{xs: 5, md: 10}} >
-      <Grid item md={3} display={"flex"} justifyContent={"center"}>
+    <Grid container bgcolor={"#000000"}  spacing={2} padding={{xs: 5, md: 10,sm:5}} >
+      <Grid item md={3} sm={3} display={"flex"} justifyContent={"center"}>
         <Stack spacing={2}>
           <img
             src={Logo}
@@ -29,7 +29,7 @@ const Footer = () => {
           </Typography>
         </Stack>
       </Grid>
-      <Grid item md={5} display={"flex"} justifyContent={"center"}>
+      <Grid item md={5} sm={5} display={"flex"} justifyContent={"center"}>
         <Stack direction={"row"} spacing={8}>
           <Stack spacing={2}>
             <Typography variant="h3">Company</Typography>
@@ -49,7 +49,7 @@ const Footer = () => {
           </Stack>
         </Stack>
       </Grid>
-      <Grid item md={4} display={"flex"} justifyContent={"center"}>
+      <Grid item md={4} sm={4} display={"flex"} justifyContent={"center"}>
         <SubscribeCard />
       </Grid>
       <Grid item xs={12}>

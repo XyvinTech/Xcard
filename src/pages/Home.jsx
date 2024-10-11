@@ -70,7 +70,7 @@ const Home = () => {
           backgroundPosition: "center",
         }}
       >
-        <Header content={mainContent}isHome />
+        <Header content={mainContent} isHome />
         <Header2 content={headerContent} />
         <Header3
           data={data}
@@ -86,8 +86,8 @@ const Home = () => {
         {" "}
         <Header2 content={headerData} white />
         <ClientsPage />
-        <Testimonial /> 
-        {/* <Header4 />{" "} */}
+        <Testimonial />
+        <Header4 />{" "}
       </Box>
       <Box
         sx={{

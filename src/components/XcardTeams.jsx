@@ -43,12 +43,12 @@ const XcardTeams = () => {
     <Grid
       container
       spacing={2}
-      padding={{ xs: 5, md: 10 }}
+      padding={{ xs: 5, md: 10 ,sm:5}}
       mt={10}
       justifyContent="center"
       alignItems="center"
     >
-      <Grid item md={6} display={"flex"} justifyContent={"flex-start"}>
+      <Grid item md={6} sm={6} display={"flex"} justifyContent={"flex-start"}>
         <Box
           component="img"
           src={headerImage2}
@@ -67,7 +67,7 @@ const XcardTeams = () => {
         />
       </Grid>
 
-      <Grid item md={6} display={"flex"} justifyContent={"center"}>
+      <Grid item md={6} sm={6} display={"flex"} justifyContent={"center"}>
         <Stack spacing={2}>
           <Typography fontSize={{xs:"32px", md:"44px"}} fontWeight={700}>
             Why Choose Xcard for Teams?

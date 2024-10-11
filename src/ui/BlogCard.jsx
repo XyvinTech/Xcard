@@ -31,7 +31,7 @@ const BlogCard = ({ content = {} }) => {
         padding={"16px"}
         borderRadius={"0 0 12px 12px"}
         spacing={2}
-        height={"200px"} 
+        height={{sm :"100%", md:"200px",xs:"100%"}} 
         justifyContent={"space-between"}
       >
        

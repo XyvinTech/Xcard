@@ -11,12 +11,12 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
     <Grid
       container
       spacing={2}
-      padding={{ xs: 5, md: 10 }}
+      padding={{ xs: 5, md: 10,sm:5 }}
       display={"flex"}
       justifyContent="center"
       alignItems="center"
     >
-      <Grid item md={6} display={"flex"} justifyContent={"flex-start"}>
+      <Grid item md={6} sm={6} display={"flex"} justifyContent={"flex-start"}>
         <Stack spacing={2}>
           {title ? (
             <Typography
@@ -47,6 +47,7 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
                   width: {
                     xs: "150px",
                     md: "180px",
+                    
                   },
                   height: {
                     xs: "44px",
@@ -113,7 +114,7 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
         </Stack>
       </Grid>
 
-      <Grid item md={6} display={"flex"} justifyContent={"center"}>
+      <Grid item md={6}sm={6} display={"flex"} justifyContent={"center"}>
         {image ? (
           <Box
             component="img"
@@ -124,6 +125,7 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
               width: {
                 xs: shop ? "100%" : "100%",
                 md: shop ? "337px" : "539px",
+                // sm : shop ? "60%" : "60%",
               },
               height: {
                 xs: shop ? "auto" : "auto",

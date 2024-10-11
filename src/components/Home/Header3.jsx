@@ -3,7 +3,7 @@ import React from "react";
 
 const Header3 = ({ data, title, subtitle }) => {
   return (
-    <Box padding={{xs: 5, md:10}} mt={10}>
+    <Box padding={{xs: 5, md:10,sm:5}} mt={10}>
       <>
         {title ? (
           <Typography fontSize={{ xs: "32px", md: "44px" }} lineHeight={"44px"} fontWeight={700} textAlign={"center"}>
@@ -38,7 +38,7 @@ const Header3 = ({ data, title, subtitle }) => {
                 </Grid>
               ))
             : data.map((item, index) => (
-                <Grid item md={3} key={index}>
+                <Grid item md={3} sm={6} key={index}>
                   <Stack spacing={2} alignItems="center">
                     <img
                       src={item?.image}

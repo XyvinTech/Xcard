@@ -40,7 +40,7 @@ const testimonials = [
 
 const Testimonial = ({ loading }) => {
   return (
-    <Box padding={{ xs: 5, md: 10 }}  mt={10}>
+    <Box padding={{ xs: 5, md: 10,sm:5 }}  mt={10}>
       <Typography
        fontSize={{xs: "32px", md: "44px"}} 
         fontWeight={700}
@@ -67,7 +67,7 @@ const Testimonial = ({ loading }) => {
           ))
         ) : (
           testimonials.map((testimonial, index) => (
-            <Grid item md={3} key={index}>
+            <Grid item md={3}sm={6} key={index}>
               <HomeCard data={testimonial} loading={false} />
             </Grid>
           ))

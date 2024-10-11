@@ -47,8 +47,8 @@ const GetInTouch = () => {
           <StyledInput placeholder="Enter Message" rows={5} />
         </Grid>
         <Grid item md={12}xs={12}>
-          {" "}
-          <StyledButton name={"Send Message"} />
+        <Stack width={"100%"}> <StyledButton name={"Send Message"} /></Stack>
+         
         </Grid>
       </Grid>
     </Box>

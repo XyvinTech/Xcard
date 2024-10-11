@@ -9,7 +9,7 @@ const Header4 = () => {
   return (
     <Grid
       container
-      padding={{ xs: 5, md: 10 }}
+      padding={{ xs: 5, md: 10,sm:5 }}
       height={{ xs: "auto", md: "750px" }}
       // bgcolor={"#000000"}
       style={{
@@ -19,7 +19,7 @@ const Header4 = () => {
         objectFit: "fill",
       }}
     >
-      <Grid item md={5} paddingTop={15} justifyContent={"flex-start"}>
+      <Grid item md={5} sm={6}  justifyContent={"center"}display={"flex"}alignItems={"center"}>
         <Stack spacing={2}>
           <Typography fontSize={{ xs: "40px", md: "50px" }} fontWeight={700}>
             Green Your Network. Plant a Tree with Every Order.
@@ -37,8 +37,8 @@ const Header4 = () => {
         </Stack>
       </Grid>
 
-      <Grid item md={7}>
-        <Stack spacing={4} alignItems="center">
+      <Grid item md={7} sm={6} display={"flex"} justifyContent={"center"} >
+        <Stack spacing={4} display={"flex"} justifyContent={"center"} alignItems="center">
           <Stack spacing={2} pt={2}>
             {" "}
             <Custom />
