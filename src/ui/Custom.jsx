@@ -40,7 +40,7 @@ const Custom = () => {
                 boxShadow: "0px 4px 4px rgba(255, 255, 255, 0.5) inset",
               },
               "&.Mui-focusVisible": {
-                boxShadow: "0 0 0 8px rgba(255, 255, 255, 0.4)", // Focus outline color
+                boxShadow: "0 0 0 8px rgba(255, 255, 255, 0.4)",
               },
             },
             "& .MuiSlider-rail": {
@@ -51,7 +51,6 @@ const Custom = () => {
           }}
         />
       </Box>
-      {/* Add margin to create gap between slider and input */}
       <Box
         sx={{
           width: 100,
@@ -65,7 +64,7 @@ const Custom = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "flex-start",
-          marginLeft: 2, // Add margin-left to create gap
+          marginLeft: 2, 
         }}
       >
         <Typography
