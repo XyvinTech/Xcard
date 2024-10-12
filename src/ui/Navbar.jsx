@@ -39,8 +39,8 @@ function Navbar() {
       position="fixed"
       sx={{
         background: `linear-gradient(127deg, black 0%, #1E1E1E 100%)`,
-        paddingTop: "30px",
-        paddingBottom: "30px",
+        paddingTop: "20px",
+        paddingBottom: "20px",
         boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
         borderBottom: "1px #2D2D2D solid",
       }}

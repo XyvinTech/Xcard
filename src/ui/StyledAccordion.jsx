@@ -50,7 +50,7 @@ const StyledAccordion = ({ data }) => {
             </Button>
           </AccordionSummary>
           <AccordionDetails
-            sx={{ color: "#ADADAD", fontSize: "18px", fontWeight: "400" }}
+            sx={{ color: "#ADADAD", fontSize: "18px", fontWeight: "400",paddingLeft:5,paddingRight:5 }}
           >
             {item.content}
           </AccordionDetails>
