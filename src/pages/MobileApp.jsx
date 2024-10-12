@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../components/Home/Header";
 import header from "../assets/images/Header6.webp";
 import img1 from "../assets/images/img7.webp";

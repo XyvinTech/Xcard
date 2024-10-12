@@ -14,11 +14,12 @@ import StyledButton from "./StyledButton";
 
 const pages = [
   { name: "Home", path: "/" },
-  { name: "Features", path: "/features" },
+  { name: "Features", path: "#features" },
   { name: "Team", path: "/team" },
   { name: "Mobile App", path: "/mobile-app" },
   { name: "Shop", path: "/shop" },
   { name: "Support", path: "/support" },
+
 ];
 
 function Navbar() {

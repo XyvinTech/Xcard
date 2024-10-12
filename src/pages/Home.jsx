@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../components/Home/Header";
 import { Box } from "@mui/material";
 import Header2 from "../components/Home/Header2";
@@ -61,8 +61,6 @@ const Home = () => {
         "Add multiple links to your digital business card, from your website to your social media profiles.",
     },
   ];
-  
-
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -80,11 +78,14 @@ const Home = () => {
       >
         <Header content={mainContent} isHome />
         <Header2 content={headerContent} />
-        <Header3
-          data={data}
-          title="Beyond the Ordinary Business Card"
-          subtitle="Our NFC business cards offer more than just contact sharing. Experience the benefits of a digital business card that empowers your professional network."
-        />
+        <div id="features">
+          {" "}
+          <Header3
+            data={data}
+            title="Beyond the Ordinary Business Card"
+            subtitle="Our NFC business cards offer more than just contact sharing. Experience the benefits of a digital business card that empowers your professional network."
+          />
+        </div>
       </Box>
       <Box
         sx={{

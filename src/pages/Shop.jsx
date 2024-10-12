@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import GetInTouch from "../components/Home/GetInTouch";
 import Header from "../components/Home/Header";
 import header from "../assets/images/Header9.webp";
