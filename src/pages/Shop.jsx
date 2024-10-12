@@ -13,6 +13,7 @@ import icon2 from "../assets/images/icon2.webp";
 import icon3 from "../assets/images/icon3.webp";
 import icon4 from "../assets/images/icon4.webp";
 import { useLocation } from "react-router-dom";
+import GetCards from "../components/GetCards";
 
 const Shop = () => {
   const { pathname } = useLocation();
@@ -74,6 +75,7 @@ const Shop = () => {
             "Discover how easy it is to use Xcard and start networking smarter."
           }
         />
+        {/* <GetCards/> */}
         <GetInTouch />
       </Box>
     </>

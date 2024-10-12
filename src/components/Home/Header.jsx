@@ -1,17 +1,30 @@
 import { Grid, Stack, Typography, Skeleton, Box } from "@mui/material";
 import React from "react";
+import { motion } from "framer-motion";  // Importing Framer Motion
 import StyledButton from "../../ui/StyledButton";
 import App from "../../assets/images/AppStore.webp";
 import buttonimage from "../../assets/images/Button.png";
 import Play from "../../assets/images/PlayStore.webp";
+
 const Header = ({ content = {}, isHome, isMobile, shop }) => {
   const { image, title, subtitle, des, button } = content;
+
+  // Define animation variants
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.8 } },
+  };
+
+  const slideIn = {
+    hidden: { x: -100, opacity: 0 },
+    visible: { x: 0, opacity: 1, transition: { duration: 1 } },
+  };
 
   return (
     <Grid
       container
       spacing={2}
-      padding={{ xs: 5, md: 10,sm:5 }}
+      padding={{ xs: 5, md: 10, sm: 5 }}
       display={"flex"}
       justifyContent="center"
       alignItems="center"
@@ -19,58 +32,60 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
       <Grid item md={6} sm={6} display={"flex"} justifyContent={"flex-start"}>
         <Stack spacing={2}>
           {title ? (
-            <Typography
-              fontSize={{ xs: "32px", md: isHome ? "84px" : "50px" }}
-              lineHeight={{ xs: "40px", md: isHome ? "100px" : "60px" }}
-              fontWeight={700}
-            >
-              {title}
-            </Typography>
+            <motion.div variants={slideIn} initial="hidden" animate="visible">
+              <Typography
+                fontSize={{ xs: "32px", md: isHome ? "84px" : "50px" }}
+                lineHeight={{ xs: "40px", md: isHome ? "100px" : "60px" }}
+                fontWeight={700}
+              >
+                {title}
+              </Typography>
+            </motion.div>
           ) : (
             <Skeleton variant="text" width={300} height={100} />
           )}
 
           {subtitle ? (
-            <Typography variant="h4">{subtitle}</Typography>
+            <motion.div variants={fadeIn} initial="hidden" animate="visible">
+              <Typography variant="h4">{subtitle}</Typography>
+            </motion.div>
           ) : (
             <Skeleton variant="text" width={250} height={40} />
           )}
-          {des && <Typography variant="h4">{des}</Typography>}
+
+          {des && (
+            <motion.div variants={fadeIn} initial="hidden" animate="visible">
+              <Typography variant="h4">{des}</Typography>
+            </motion.div>
+          )}
+
           {isMobile ? (
             <Stack direction={"row"} spacing={2} pt={2}>
-              <Box
-                component="img"
-                src={App}
-                alt="logo"
-                sx={{
-                  objectFit: "fill",
-                  width: {
-                    xs: "150px",
-                    md: "180px",
-                    
-                  },
-                  height: {
-                    xs: "44px",
-                    md: "52px",
-                  },
-                }}
-              />
-              <Box
-                component="img"
-                src={Play}
-                alt="logo"
-                sx={{
-                  objectFit: "fill",
-                  width: {
-                    xs: "150px",
-                    md: "180px",
-                  },
-                  height: {
-                    xs: "44px",
-                    md: "52px",
-                  },
-                }}
-              />
+              <motion.div variants={fadeIn} initial="hidden" animate="visible">
+                <Box
+                  component="img"
+                  src={App}
+                  alt="App Store"
+                  sx={{
+                    objectFit: "fill",
+                    width: { xs: "150px", md: "180px" },
+                    height: { xs: "44px", md: "52px" },
+                  }}
+                />
+              </motion.div>
+
+              <motion.div variants={fadeIn} initial="hidden" animate="visible">
+                <Box
+                  component="img"
+                  src={Play}
+                  alt="Play Store"
+                  sx={{
+                    objectFit: "fill",
+                    width: { xs: "150px", md: "180px" },
+                    height: { xs: "44px", md: "52px" },
+                  }}
+                />
+              </motion.div>
             </Stack>
           ) : (
             <Stack direction={"row"} spacing={2}>
@@ -79,7 +94,8 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
                   <Typography fontSize={"32px"} fontWeight={700}>
                     Our Mission
                   </Typography>
-                  <img
+                  <motion.img
+                    src={buttonimage}
                     style={{
                       width: 120,
                       height: 3,
@@ -87,12 +103,13 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
                         "linear-gradient(182deg, #575142 0%, #FBF19A 100%)",
                       borderRadius: 14,
                     }}
-                    src={buttonimage}
                   />
-                  <Typography variant="h4" mt={2}mb={{xs:2,md:0}}>
-                    To empower professionals to connect, collaborate, and
-                    succeed in today's digital world.
-                  </Typography>
+                  <motion.div variants={fadeIn} initial="hidden" animate="visible">
+                    <Typography variant="h4" mt={2} mb={{ xs: 2, md: 0 }}>
+                      To empower professionals to connect, collaborate, and
+                      succeed in today's digital world.
+                    </Typography>
+                  </motion.div>
                 </Stack>
               ) : (
                 <>
@@ -114,25 +131,26 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
         </Stack>
       </Grid>
 
-      <Grid item md={6}sm={6} display={"flex"} justifyContent={"center"}>
+      <Grid item md={6} sm={6} display={"flex"} justifyContent={"center"}>
         {image ? (
-          <Box
-            component="img"
-            src={image}
-            alt="background"
-            sx={{
-              objectFit: "fill",
-              width: {
-                xs: shop ? "100%" : "100%",
-                md: shop ? "337px" : "539px",
-                // sm : shop ? "60%" : "60%",
-              },
-              height: {
-                xs: shop ? "auto" : "auto",
-                md: shop ? "414px" : "514px",
-              },
-            }}
-          />
+          <motion.div variants={fadeIn} initial="hidden" animate="visible">
+            <Box
+              component="img"
+              src={image}
+              alt="background"
+              sx={{
+                objectFit: "fill",
+                width: {
+                  xs: shop ? "100%" : "100%",
+                  md: shop ? "337px" : "539px",
+                },
+                height: {
+                  xs: shop ? "auto" : "auto",
+                  md: shop ? "414px" : "514px",
+                },
+              }}
+            />
+          </motion.div>
         ) : (
           <Skeleton variant="rectangular" width={539} height={514} />
         )}
