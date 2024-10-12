@@ -53,7 +53,6 @@ const Shop = () => {
     },
   ];
 
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
@@ -75,7 +74,7 @@ const Shop = () => {
             "Discover how easy it is to use Xcard and start networking smarter."
           }
         />
-        {/* <GetCards/> */}
+        <GetCards />
         <GetInTouch />
       </Box>
     </>
