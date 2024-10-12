@@ -1,6 +1,6 @@
 import { Grid, Stack, Typography, Skeleton, Box } from "@mui/material";
-import React from "react";
-import { motion } from "framer-motion";  // Importing Framer Motion
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";  
 import StyledButton from "../../ui/StyledButton";
 import App from "../../assets/images/AppStore.webp";
 import buttonimage from "../../assets/images/Button.png";
@@ -9,7 +9,6 @@ import Play from "../../assets/images/PlayStore.webp";
 const Header = ({ content = {}, isHome, isMobile, shop }) => {
   const { image, title, subtitle, des, button } = content;
 
-  // Define animation variants
   const fadeIn = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.8 } },
@@ -20,6 +19,8 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
     visible: { x: 0, opacity: 1, transition: { duration: 1 } },
   };
 
+  const ref = useRef(null);  
+  const inView = useInView(ref, { triggerOnce: false, threshold: 0.1 });
   return (
     <Grid
       container
@@ -32,7 +33,12 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
       <Grid item md={6} sm={6} display={"flex"} justifyContent={"flex-start"}>
         <Stack spacing={2}>
           {title ? (
-            <motion.div variants={slideIn} initial="hidden" animate="visible">
+            <motion.div
+              ref={ref} 
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              variants={slideIn}
+            >
               <Typography
                 fontSize={{ xs: "32px", md: isHome ? "84px" : "50px" }}
                 lineHeight={{ xs: "40px", md: isHome ? "100px" : "60px" }}
@@ -46,7 +52,11 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
           )}
 
           {subtitle ? (
-            <motion.div variants={fadeIn} initial="hidden" animate="visible">
+            <motion.div
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              variants={fadeIn}
+            >
               <Typography variant="h4">{subtitle}</Typography>
             </motion.div>
           ) : (
@@ -54,14 +64,22 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
           )}
 
           {des && (
-            <motion.div variants={fadeIn} initial="hidden" animate="visible">
+            <motion.div
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}  
+              variants={fadeIn}
+            >
               <Typography variant="h4">{des}</Typography>
             </motion.div>
           )}
 
           {isMobile ? (
             <Stack direction={"row"} spacing={2} pt={2}>
-              <motion.div variants={fadeIn} initial="hidden" animate="visible">
+              <motion.div
+                initial="hidden"
+                animate={inView ? "visible" : "hidden"}
+                variants={fadeIn}
+              >
                 <Box
                   component="img"
                   src={App}
@@ -74,7 +92,11 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
                 />
               </motion.div>
 
-              <motion.div variants={fadeIn} initial="hidden" animate="visible">
+              <motion.div
+                initial="hidden"
+                animate={inView ? "visible" : "hidden"}
+                variants={fadeIn}
+              >
                 <Box
                   component="img"
                   src={Play}
@@ -104,7 +126,11 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
                       borderRadius: 14,
                     }}
                   />
-                  <motion.div variants={fadeIn} initial="hidden" animate="visible">
+                  <motion.div
+                    initial="hidden"
+                    animate={inView ? "visible" : "hidden"}
+                    variants={fadeIn}
+                  >
                     <Typography variant="h4" mt={2} mb={{ xs: 2, md: 0 }}>
                       To empower professionals to connect, collaborate, and
                       succeed in today's digital world.
@@ -133,7 +159,12 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
 
       <Grid item md={6} sm={6} display={"flex"} justifyContent={"center"}>
         {image ? (
-          <motion.div variants={fadeIn} initial="hidden" animate="visible">
+          <motion.div
+            ref={ref}  
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            variants={fadeIn}
+          >
             <Box
               component="img"
               src={image}
