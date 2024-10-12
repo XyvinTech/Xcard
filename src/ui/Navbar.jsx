@@ -92,44 +92,55 @@ function Navbar() {
                 },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem
-                  key={page.name}
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    padding: "12px 20px",
-                    transition: "background-color 0.3s ease, color 0.3s ease",
-                    backgroundColor:
-                      location.pathname === page.path
-                        ? "#333333"
-                        : "transparent",
-                    "&:hover": {
-                      backgroundColor: "#444444",
-                    },
-                  }}
-                >
-                  <Link
-                    to={page.path}
-                    style={{
-                      textDecoration: "none",
-                      color:
-                        location.pathname === page.path ? "#A6A074" : "#8E8E8E",
-                      fontWeight:
-                        location.pathname === page.path ? "bold" : "normal",
-                      width: "100%",
-                      display: "flex",
-                      alignItems: "center",
-                      fontSize: "16px",
+              {pages.map((page) =>
+                page.name === "Features" ? (
+                  <MenuItem
+                    key={page.name}
+                    onClick={() => {
+                      handleCloseNavMenu();
+                      scrollToFeatures(); // Call the scroll function
+                    }}
+                    sx={{
+                      padding: "12px 20px",
+                      backgroundColor:
+                        location.pathname === page.path ? "#333333" : "transparent",
+                      "&:hover": {
+                        backgroundColor: "#444444",
+                      },
                     }}
                   >
-                    <Typography
-                      sx={{ marginLeft: "8px", letterSpacing: "0.5px" }}
-                    >
+                    <Typography sx={{ color: "#8E8E8E", fontSize: "16px" }}>
                       {page.name}
                     </Typography>
-                  </Link>
-                </MenuItem>
-              ))}
+                  </MenuItem>
+                ) : (
+                  <MenuItem
+                    key={page.name}
+                    onClick={handleCloseNavMenu}
+                    sx={{
+                      padding: "12px 20px",
+                      backgroundColor:
+                        location.pathname === page.path ? "#333333" : "transparent",
+                      "&:hover": {
+                        backgroundColor: "#444444",
+                      },
+                    }}
+                  >
+                    <Link
+                      to={page.path}
+                      style={{
+                        textDecoration: "none",
+                        color: location.pathname === page.path ? "#A6A074" : "#8E8E8E",
+                        width: "100%",
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                    >
+                      <Typography>{page.name}</Typography>
+                    </Link>
+                  </MenuItem>
+                )
+              )}
             </Menu>
           </Box>
           {/* <Box
