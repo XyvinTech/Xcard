@@ -8,7 +8,7 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Logo from "../assets/images/Logo.png";
 import StyledButton from "./StyledButton";
 
@@ -25,7 +25,14 @@ const pages = [
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const location = useLocation();
-
+  const navigate = useNavigate();
+  const scrollToFeatures = () => {
+    navigate("/", { replace: true });
+    setTimeout(() => {
+      const featuresElement = document.getElementById("features");
+      featuresElement?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -145,30 +152,37 @@ function Navbar() {
               gap: "30px",
             }}
           >
-            {pages.map((page) => (
-              <Link
-                key={page.name}
-                to={page.path}
-                onClick={handleCloseNavMenu}
-                style={{
-                  textTransform: "none",
-                  color:
-                    location.pathname === page.path ? "#A6A074" : "#8E8E8E", 
-                  display: "block",
-                  fontSize: "16px",
-                  borderRadius: "0px",
-                  fontWeight: "500",
-                  textDecoration: "none",
-                  borderBottom:
-                    location.pathname === page.path
-                      ? "2px solid #A6A074"
-                      : "none", 
-                  margin: "0 16px",
-                }}
-              >
-                {page.name}
-              </Link>
-            ))}
+             {pages.map((page) =>
+              page.name === "Features" ? (
+                <Typography
+                  key={page.name}
+                  onClick={scrollToFeatures}
+                  sx={{
+                    textTransform: "none",
+                    color: "#8E8E8E",
+                    display: "block",
+                    fontSize: "16px",
+                    cursor: "pointer",
+                    borderBottom: "none",
+                    margin: "0 16px",
+                  }}
+                >
+                  {page.name}
+                </Typography>
+              ) : (
+                <Link
+                  key={page.name}
+                  to={page.path}
+                  onClick={handleCloseNavMenu}
+                  style={{
+                    color: location.pathname === page.path ? "#A6A074" : "#8E8E8E",
+                    textDecoration: "none",
+                  }}
+                >
+                  {page.name}
+                </Link>
+              )
+            )}
           </Box>
           <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
             <StyledButton name={"Buy Now"} />
