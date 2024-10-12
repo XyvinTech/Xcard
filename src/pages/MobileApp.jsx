@@ -9,7 +9,9 @@ import img4 from "../assets/images/img10.webp";
 import Header3 from "../components/Home/Header3";
 import WhyXcard from "../components/WhyXcard";
 import GetInTouch from "../components/Home/GetInTouch";
+import { useLocation } from "react-router-dom";
 const MobileApp = () => {
+  const { pathname } = useLocation();
   const mainContent = {
     image: header,
     title: "Your Digital Business Card in Your Pocket",
@@ -40,6 +42,11 @@ const MobileApp = () => {
       subtitle: "Capture leads and nurture them for conversions.",
     },
   ];
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <>
       <Box

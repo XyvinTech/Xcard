@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import HelpComponent from "../components/Home/HelpComponent";
 import GetInTouch from "../components/Home/GetInTouch";
 import Header4 from "../components/Home/Header4";
@@ -11,7 +11,9 @@ import img3 from "../assets/images/team3.webp";
 import img4 from "../assets/images/team4.webp";
 import Header3 from "../components/Home/Header3";
 import XcardTeams from "../components/XcardTeams";
+import { useLocation } from "react-router-dom";
 const Team = () => {
+  const { pathname } = useLocation();
   const mainContent = {
     image: header,
     title: "Connect Your Team, Connect with Clients",
@@ -44,6 +46,10 @@ const Team = () => {
         "Access your digital business cards and network even without an internet connection.",
     },
   ];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <>
       <Box

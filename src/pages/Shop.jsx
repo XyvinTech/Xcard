@@ -12,8 +12,10 @@ import icon1 from "../assets/images/icon1.webp";
 import icon2 from "../assets/images/icon2.webp";
 import icon3 from "../assets/images/icon3.webp";
 import icon4 from "../assets/images/icon4.webp";
+import { useLocation } from "react-router-dom";
 
 const Shop = () => {
+  const { pathname } = useLocation();
   const mainContent = {
     image: header,
     title: "Upgrade to Smart Business Cards",
@@ -49,6 +51,11 @@ const Shop = () => {
       subtitle: "After approval we will program, produce and ship your card.",
     },
   ];
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <>
       <Box

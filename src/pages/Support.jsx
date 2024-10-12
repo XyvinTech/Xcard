@@ -5,7 +5,9 @@ import Header from "../components/Home/Header";
 import header from "../assets/images/Header8.webp";
 import People from "../components/People";
 import Blog from "../components/Blog";
+import { useLocation } from "react-router-dom";
 const Support = () => {
+  const { pathname } = useLocation();
   const mainContent = {
     image: header,
     title: "Who We Are",
@@ -13,6 +15,11 @@ const Support = () => {
   
     button: "Try Now",
   };
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <>
       <Box
