@@ -47,17 +47,7 @@ function Navbar() {
     >
       <Container maxWidth="xl">
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Box
-            component="img"
-            src={Logo}
-            alt="logo"
-            sx={{
-              width: "99px",
-              height: "48px",
-              objectFit: "fill",
-              display: { xs: "none", md: "flex" },
-            }}
-          />
+        <Typography sx={{ display: { xs: "none", md: "flex" } }} fontSize={{ xs: "24px", md: "32px" }} fontWeight={600}>xCard</Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -135,7 +125,7 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
-          <Box
+          {/* <Box
             component="img"
             src={Logo}
             alt="logo"
@@ -145,7 +135,8 @@ function Navbar() {
               objectFit: "fill",
               display: { xs: "flex", md: "none" },
             }}
-          />
+          /> */}
+          <Typography sx={{ display: { xs: "flex", md: "none" } }} fontSize={{ xs: "24px", md: "32px" }} fontWeight={600}>xCard</Typography>
           <Box
             sx={{
               flexGrow: 1,
