@@ -1,16 +1,12 @@
-import { Stack, Typography, Skeleton } from "@mui/material";
+import { Stack, Typography, Skeleton, Box } from "@mui/material";
 import React from "react";
 import StyledButton from "./StyledButton";
-
+import icon from "../assets/images/share.webp";
 const BlogCard = ({ content = {} }) => {
   const { image, title, subtitle } = content;
 
   return (
-    <Stack
-      borderRadius={"12px"}
-      border={"1px solid #2D2D2D"}
-      height={"100%"}
-    >
+    <Stack borderRadius={"12px"} border={"1px solid #2D2D2D"} height={"100%"}>
       {image ? (
         <img
           src={image}
@@ -31,10 +27,9 @@ const BlogCard = ({ content = {} }) => {
         padding={"16px"}
         borderRadius={"0 0 12px 12px"}
         spacing={2}
-        height={{sm :"100%", md:"200px",xs:"100%"}} 
+        height={{ sm: "100%", md: "200px", xs: "100%" }}
         justifyContent={"space-between"}
       >
-       
         {title ? (
           <Typography
             variant="h1"
@@ -44,8 +39,8 @@ const BlogCard = ({ content = {} }) => {
               WebkitBoxOrient: "vertical",
               overflow: "hidden",
               textOverflow: "ellipsis",
-              height: "auto", 
-              maxHeight: "60px", 
+              height: "auto",
+              maxHeight: "60px",
             }}
           >
             {title}
@@ -63,8 +58,8 @@ const BlogCard = ({ content = {} }) => {
               WebkitBoxOrient: "vertical",
               overflow: "hidden",
               textOverflow: "ellipsis",
-              height: "auto", 
-              maxHeight: "30px", 
+              height: "auto",
+              maxHeight: "30px",
             }}
           >
             {subtitle}
@@ -79,7 +74,25 @@ const BlogCard = ({ content = {} }) => {
           alignItems="center"
         >
           <StyledButton name={"Read More"} />
-          <Typography variant="h6">5 min read</Typography>
+          <Box
+            component="img"
+            src={icon}
+            alt="share"
+            sx={{
+              width: {
+                xs: "18px",
+                md: "18px",
+                sm: "18px",
+                lg: "24px",
+              },
+              height: {
+                xs: "18px",
+                md: "18px",
+                sm: "18px",
+                lg: "24px",
+              },
+            }}
+          />
         </Stack>
       </Stack>
     </Stack>

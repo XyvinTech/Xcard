@@ -49,7 +49,7 @@ const People = () => {
         justifyContent={"center"}
       >
         {peopleData?.map((person, index) => (
-          <Grid item md={3} key={index}>
+          <Grid item md={3} lg={3}  sm={6} xs={12} key={index}>
             <PeopleCard content={person} />
           </Grid>
         ))}
