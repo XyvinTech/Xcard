@@ -46,7 +46,7 @@ const ClientsPage = ({ isLoading }) => {
 
       <Grid container pt={10} paddingBottom={0} spacing={3}>
         {clientLogos?.map((logo, index) => (
-        <Grid item xs={6} sm={4} md={2.4} lg={2.4} key={index}>
+        <Grid item xs={6} sm={4} md={4} lg={2.4} key={index}>
         {isLoading ? (
           <Skeleton
             variant="rectangular"
