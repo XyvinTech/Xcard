@@ -22,7 +22,7 @@ const Header2 = ({ content = {}, white }) => {
     <Grid
       container
       spacing={2}
-      padding={{ xs: 5, md: 10, sm: 5 }}
+      padding={{lg:10, xs: 5, md: 10, sm: 5 }}
       mt={10}
       justifyContent="center"
       alignItems="center"
@@ -43,12 +43,14 @@ const Header2 = ({ content = {}, white }) => {
                 objectFit: "fill",
                 width: {
                   xs: "100%",
-                  md: "539px",
+                  lg: "539px",
+                  md: "100%",
                   sm: "60%",
                 },
                 height: {
                   xs: "auto",
-                  md: "514px",
+                  lg: "514px",
+                  md: "100%",
                 },
               }}
             />

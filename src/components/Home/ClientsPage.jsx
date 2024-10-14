@@ -60,16 +60,16 @@ const ClientsPage = ({ isLoading }) => {
             alt={logo.alt}
             sx={{
               width: {
-                xs: "100%",  // Full width on mobile
-                sm: "100%",  // Full width on small screens
-                md: "180px", // Fixed width on medium screens and up
+                xs: "100%", 
+                sm: "100%",  
+                md: "180px",
               },
               height: {
-                xs: "auto",  // Auto height to maintain aspect ratio on mobile
-                sm: "auto",  // Auto height on small screens
-                md: "64px",  // Fixed height on medium screens and up
+                xs: "auto",  
+                sm: "auto", 
+                md: "64px", 
               },
-              objectFit: "contain",  // Ensure image fits within the box without being cropped
+              objectFit: "contain", 
             }}
           />
         )}
