@@ -14,7 +14,7 @@ const CardComponent = ({ content = {} }) => {
         justifyContent={"center"}
         alignItems={"center"}
       >
-        <Stack height={{ md: "150px", xs: "auto" }}>
+        <Stack height={{ lg: "150px",md:"170px", xs: "auto" }}>
           {title ? (
             <Typography fontSize={{ md: "32px", xs: "24px" }} fontWeight={700}>
               {title}
