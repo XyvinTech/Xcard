@@ -21,8 +21,9 @@ const Custom = () => {
       <Box
         sx={{
           width: {
-            xs: 200, // width for extra-small screens
-            md: 400, // width for medium and larger screens
+            xs: 200, 
+            md: 300, 
+            lg: 400
           },
           position: "relative",
         }}

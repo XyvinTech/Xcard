@@ -57,11 +57,13 @@ const XcardTeams = () => {
             objectFit: "fill",
             width: {
               xs: "100%",
-              md: "539px",
+              lg: "539px",
+              md: "100%",
             },
             height: {
               xs: "auto",
-              md: "514px",
+              lg: "514px",
+              md: "100%",
             },
           }}
         />

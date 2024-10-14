@@ -173,11 +173,13 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
                 objectFit: "fill",
                 width: {
                   xs: shop ? "100%" : "100%",
-                  md: shop ? "337px" : "539px",
+                  lg: shop ? "337px" : "539px",
+                  md: shop ? "100%" : "100%",
                 },
                 height: {
                   xs: shop ? "auto" : "auto",
-                  md: shop ? "414px" : "514px",
+                  lg: shop ? "414px" : "514px",
+                  md: shop ? "100%" : "100%",
                 },
               }}
             />

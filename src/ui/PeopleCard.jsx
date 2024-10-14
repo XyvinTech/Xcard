@@ -1,5 +1,5 @@
 import React from "react";
-import { Stack, Typography, Skeleton } from "@mui/material";
+import { Stack, Typography, Skeleton, Box } from "@mui/material";
 
 const PeopleCard = ({ content = {} }) => {
   const { image, title, subtitle } = content;
@@ -7,13 +7,24 @@ const PeopleCard = ({ content = {} }) => {
   return (
     <Stack spacing={1}>
       {image ? (
-        <img
+        <Box
+          component="img"
           src={image}
-          alt={"profile"}
-          style={{
+          alt="profile"
+          sx={{
             objectFit: "fill",
-            width: "270px",
-            height: "326px",
+            width: {
+              xs: "100%",
+              sm: "100%",
+              lg: "270px",
+              md: "100%",
+            },
+            height: {
+              xs: "auto",
+              sm: "auto",
+              lg: "326px",
+              md: "100%",
+            },
             borderRadius: "12px",
           }}
         />

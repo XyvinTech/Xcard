@@ -100,11 +100,13 @@ const WhyXcard = () => {
             objectFit: "fill",
             width: {
               xs: "100%",
-              md: "459px",
+              lg: "459px",
+              md: "100%",
             },
             height: {
               xs: "auto",
-              md: "524px",
+              lg: "524px",
+              md: "100%",
             },
           }}
         />

@@ -15,7 +15,7 @@ const HomeCard = ({ data, loading }) => {
       alignItems={"center"}
       border={"1px #E3E3E3 solid"}
       textAlign={"center"}
-      height={"395px"}
+      height={{ lg :"395px",md:"410px", xs: "auto" }} 
     >
       {loading ? (
         <Skeleton variant="text" width={"80%"} height={40} animation="wave" />

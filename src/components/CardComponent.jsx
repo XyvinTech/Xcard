@@ -39,8 +39,8 @@ const CardComponent = ({ content = {} }) => {
             alt="Card image"
             sx={{
               objectFit: "fill",
-              width: { xs: "100%", md: "316px" },
-              height: { xs: "auto", md: "197px" },
+              width: { xs: "100%", lg: "316px",md:"100%" },
+              height: { xs: "auto", lg: "197px",md:"100%" },
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
