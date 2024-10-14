@@ -52,7 +52,7 @@ const CardComponent = ({ content = {} }) => {
 
         {data ? (
           data?.map((item, index) => (
-            <Stack padding={6} key={index} height={{ lg: "200px",md:"220px", xs: "auto" }}>
+            <Stack padding={{lg:6, md:3}} key={index} height={{ lg: "200px",md:"220px", xs: "auto" }}>
               <Typography variant="h3">{item.title}</Typography>
               <Typography variant="h4" fontWeight={300} pt={2}>
                 {item.subtitle}
