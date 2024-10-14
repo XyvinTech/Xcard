@@ -23,7 +23,7 @@ const GetInTouch = () => {
         display={"flex"}
         justifyContent={"center"}
         padding={{ xs: 0, md: 10, lg: 40 }}
-        paddingTop={{ xs: 5, md: 10 }}
+        paddingTop={{ xs: 5, md: 10, lg: 5 }}
         paddingBottom={{ xs: 5, md: 0 }}
       >
         <Grid item md={12} xs={12}>
