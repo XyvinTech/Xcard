@@ -16,12 +16,12 @@ const clientLogos = [
 
 const ClientsPage = ({ isLoading }) => {
   return (
-    <Box padding={{ xs: 5, md: 10, sm: 5 }} mt={10}>
+    <Box padding={{ xs: 5, md: 10 ,sm:5}} mt={10}>
       {isLoading ? (
         <Skeleton variant="text" width={400} height={50} sx={{ mx: "auto" }} />
       ) : (
         <Typography
-          fontSize={{ xs: "32px", md: "44px" }}
+          fontSize={{xs: "32px", md: "44px"}} 
           fontWeight={700}
           textAlign={"center"}
           color="#000"
@@ -31,12 +31,7 @@ const ClientsPage = ({ isLoading }) => {
       )}
 
       {isLoading ? (
-        <Skeleton
-          variant="text"
-          width={600}
-          height={30}
-          sx={{ mx: "auto", mt: 2 }}
-        />
+        <Skeleton variant="text" width={600} height={30} sx={{ mx: "auto", mt: 2 }} />
       ) : (
         <Typography
           variant="h5"
@@ -45,35 +40,41 @@ const ClientsPage = ({ isLoading }) => {
           color="#000"
           mt={2}
         >
-          Our NFC business cards are the preferred choice for professionals
-          seeking a modern and efficient solution.
+          Our NFC business cards are the preferred choice for professionals seeking a modern and efficient solution.
         </Typography>
       )}
 
       <Grid container pt={10} paddingBottom={0} spacing={3}>
         {clientLogos?.map((logo, index) => (
-          <Grid item xs={6} sm={4} md={2.4} lg={2} key={index}>
-            {isLoading ? (
-              <Skeleton variant="rectangular" width={180} height={64} />
-            ) : (
-              <Box
-                component="img"
-                src={logo.src}
-                alt={logo.alt}
-                sx={{
-                  width: {
-                    xs: "100%",
-                    md: "180px",
-                  },
-                  height: {
-                    xs: "100%",
-                    md: "64px",
-                  },
-                  objectFit: "fill",
-                }}
-              />
-            )}
-          </Grid>
+        <Grid item xs={6} sm={4} md={2.4} lg={2.4} key={index}>
+        {isLoading ? (
+          <Skeleton
+            variant="rectangular"
+            width={180}
+            height={64}
+          />
+        ) : (
+          <Box
+            component="img"
+            src={logo.src}
+            alt={logo.alt}
+            sx={{
+              width: {
+                xs: "100%",  // Full width on mobile
+                sm: "100%",  // Full width on small screens
+                md: "180px", // Fixed width on medium screens and up
+              },
+              height: {
+                xs: "auto",  // Auto height to maintain aspect ratio on mobile
+                sm: "auto",  // Auto height on small screens
+                md: "64px",  // Fixed height on medium screens and up
+              },
+              objectFit: "contain",  // Ensure image fits within the box without being cropped
+            }}
+          />
+        )}
+      </Grid>
+      
         ))}
       </Grid>
     </Box>
