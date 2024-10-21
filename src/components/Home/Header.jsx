@@ -8,7 +8,7 @@ import Play from "../../assets/images/PlayStore.webp";
 import image1 from "../../assets/images/image1.png";
 import image2 from "../../assets/images/image2.png";
 
-const Header = ({ content = {}, isHome, isMobile, shop }) => {
+const Header = ({ content = {}, isHome, isMobile, shop, support }) => {
   const { image, title, subtitle, des, button } = content;
 
   const fadeIn = {
@@ -178,31 +178,61 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
         alignItems={"center"}
         position="relative"
       >
-        {isHome ? (
-          <>
+        {support ? (
+          <motion.div
+            initial={{ opacity: 0, x: 100 }} // Start off-screen to the right
+            animate={{ opacity: 1, x: 0 }} // Fade in and slide to position
+            transition={{ duration: 1, ease: "easeOut" }}
+          >
+            {" "}
             <Box
               component="img"
-              src={image1}
-              alt="background"
+              src={image}
+              alt="rotating image"
               sx={{
-                objectFit: "fill",
+                objectFit: "cover",
                 width: {
                   xs: shop ? "100%" : "100%",
                   lg: shop ? "337px" : "539px",
                   md: shop ? "100%" : "100%",
+                  sm: shop ? "100%" : "100%",
                 },
                 height: {
                   xs: shop ? "auto" : "auto",
                   lg: shop ? "414px" : "514px",
                   md: shop ? "100%" : "100%",
+                  sm: shop ? "100%" : "100%",
+                },
+              }}
+            />
+          </motion.div>
+        ) : (
+          <>
+            <Box
+              component="img"
+              src={image1}
+              display={shop ? "none" : "block"}
+              alt="background"
+              sx={{
+                objectFit: "fill",
+                width: {
+                  xs: "100%",
+                  lg: "539px",
+                  md: "100%",
+                },
+                height: {
+                  xs: "auto",
+                  lg: "514px",
+                  md: "100%",
                 },
                 zIndex: 1, // Lower zIndex for image1
               }}
             />
 
             <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+              initial={{ opacity: 0, x: 100 }} // Start off-screen to the right
+              animate={{ opacity: 1, x: 0 }} // Fade in and slide to position
+              transition={{ duration: 1, ease: "easeOut" }} // Adjust the timing and easing as needed
               style={{
                 position: "absolute",
                 transform: "translate(-50%, -50%)",
@@ -211,70 +241,42 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
               sx={{
                 top: {
                   xs: "10%",
-                  sm: "10%", 
+                  sm: "10%",
                   md: "8%",
                   lg: "6%",
-                  xl: "5%", 
+                  xl: "5%",
                 },
                 left: {
-                  xs: "15%", 
-                  sm: "10%", 
-                  md: "10%", 
-                  lg: "8%", 
-                  xl: "7%", 
+                  xs: "15%",
+                  sm: "10%",
+                  md: "10%",
+                  lg: "8%",
+                  xl: "7%",
                 },
               }}
             >
               <Box
                 component="img"
-                src={image2}
+                src={image}
                 alt="rotating image"
                 sx={{
                   objectFit: "cover",
                   width: {
-                    xs: shop ? "100%" : "100%",
-                    lg: shop ? "337px" : "100%",
-                    md: shop ? "100%" : "100%",
-                    sm: shop ? "100%" : "100%",
+                    xs: "100%",
+                    lg: "100%",
+                    md: "100%",
+                    sm: "100%",
                   },
                   height: {
-                    xs: shop ? "auto" : "auto",
-                    lg: shop ? "414px" : "400px",
-                    md: shop ? "100%" : "100%",
-                    sm: shop ? "100%" : "100%",
+                    xs: "auto",
+                    lg: "400px",
+                    md: "100%",
+                    sm: "100%",
                   },
                 }}
               />
             </motion.div>
           </>
-        ) : image ? (
-          <motion.div
-            ref={ref}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            variants={fadeIn}
-          >
-            <Box
-              component="img"
-              src={image}
-              alt="background"
-              sx={{
-                objectFit: "fill",
-                width: {
-                  xs: shop ? "100%" : "100%",
-                  lg: shop ? "337px" : "539px",
-                  md: shop ? "100%" : "100%",
-                },
-                height: {
-                  xs: shop ? "auto" : "auto",
-                  lg: shop ? "414px" : "514px",
-                  md: shop ? "100%" : "100%",
-                },
-              }}
-            />
-          </motion.div>
-        ) : (
-          <Skeleton variant="rectangular" width={539} height={514} />
         )}
       </Grid>
     </Grid>

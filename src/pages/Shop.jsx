@@ -66,7 +66,7 @@ const Shop = () => {
           backgroundPosition: "center",
         }}
       >
-        <Header content={mainContent} />
+        <Header content={mainContent} support/>
         <Header3
           title={"How Xcard Works"}
           data={data}

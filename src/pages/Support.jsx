@@ -30,7 +30,7 @@ const Support = () => {
           backgroundPosition: "center",
         }}
       >
-        <Header content={mainContent}  shop/>
+        <Header content={mainContent} support  shop/>
         <People/>
         <Blog/>
         <GetInTouch />

@@ -10,7 +10,7 @@ import HelpComponent from "../components/Home/HelpComponent";
 import GetInTouch from "../components/Home/GetInTouch";
 import Testimonial from "../components/Home/Testimonial";
 import ClientsPage from "../components/Home/ClientsPage";
-import header from "../assets/images/Header.webp";
+import header from "../assets/images/image2.png";
 import img1 from "../assets/images/img1.png";
 import img2 from "../assets/images/img2.png";
 import img3 from "../assets/images/img3.png";
