@@ -1,8 +1,8 @@
 import { Grid, Stack, Typography } from "@mui/material";
 import React from "react";
 import image from "../../assets/images/Header4.webp";
-import img1 from "../../assets/images/img1.png";
-import img2 from "../../assets/images/img2.png";
+import img1 from "../../assets/images/money.png";
+import img2 from "../../assets/images/tree.png";
 import Custom from "../../ui/Custom";
 
 const Header4 = () => {
@@ -76,12 +76,12 @@ const Header4 = () => {
                 width={"140px"}
                 height={"140px"}
               />
-              <Typography variant="h3">Bottom Line</Typography>
+              <Typography variant="h3">Tree Saved</Typography>
               <Typography
                 fontSize={{ xs: "24px", md: "32px" }}
                 fontWeight={700}
               >
-                Rs. 25000
+               8
               </Typography>
               <Typography variant="h6">Savings per year</Typography>
             </Stack>
