@@ -211,14 +211,14 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
               sx={{
                 top: {
                   xs: "10%",
-                  sm: "12%", 
+                  sm: "10%", 
                   md: "8%",
                   lg: "6%",
                   xl: "5%", 
                 },
                 left: {
                   xs: "15%", 
-                  sm: "12%", 
+                  sm: "10%", 
                   md: "10%", 
                   lg: "8%", 
                   xl: "7%", 
@@ -235,11 +235,13 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
                     xs: shop ? "100%" : "100%",
                     lg: shop ? "337px" : "100%",
                     md: shop ? "100%" : "100%",
+                    sm: shop ? "100%" : "100%",
                   },
                   height: {
                     xs: shop ? "auto" : "auto",
                     lg: shop ? "414px" : "400px",
                     md: shop ? "100%" : "100%",
+                    sm: shop ? "100%" : "100%",
                   },
                 }}
               />
