@@ -1,10 +1,12 @@
 import { Grid, Stack, Typography, Skeleton, Box } from "@mui/material";
 import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";  
+import { motion, useInView } from "framer-motion";
 import StyledButton from "../../ui/StyledButton";
 import App from "../../assets/images/AppStore.webp";
 import buttonimage from "../../assets/images/Button.png";
 import Play from "../../assets/images/PlayStore.webp";
+import image1 from "../../assets/images/image1.png";
+import image2 from "../../assets/images/image2.png";
 
 const Header = ({ content = {}, isHome, isMobile, shop }) => {
   const { image, title, subtitle, des, button } = content;
@@ -19,8 +21,19 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
     visible: { x: 0, opacity: 1, transition: { duration: 1 } },
   };
 
-  const ref = useRef(null);  
+  // Adding continuous rotation animation for image2
+  const rotateAnimation = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      rotate: 360,
+      transition: { duration: 10, repeat: Infinity, ease: "linear" },
+    },
+  };
+
+  const ref = useRef(null);
   const inView = useInView(ref, { triggerOnce: false, threshold: 0.1 });
+
   return (
     <Grid
       container
@@ -34,7 +47,7 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
         <Stack spacing={2}>
           {title ? (
             <motion.div
-              ref={ref} 
+              ref={ref}
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
               variants={slideIn}
@@ -66,7 +79,7 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
           {des && (
             <motion.div
               initial="hidden"
-              animate={inView ? "visible" : "hidden"}  
+              animate={inView ? "visible" : "hidden"}
               variants={fadeIn}
             >
               <Typography variant="h4">{des}</Typography>
@@ -156,11 +169,85 @@ const Header = ({ content = {}, isHome, isMobile, shop }) => {
           )}
         </Stack>
       </Grid>
+      <Grid
+        item
+        md={6}
+        sm={6}
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
+        position="relative"
+      >
+        {isHome ? (
+          <>
+            <Box
+              component="img"
+              src={image1}
+              alt="background"
+              sx={{
+                objectFit: "fill",
+                width: {
+                  xs: shop ? "100%" : "100%",
+                  lg: shop ? "337px" : "539px",
+                  md: shop ? "100%" : "100%",
+                },
+                height: {
+                  xs: shop ? "auto" : "auto",
+                  lg: shop ? "414px" : "514px",
+                  md: shop ? "100%" : "100%",
+                },
+                zIndex: 1, // Lower zIndex for image1
+              }}
+            />
 
-      <Grid item md={6} sm={6} display={"flex"} justifyContent={"center"}>
-        {image ? (
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+              style={{
+                position: "absolute",
+                transform: "translate(-50%, -50%)",
+                zIndex: 2,
+              }}
+              sx={{
+                top: {
+                  xs: "10%",
+                  sm: "12%", 
+                  md: "8%",
+                  lg: "6%",
+                  xl: "5%", 
+                },
+                left: {
+                  xs: "15%", 
+                  sm: "12%", 
+                  md: "10%", 
+                  lg: "8%", 
+                  xl: "7%", 
+                },
+              }}
+            >
+              <Box
+                component="img"
+                src={image2}
+                alt="rotating image"
+                sx={{
+                  objectFit: "cover",
+                  width: {
+                    xs: shop ? "100%" : "100%",
+                    lg: shop ? "337px" : "100%",
+                    md: shop ? "100%" : "100%",
+                  },
+                  height: {
+                    xs: shop ? "auto" : "auto",
+                    lg: shop ? "414px" : "400px",
+                    md: shop ? "100%" : "100%",
+                  },
+                }}
+              />
+            </motion.div>
+          </>
+        ) : image ? (
           <motion.div
-            ref={ref}  
+            ref={ref}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             variants={fadeIn}

@@ -1,14 +1,16 @@
 import { Box, Grid, Typography, Skeleton } from "@mui/material";
 import React from "react";
 import HomeCard from "../../ui/HomeCard";
-import img1 from "../../assets/images/img1.png";
-
+import person1 from "../../assets/images/people1.webp";
+import person2 from "../../assets/images/people2.webp";
+import person3 from "../../assets/images/people3.webp";
+import person4 from "../../assets/images/people4.webp";
 const testimonials = [
   {
     title: "“The Future of Business Cards”",
     description:
       "The NFC technology and customizable landing pages are a game-changer. It's the future of business cards.",
-    img: img1,
+    img: person1,
     name: "John Smith",
     role: "CEO, Farrell",
   },
@@ -16,7 +18,7 @@ const testimonials = [
     title: "“A Quick Win for Networking”",
     description:
       "The ease of sharing contact information and generating leads has significantly boosted my business.",
-    img: img1,
+    img: person4,
     name: "Amal Jackson",
     role: "CEO, Grady and Sons",
   },
@@ -24,7 +26,7 @@ const testimonials = [
     title: "“A Must-Have for Modern Professionals”",
     description:
       "The customizable landing pages and lead generation features are top-notch.",
-    img: img1,
+    img: person2,
     name: "Priya Sony",
     role: "CEO, Amber Glow",
   },
@@ -32,8 +34,8 @@ const testimonials = [
     title: "“Simple, Effective, and Efficient”",
     description:
       "I love how easy it is to use this platform. The user interface is intuitive, and the features are powerful.",
-    img: img1,
-    name: "Reshma Gupta",
+    img: person3,
+    name: "Raj Gupta",
     role: "CEO, Crystal Clear",
   },
 ];

@@ -44,7 +44,7 @@ const HomeCard = ({ data, loading }) => {
           alt="img1"
           width={"80px"}
           height={"80px"}
-          style={{ borderRadius: "50%", objectFit: "fill" }}
+          style={{ borderRadius: "50%", objectFit: "cover" }}
         />
       )}
       <Stack
