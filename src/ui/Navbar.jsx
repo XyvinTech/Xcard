@@ -19,7 +19,6 @@ const pages = [
   { name: "Mobile App", path: "/mobile-app" },
   { name: "Shop", path: "/shop" },
   { name: "Support", path: "/support" },
-
 ];
 
 function Navbar() {
@@ -54,7 +53,13 @@ function Navbar() {
     >
       <Container maxWidth="xl">
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Typography sx={{ display: { xs: "none", md: "flex" } }} fontSize={{ xs: "24px", md: "32px" }} fontWeight={600}>xCard</Typography>
+          <Typography
+            sx={{ display: { xs: "none", md: "flex" } }}
+            fontSize={{ xs: "24px", md: "32px" }}
+            fontWeight={600}
+          >
+            xCard
+          </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -103,7 +108,9 @@ function Navbar() {
                     sx={{
                       padding: "12px 20px",
                       backgroundColor:
-                        location.pathname === page.path ? "#333333" : "transparent",
+                        location.pathname === page.path
+                          ? "#333333"
+                          : "transparent",
                       "&:hover": {
                         backgroundColor: "#444444",
                       },
@@ -120,7 +127,9 @@ function Navbar() {
                     sx={{
                       padding: "12px 20px",
                       backgroundColor:
-                        location.pathname === page.path ? "#333333" : "transparent",
+                        location.pathname === page.path
+                          ? "#333333"
+                          : "transparent",
                       "&:hover": {
                         backgroundColor: "#444444",
                       },
@@ -130,7 +139,10 @@ function Navbar() {
                       to={page.path}
                       style={{
                         textDecoration: "none",
-                        color: location.pathname === page.path ? "#A6A074" : "#8E8E8E",
+                        color:
+                          location.pathname === page.path
+                            ? "#A6A074"
+                            : "#8E8E8E",
                         width: "100%",
                         display: "flex",
                         alignItems: "center",
@@ -154,7 +166,13 @@ function Navbar() {
               display: { xs: "flex", md: "none" },
             }}
           /> */}
-          <Typography sx={{ display: { xs: "flex", md: "none" } }} fontSize={{ xs: "24px", md: "32px" }} fontWeight={600}>xCard</Typography>
+          <Typography
+            sx={{ display: { xs: "flex", md: "none" } }}
+            fontSize={{ xs: "24px", md: "32px" }}
+            fontWeight={600}
+          >
+            xCard
+          </Typography>
           <Box
             sx={{
               flexGrow: 1,
@@ -163,7 +181,7 @@ function Navbar() {
               gap: "30px",
             }}
           >
-             {pages.map((page) =>
+            {pages.map((page) =>
               page.name === "Features" ? (
                 <Typography
                   key={page.name}
@@ -186,7 +204,8 @@ function Navbar() {
                   to={page.path}
                   onClick={handleCloseNavMenu}
                   style={{
-                    color: location.pathname === page.path ? "#A6A074" : "#8E8E8E",
+                    color:
+                      location.pathname === page.path ? "#A6A074" : "#8E8E8E",
                     textDecoration: "none",
                   }}
                 >

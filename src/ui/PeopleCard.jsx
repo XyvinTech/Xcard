@@ -12,7 +12,7 @@ const PeopleCard = ({ content = {} }) => {
           src={image}
           alt="profile"
           sx={{
-            objectFit: "fill",
+            objectFit: "cover",
             width: {
               xs: "100%",
               sm: "100%",

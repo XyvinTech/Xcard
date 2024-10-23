@@ -6,7 +6,6 @@ import App from "../../assets/images/AppStore.webp";
 import buttonimage from "../../assets/images/Button.png";
 import Play from "../../assets/images/PlayStore.webp";
 import image1 from "../../assets/images/image1.png";
-import image2 from "../../assets/images/image2.png";
 
 const Header = ({ content = {}, isHome, isMobile, shop, support }) => {
   const { image, title, subtitle, des, button } = content;
@@ -19,16 +18,6 @@ const Header = ({ content = {}, isHome, isMobile, shop, support }) => {
   const slideIn = {
     hidden: { x: -100, opacity: 0 },
     visible: { x: 0, opacity: 1, transition: { duration: 1 } },
-  };
-
-  // Adding continuous rotation animation for image2
-  const rotateAnimation = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      rotate: 360,
-      transition: { duration: 10, repeat: Infinity, ease: "linear" },
-    },
   };
 
   const ref = useRef(null);
@@ -180,8 +169,8 @@ const Header = ({ content = {}, isHome, isMobile, shop, support }) => {
       >
         {support ? (
           <motion.div
-            initial={{ opacity: 0, x: 100 }} // Start off-screen to the right
-            animate={{ opacity: 1, x: 0 }} // Fade in and slide to position
+            initial={{ opacity: 0, x: 100 }} 
+            animate={{ opacity: 1, x: 0 }} 
             transition={{ duration: 1, ease: "easeOut" }}
           >
             {" "}
@@ -219,20 +208,22 @@ const Header = ({ content = {}, isHome, isMobile, shop, support }) => {
                   xs: "100%",
                   lg: "539px",
                   md: "100%",
+                  sm: "100%",
                 },
                 height: {
                   xs: "auto",
                   lg: "514px",
                   md: "100%",
+                  sm: "100%",
                 },
-                zIndex: 1, // Lower zIndex for image1
+                zIndex: 1, 
               }}
             />
 
             <motion.div
-              initial={{ opacity: 0, x: 100 }} // Start off-screen to the right
-              animate={{ opacity: 1, x: 0 }} // Fade in and slide to position
-              transition={{ duration: 1, ease: "easeOut" }} // Adjust the timing and easing as needed
+              initial={{ opacity: 0, x: 100 }} 
+              animate={{ opacity: 1, x: 0 }} 
+              transition={{ duration: 1, ease: "easeOut" }}
               style={{
                 position: "absolute",
                 transform: "translate(-50%, -50%)",

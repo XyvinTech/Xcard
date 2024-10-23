@@ -78,7 +78,7 @@ const Home = () => {
       >
         <Header content={mainContent} isHome />
         <Header2 content={headerContent} />
-        <div id="features">
+        <div id="features"style={{ paddingTop: "10px" }}>
           {" "}
           <Header3
             data={data}

@@ -1,41 +1,58 @@
 import { Box, Grid, Skeleton, Typography } from "@mui/material";
 import React from "react";
 import PeopleCard from "../ui/PeopleCard";
-import person1 from "../assets/images/people1.webp";
-import person2 from "../assets/images/people2.webp";
-import person3 from "../assets/images/people3.webp";
-import person4 from "../assets/images/people4.webp";
+import person1 from "../assets/images/suresh.jpg";
+import person2 from "../assets/images/anto.jpg";
+import person3 from "../assets/images/jayan.jpg";
+import person4 from "../assets/images/rajeev.jpg";
+import person5 from "../assets/images/reshmi.jpg";
 const People = () => {
   const peopleData = [
-    {
-      image: person1,
-      title: "John Doe",
-      subtitle: "CEO",
-    },
+  
     {
       image: person2,
-      title: "Jane Smith",
-      subtitle: "Co-Founder",
+      title: "Anto Jose",
+      subtitle: "COO",
+    },
+    {
+      image: person1,
+      title: "Suresh K",
+      subtitle: "Managing Director",
     },
     {
       image: person3,
-      title: "Alex Johnson",
-      subtitle: "Head of Product",
+      title: "Jayachandran A K ",
+      subtitle: "Director",
     },
     {
       image: person4,
-      title: "Michael Brown",
-      subtitle: "Head of Marketing",
+      title: "Rajeev P R ",
+      subtitle: "Web Designer",
+    },
+    {
+      image: person5,
+      title: "Reshmi K ",
+      subtitle: "Whole Time Director",
     },
   ];
   return (
-    <Box padding={{ xs: 5, md: 10 }}  mt={10}>
+    <Box padding={{ xs: 5, md: 10 }} mt={10}>
       <>
-        <Typography fontSize={{xs: "32px", md: "44px"}} fontWeight={700} textAlign={"center"}>
+        <Typography
+          fontSize={{ xs: "32px", md: "44px" }}
+          fontWeight={700}
+          textAlign={"center"}
+        >
           The People Behind Xcard
         </Typography>
 
-        <Typography variant="h5" width={{ xs: "100%", md: "50%" }} mt={2}  mx={"auto"} textAlign={"center"}>
+        <Typography
+          variant="h5"
+          width={{ xs: "100%", md: "50%" }}
+          mt={2}
+          mx={"auto"}
+          textAlign={"center"}
+        >
           Discover the passionate individuals driving Xcard's mission to
           revolutionize networking.
         </Typography>
@@ -49,7 +66,7 @@ const People = () => {
         justifyContent={"center"}
       >
         {peopleData?.map((person, index) => (
-          <Grid item md={3} lg={3}  sm={6} xs={12} key={index}>
+          <Grid item md={3} lg={4} sm={6} xs={12} key={index} display={"flex"} justifyContent={"center"}>
             <PeopleCard content={person} />
           </Grid>
         ))}
