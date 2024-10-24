@@ -5,7 +5,7 @@ import StyledButton from "../../ui/StyledButton";
 import App from "../../assets/images/AppStore.webp";
 import buttonimage from "../../assets/images/Button.png";
 import Play from "../../assets/images/PlayStore.webp";
-import image1 from "../../assets/images/image1.png";
+import image1 from "../../assets/images/image1.webp";
 
 const Header = ({ content = {}, isHome, isMobile, shop, support }) => {
   const { image, title, subtitle, des, button } = content;
