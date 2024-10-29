@@ -23,7 +23,7 @@ const Header2 = ({ content = {}, white }) => {
       container
       spacing={2}
       padding={{lg:10, xs: 5, md: 10, sm: 5 }}
-      mt={10}
+      mt={2}
       justifyContent="center"
       alignItems="center"
     >

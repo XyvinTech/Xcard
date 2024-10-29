@@ -16,7 +16,7 @@ const Header3 = ({ data, title, subtitle }) => {
   };
 
   return (
-    <Box padding={{ xs: 5, md: 10, sm: 5 }} mt={10} ref={ref}>
+    <Box padding={{ xs: 5, md: 10, sm: 5 }} mt={2} ref={ref}>
       <>
         {title ? (
           <motion.div

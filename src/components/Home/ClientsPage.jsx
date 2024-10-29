@@ -16,7 +16,7 @@ const clientLogos = [
 
 const ClientsPage = ({ isLoading }) => {
   return (
-    <Box padding={{ xs: 5, md: 10 ,sm:5}} mt={10}>
+    <Box padding={{ xs: 5, md: 10 ,sm:5}} mt={2} paddingTop={0}>
       {isLoading ? (
         <Skeleton variant="text" width={400} height={50} sx={{ mx: "auto" }} />
       ) : (
