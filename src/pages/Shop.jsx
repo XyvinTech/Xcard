@@ -1,19 +1,20 @@
 import { Box } from "@mui/material";
 import React, { useEffect } from "react";
-import GetInTouch from "../components/Home/GetInTouch";
-import Header from "../components/Home/Header";
-import header from "../assets/images/Header9.webp";
-import Header3 from "../components/Home/Header3";
-import img1 from "../assets/images/img11.webp";
-import img2 from "../assets/images/img12.webp";
-import img3 from "../assets/images/img13.webp";
-import img4 from "../assets/images/img14.webp";
-import icon1 from "../assets/images/icon1.webp";
-import icon2 from "../assets/images/icon2.webp";
-import icon3 from "../assets/images/icon3.webp";
-import icon4 from "../assets/images/icon4.webp";
+import GetInTouch from "../components/GetInTouch";
+import Header from "../components/Header";
+import header from "../assets/images/Shop/Header9.webp";
+import Header3 from "../components/Header3";
+import img1 from "../assets/images/Shop/img11.webp";
+import img2 from "../assets/images/Shop/img12.webp";
+import img3 from "../assets/images/Shop/img13.webp";
+import img4 from "../assets/images/Shop/img14.webp";
+import icon1 from "../assets/images/Shop/icon1.webp";
+import icon2 from "../assets/images/Shop/icon2.webp";
+import icon3 from "../assets/images/Shop/icon3.webp";
+import icon4 from "../assets/images/Shop/icon4.webp";
 import { useLocation } from "react-router-dom";
-import GetCards from "../components/GetCards";
+import ChooseUs from "../components/Card/ChooseUs";
+import Cards from "../components/Card/Cards";
 
 const Shop = () => {
   const { pathname } = useLocation();
@@ -66,15 +67,21 @@ const Shop = () => {
           backgroundPosition: "center",
         }}
       >
-        <Header content={mainContent} support/>
+        <Header content={mainContent} support /> <ChooseUs />
         <Header3
           title={"How Xcard Works"}
           data={data}
           subtitle={
             "Discover how easy it is to use Xcard and start networking smarter."
           }
-        />
-        <GetCards />
+        />{" "}
+        <Box
+          sx={{
+            backgroundColor: "#FAFAFA",
+          }}
+        >
+          <Cards />
+        </Box>
         <GetInTouch />
       </Box>
     </>

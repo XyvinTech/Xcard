@@ -1,10 +1,10 @@
 import { Box, Grid, Typography, Skeleton } from "@mui/material";
 import React from "react";
-import img1 from "../../assets/images/Bajaj.png";
-import img2 from "../../assets/images/Oracle.png";
-import img3 from "../../assets/images/Canon.png";
-import img4 from "../../assets/images/Microsoft.png";
-import img5 from "../../assets/images/Oracle.png";
+import img1 from "../../assets/images/Home/Bajaj.png";
+import img2 from "../../assets/images/Home/Oracle.png";
+import img3 from "../../assets/images/Home/Canon.png";
+import img4 from "../../assets/images/Home/Microsoft.png";
+import img5 from "../../assets/images/Home/Oracle.png";
 
 const clientLogos = [
   { src: img1, alt: "Bajaj" },

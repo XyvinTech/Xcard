@@ -1,10 +1,10 @@
 import { Box } from "@mui/material";
 import React, { useEffect } from "react";
-import GetInTouch from "../components/Home/GetInTouch";
-import Header from "../components/Home/Header";
-import header from "../assets/images/Header8.webp";
-import People from "../components/People";
-import Blog from "../components/Blog";
+import GetInTouch from "../components/GetInTouch";
+import Header from "../components/Header";
+import header from "../assets/images/Support/Header8.webp";
+import People from "../components/Support/People";
+import Blog from "../components/Support/Blog";
 import { useLocation } from "react-router-dom";
 const Support = () => {
   const { pathname } = useLocation();

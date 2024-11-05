@@ -1,15 +1,24 @@
 import { Box } from "@mui/material";
 import React, { useEffect } from "react";
-import Header from "../components/Home/Header";
-import header from "../assets/images/Header6.webp";
-import img1 from "../assets/images/img7.webp";
-import img2 from "../assets/images/img8.webp";
-import img3 from "../assets/images/img9.webp";
-import img4 from "../assets/images/img10.webp";
-import Header3 from "../components/Home/Header3";
-import WhyXcard from "../components/WhyXcard";
-import GetInTouch from "../components/Home/GetInTouch";
+import Header from "../components/Header";
+import header from "../assets/images/MobileApp/Header6.webp";
+import header1 from "../assets/images/Team/Header5.webp";
+import img1 from "../assets/images/MobileApp/img7.webp";
+import img2 from "../assets/images/MobileApp/img8.webp";
+import img3 from "../assets/images/MobileApp/img9.webp";
+import img4 from "../assets/images/MobileApp/img10.webp";
+import netImg1 from "../assets/images/Team/team1.webp";
+import netImg2 from "../assets/images/Team/team2.webp";
+import netImg3 from "../assets/images/Team/team3.webp";
+import netImg4 from "../assets/images/Team/team4.webp";
+import Header3 from "../components/Header3";
+import WhyXcard from "../components/MobileApp/WhyXcard";
+import GetInTouch from "../components/GetInTouch";
 import { useLocation } from "react-router-dom";
+import Header2 from "../components/Home/Header2";
+import XcardTeams from "../components/Team/XcardTeams";
+import Header4 from "../components/Header4";
+import HelpComponent from "../components/HelpComponent";
 const MobileApp = () => {
   const { pathname } = useLocation();
   const mainContent = {
@@ -19,6 +28,32 @@ const MobileApp = () => {
     des: "Download the Xcard mobile app for easy access and effortless networking.",
     button: "Try Now",
   };
+  const Networkdata = [
+    {
+      image: netImg1,
+      title: "Centralized Management",
+      subtitle:
+        "Manage your team's digital business cards from a single dashboard.",
+    },
+    {
+      image: netImg2,
+      title: "Enhanced Collaboration",
+      subtitle:
+        "Share contacts, leads, and collaborate seamlessly within your team.",
+    },
+    {
+      image: netImg3,
+      title: "Advanced Analytics",
+      subtitle:
+        "Track team performance, identify trends, and optimize your strategy.",
+    },
+    {
+      image: netImg4,
+      title: "Offline access",
+      subtitle:
+        "Access your digital business cards and network even without an internet connection.",
+    },
+  ];
   const data = [
     {
       image: img1,
@@ -43,7 +78,12 @@ const MobileApp = () => {
     },
   ];
 
-
+  const headerData = {
+    image: header1,
+    title: "Connect Your Team, Connect with Clients",
+    subtitle: "Streamline team collaboration and communication.",
+    button: "Try Now",
+  };
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
@@ -57,7 +97,7 @@ const MobileApp = () => {
           backgroundPosition: "center",
         }}
       >
-        <Header content={mainContent}isMobile />
+        <Header content={mainContent} isMobile />
         <Header3
           title={"Network Anytime, Anywhere"}
           data={data}
@@ -65,7 +105,27 @@ const MobileApp = () => {
             "Stay connected and network efficiently, no matter where you are."
           }
         />
-        <WhyXcard /> <GetInTouch />
+        <WhyXcard />
+        <Box
+          sx={{
+            backgroundColor: "#FAFAFA",
+          }}
+        >
+          {" "}
+          <Header2 content={headerData} white app />
+          <Header3
+            white
+            title={"Network Together, Achieve More"}
+            data={Networkdata}
+            subtitle={
+              "Equip your team with the tools they need to connect with potential clients and partners more efficiently."
+            }
+          />
+          <XcardTeams />
+        </Box>
+        <Header4 />
+        <HelpComponent />
+        <GetInTouch />
       </Box>
     </>
   );

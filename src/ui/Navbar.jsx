@@ -9,22 +9,31 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import Logo from "../assets/images/Logo.png";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import StyledButton from "./StyledButton";
+import { Collapse } from "@mui/material";
 
 const pages = [
   { name: "Home", path: "/" },
   { name: "Features", path: "#features" },
-  { name: "Team", path: "/team" },
-  { name: "Mobile App", path: "/mobile-app" },
-  { name: "Shop", path: "/shop" },
+  { name: "Products", path: "/products" },
   { name: "Support", path: "/support" },
+];
+
+const productSubpages = [
+  { name: "Mobile App", path: "/products/app" },
+  { name: "NFC Card", path: "/products/card" },
+  { name: "QR Stand", path: "/products/qrstand" },
+  { name: "Restaurant", path: "/products/restaurant" },
 ];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElProducts, setAnchorElProducts] = React.useState(null);
+  const [openProductsSubmenu, setOpenProductsSubmenu] = React.useState(false); // For Products subnavigation
   const location = useLocation();
   const navigate = useNavigate();
+
   const scrollToFeatures = () => {
     navigate("/", { replace: true });
     setTimeout(() => {
@@ -32,6 +41,7 @@ function Navbar() {
       featuresElement?.scrollIntoView({ behavior: "smooth" });
     }, 100);
   };
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -40,6 +50,16 @@ function Navbar() {
     setAnchorElNav(null);
   };
 
+  const handleOpenProductsMenu = (event) => {
+    setAnchorElProducts(event.currentTarget);
+  };
+
+  const handleCloseProductsMenu = () => {
+    setAnchorElProducts(null);
+  };
+  const toggleProductsSubmenu = () => {
+    setOpenProductsSubmenu((prevOpen) => !prevOpen);
+  };
   return (
     <AppBar
       position="fixed"
@@ -103,7 +123,7 @@ function Navbar() {
                     key={page.name}
                     onClick={() => {
                       handleCloseNavMenu();
-                      scrollToFeatures(); // Call the scroll function
+                      scrollToFeatures();
                     }}
                     sx={{
                       padding: "12px 20px",
@@ -119,6 +139,35 @@ function Navbar() {
                     <Typography sx={{ color: "#8E8E8E", fontSize: "16px" }}>
                       {page.name}
                     </Typography>
+                  </MenuItem>
+                ) : page.name === "Products" ? (
+                  <MenuItem
+                    key={page.name}
+                    onClick={toggleProductsSubmenu}
+                    sx={{
+                      padding: "12px 20px",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      backgroundColor: location.pathname.startsWith("/products")
+                        ? "#333333"
+                        : "transparent",
+                      "&:hover": {
+                        backgroundColor: "#444444",
+                      },
+                    }}
+                  >
+                    <Typography sx={{ color: "#8E8E8E", fontSize: "16px" }}>
+                      {page.name}
+                    </Typography>
+                    <ArrowDropDownIcon
+                      sx={{
+                        color: "#8E8E8E",
+                        transform: openProductsSubmenu
+                          ? "rotate(180deg)"
+                          : "rotate(0deg)",
+                        transition: "transform 0.3s",
+                      }}
+                    />
                   </MenuItem>
                 ) : (
                   <MenuItem
@@ -153,19 +202,36 @@ function Navbar() {
                   </MenuItem>
                 )
               )}
+              <Collapse in={openProductsSubmenu}>
+                {productSubpages.map((subpage) => (
+                  <MenuItem
+                    key={subpage.name}
+                    onClick={() => {
+                      handleCloseNavMenu();
+                      navigate(subpage.path);
+                    }}
+                    sx={{
+                      padding: "8px 20px",
+                      paddingLeft: "40px",
+                      backgroundColor:
+                        location.pathname === subpage.path
+                          ? "#333333"
+                          : "transparent",
+                      "&:hover": {
+                        backgroundColor: "#444444",
+                      },
+                      color:
+                        location.pathname === subpage.path
+                          ? "#A6A074"
+                          : "#8E8E8E",
+                    }}
+                  >
+                    {subpage.name}
+                  </MenuItem>
+                ))}
+              </Collapse>
             </Menu>
           </Box>
-          {/* <Box
-            component="img"
-            src={Logo}
-            alt="logo"
-            sx={{
-              width: "99px",
-              height: "48px",
-              objectFit: "fill",
-              display: { xs: "flex", md: "none" },
-            }}
-          /> */}
           <Typography
             sx={{ display: { xs: "flex", md: "none" } }}
             fontSize={{ xs: "24px", md: "32px" }}
@@ -198,6 +264,22 @@ function Navbar() {
                 >
                   {page.name}
                 </Typography>
+              ) : page.name === "Products" ? (
+                <Typography
+                  key={page.name}
+                  onMouseEnter={handleOpenProductsMenu}
+                  sx={{
+                    textTransform: "none",
+                    color: "#8E8E8E",
+                    display: "flex",
+                    alignItems: "center",
+                    fontSize: "16px",
+                    cursor: "pointer",
+                    margin: "0 16px",
+                  }}
+                >
+                  {page.name} <ArrowDropDownIcon />
+                </Typography>
               ) : (
                 <Link
                   key={page.name}
@@ -213,6 +295,42 @@ function Navbar() {
                 </Link>
               )
             )}
+            <Menu
+              anchorEl={anchorElProducts}
+              open={Boolean(anchorElProducts)}
+              onClose={handleCloseProductsMenu}
+              MenuListProps={{
+                onMouseLeave: handleCloseProductsMenu,
+              }}
+              sx={{
+                "& .MuiPaper-root": {
+                  backgroundColor: "#1E1E1E",
+                  borderRadius: "10px",
+                  boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.3)",
+                },
+              }}
+            >
+              {productSubpages.map((subpage) => (
+                <MenuItem
+                  key={subpage.name}
+                  onClick={() => {
+                    handleCloseProductsMenu();
+                    navigate(subpage.path);
+                  }}
+                  sx={{
+                    "&:hover": {
+                      backgroundColor: "#444444",
+                    },
+                    color:
+                      location.pathname === subpage.path
+                        ? "#A6A074"
+                        : "#8E8E8E",
+                  }}
+                >
+                  {subpage.name}
+                </MenuItem>
+              ))}
+            </Menu>
           </Box>
           <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
             <StyledButton name={"Buy Now"} />

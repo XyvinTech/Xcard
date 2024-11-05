@@ -1,9 +1,9 @@
 import { Grid, Stack, Typography, Skeleton, Box } from "@mui/material";
 import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion"; 
+import { motion, useInView } from "framer-motion";
 import StyledButton from "../../ui/StyledButton";
 
-const Header2 = ({ content = {}, white }) => {
+const Header2 = ({ content = {}, white, app }) => {
   const { image, title, subtitle } = content;
   const fadeIn = {
     hidden: { opacity: 0 },
@@ -15,14 +15,14 @@ const Header2 = ({ content = {}, white }) => {
     visible: { x: 0, opacity: 1, transition: { duration: 1 } },
   };
 
-  const ref = useRef(null); 
-  const inView = useInView(ref, { once: false }); 
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: false });
 
   return (
     <Grid
       container
       spacing={2}
-      padding={{lg:10, xs: 5, md: 10, sm: 5 }}
+      padding={{ lg: 10, xs: 5, md: 10, sm: 5 }}
       mt={2}
       justifyContent="center"
       alignItems="center"
@@ -30,7 +30,7 @@ const Header2 = ({ content = {}, white }) => {
       <Grid item md={6} sm={6} display={"flex"} justifyContent={"flex-start"}>
         {image ? (
           <motion.div
-            ref={ref} 
+            ref={ref}
             variants={fadeIn}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
@@ -66,7 +66,7 @@ const Header2 = ({ content = {}, white }) => {
             <motion.div
               variants={slideIn}
               initial="hidden"
-              animate={inView ? "visible" : "hidden"} 
+              animate={inView ? "visible" : "hidden"}
             >
               <Typography
                 fontSize={{ xs: "32px", md: "50px" }}
@@ -85,7 +85,7 @@ const Header2 = ({ content = {}, white }) => {
             <motion.div
               variants={fadeIn}
               initial="hidden"
-              animate={inView ? "visible" : "hidden"} 
+              animate={inView ? "visible" : "hidden"}
             >
               <Typography variant="h4" color={white && "#5E5E5E"}>
                 {subtitle}
@@ -95,9 +95,14 @@ const Header2 = ({ content = {}, white }) => {
             <Skeleton variant="text" width={250} height={40} />
           )}
 
-          {white && (
+          {white && !app && (
             <Stack width={"fit-content"}>
               <StyledButton name={"Know More"} />
+            </Stack>
+          )}
+          {app && (
+            <Stack width={"fit-content"}>
+              <StyledButton name={"Try Now"} />
             </Stack>
           )}
         </Stack>

@@ -21,7 +21,7 @@ const Custom = () => {
       <Box
         sx={{
           width: {
-            xs: 200, 
+            xs: 150, 
             md: 300, 
             lg: 400
           },

@@ -2,10 +2,10 @@ import { Box, Divider, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
 import SubscribeCard from "./SubscribeCard";
 import Logo from "../assets/images/Logo.png";
-import facebook from "../assets/images/facebook.webp";
-import twitter from "../assets/images/twitter.webp";
-import instagram from "../assets/images/instagram.webp";
-import linkedin from "../assets/images/linkedin.webp";
+import facebook from "../assets/images/Footer/facebook.webp";
+import twitter from "../assets/images/Footer/twitter.webp";
+import instagram from "../assets/images/Footer/instagram.webp";
+import linkedin from "../assets/images/Footer/linkedin.webp";
 import { Link, useNavigate } from "react-router-dom";
 
 const companyItems = [

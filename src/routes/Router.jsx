@@ -5,6 +5,8 @@ import Team from '../pages/Team';
 import MobileApp from '../pages/MobileApp';
 import Shop from '../pages/Shop';
 import Support from '../pages/Support';
+import QRStand from '../pages/QRStand';
+import Restaurant from '../pages/Restaurant';
 
 const router = createBrowserRouter([
   {
@@ -22,17 +24,31 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: '/mobile-app',
+    path: '/products/app',
     element: <Layout />, 
     children: [
       { path: '', element: <MobileApp /> },
     ],
   },
   {
-    path: '/shop',
+    path: '/products/qrstand',
+    element: <Layout />, 
+    children: [
+      { path: '', element: <QRStand /> },
+    ],
+  },
+  {
+    path: '/products/card',
     element: <Layout />, 
     children: [
       { path: '', element: <Shop /> },
+    ],
+  },
+  {
+    path: '/products/restaurant',
+    element: <Layout />, 
+    children: [
+      { path: '', element: <Restaurant /> },
     ],
   },
   {

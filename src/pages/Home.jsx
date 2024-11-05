@@ -1,28 +1,24 @@
 import React, { useEffect } from "react";
-import Header from "../components/Home/Header";
+import Header from "../components/Header";
 import { Box } from "@mui/material";
 import Header2 from "../components/Home/Header2";
-import headerImage from "../assets/images/Header2.webp";
-import headerImage2 from "../assets/images/Header3.webp";
-import Header3 from "../components/Home/Header3";
-import Header4 from "../components/Home/Header4";
-import HelpComponent from "../components/Home/HelpComponent";
-import GetInTouch from "../components/Home/GetInTouch";
+import headerImage2 from "../assets/images/Home/Header3.webp";
+import Header3 from "../components/Header3";
+import Header4 from "../components/Header4";
+import HelpComponent from "../components/HelpComponent";
+import GetInTouch from "../components/GetInTouch";
 import Testimonial from "../components/Home/Testimonial";
 import ClientsPage from "../components/Home/ClientsPage";
-import header from "../assets/images/image2.png";
-import img1 from "../assets/images/img1.png";
-import img2 from "../assets/images/img2.png";
-import img3 from "../assets/images/img3.png";
-import img4 from "../assets/images/img4.png";
+import header from "../assets/images/Home/image2.png";
+import img1 from "../assets/images/Home/img1.png";
+import img2 from "../assets/images/Home/img2.png";
+import img3 from "../assets/images/Home/img3.png";
+import img4 from "../assets/images/Home/img4.png";
 import { useLocation } from "react-router-dom";
+import HomeHeader from "../components/Home/HomeHeader";
 const Home = () => {
   const { pathname } = useLocation();
-  const headerContent = {
-    image: headerImage,
-    title: "Reimagine Networking. Connect with Confidence.",
-    subtitle: "The way you network will never be the same.",
-  };
+
   const headerData = {
     image: headerImage2,
     title: "Xcard for Teams: Network Smarter, Together",
@@ -77,7 +73,7 @@ const Home = () => {
         }}
       >
         <Header content={mainContent} isHome />
-        <Header2 content={headerContent} />
+        <HomeHeader />
         <div id="features"style={{ paddingTop: "10px" }}>
           {" "}
           <Header3
@@ -89,7 +85,7 @@ const Home = () => {
       </Box>
       <Box
         sx={{
-          backgroundColor: "#FFF",
+          backgroundColor: "#FAFAFA",
         }}
       >
         {" "}

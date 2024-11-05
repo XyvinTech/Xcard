@@ -1,10 +1,10 @@
 import { Box, Grid, Typography, Skeleton } from "@mui/material";
 import React from "react";
 import HomeCard from "../../ui/HomeCard";
-import person1 from "../../assets/images/people1.webp";
-import person2 from "../../assets/images/people2.webp";
-import person3 from "../../assets/images/people3.webp";
-import person4 from "../../assets/images/people4.webp";
+import person1 from "../../assets/images/Home/Testimonial/people1.webp";
+import person2 from "../../assets/images/Home/Testimonial/people2.webp";
+import person3 from "../../assets/images/Home/Testimonial/people3.webp";
+import person4 from "../../assets/images/Home/Testimonial/people4.webp";
 const testimonials = [
   {
     title: "“The Future of Business Cards”",

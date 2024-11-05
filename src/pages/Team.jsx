@@ -1,16 +1,16 @@
 import { Box } from "@mui/material";
 import React, { useEffect } from "react";
-import HelpComponent from "../components/Home/HelpComponent";
-import GetInTouch from "../components/Home/GetInTouch";
-import Header4 from "../components/Home/Header4";
-import Header from "../components/Home/Header";
-import header from "../assets/images/Header5.webp";
-import img1 from "../assets/images/team1.webp";
-import img2 from "../assets/images/team2.webp";
-import img3 from "../assets/images/team3.webp";
-import img4 from "../assets/images/team4.webp";
-import Header3 from "../components/Home/Header3";
-import XcardTeams from "../components/XcardTeams";
+import HelpComponent from "../components/HelpComponent";
+import GetInTouch from "../components/GetInTouch";
+import Header4 from "../components/Header4";
+import Header from "../components/Header";
+import header from "../assets/images/Team/Header5.webp";
+import img1 from "../assets/images/Team/team1.webp";
+import img2 from "../assets/images/Team/team2.webp";
+import img3 from "../assets/images/Team/team3.webp";
+import img4 from "../assets/images/Team/team4.webp";
+import Header3 from "../components/Header3";
+import XcardTeams from "../components/Team/XcardTeams";
 import { useLocation } from "react-router-dom";
 const Team = () => {
   const { pathname } = useLocation();
