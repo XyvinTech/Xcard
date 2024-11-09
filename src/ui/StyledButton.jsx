@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import React from "react";
 import ButtonImage from "../assets/images/Button.png";
 
-const StyledButton = ({ name, secondary }) => {
+const StyledButton = ({ name, secondary , onClick}) => {
   return (
     <>
       <Button
@@ -17,6 +17,7 @@ const StyledButton = ({ name, secondary }) => {
           color: secondary ? "#A6A074" : "rgba(0, 0, 0, 1)",
           textTransform: "none",
         }}
+        onClick={onClick}
       >
         {name}
       </Button>
