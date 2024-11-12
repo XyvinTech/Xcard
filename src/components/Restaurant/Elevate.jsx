@@ -15,11 +15,6 @@ import scan from "../../assets/images/Restaurant/Header.webp";
 import icon from "../../assets/images/Team/Ellipse.png";
 
 const Elevate = () => {
-  const isXs = useMediaQuery((theme) => theme.breakpoints.down("sm"));
-  const isSm = useMediaQuery((theme) => theme.breakpoints.between("sm", "md"));
-  const isMd = useMediaQuery((theme) => theme.breakpoints.between("md", "lg"));
-
-  const topPosition = isXs ? "142%" : isSm ? "130%" : isMd ? "140%" : "140%";
   const ref = useRef(null);
   const inView = useInView(ref, { triggerOnce: false, threshold: 0.1 });
 
@@ -104,7 +99,6 @@ const Elevate = () => {
               position: "absolute",
               transform: "translate(-50%, -50%)",
               zIndex: 2,
-              top: topPosition,
             }}
           >
             <Box
