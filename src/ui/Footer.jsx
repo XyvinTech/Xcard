@@ -97,9 +97,9 @@ const Footer = () => {
           </Stack>
         </Stack>
       </Grid>
-      <Grid item md={4} sm={4} display={"flex"} justifyContent={"center"}>
+      {/* <Grid item md={4} sm={4} display={"flex"} justifyContent={"center"}>
         <SubscribeCard />
-      </Grid>
+      </Grid> */}
       <Grid item xs={12}>
         <Divider sx={{ borderColor: "#A7A7A7", mt: 2 }} />
       </Grid>{" "}
