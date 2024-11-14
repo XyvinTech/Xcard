@@ -38,7 +38,7 @@ const Products = () => {
   };
   const qRData = {
     image: qr,
-    buttonPath:"/products/qrstand",
+    buttonPath: "/products/qrstand",
     title: "Connect Effortlessly with Buziness Connect",
     subtitle: "Upgrade your networking game today. Order your QR Stand now.",
   };
@@ -55,8 +55,7 @@ const Products = () => {
           backgroundPosition: "center",
         }}
       >
-        <ProductHeaders content={mainContent}  />
-     
+        <ProductHeaders content={mainContent} />
       </Box>
       <Box
         sx={{
@@ -69,7 +68,6 @@ const Products = () => {
       </Box>
       <Box
         sx={{
-          mt: 10,
           backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%)`,
           backgroundSize: "cover",
           backgroundPosition: "center",

@@ -47,7 +47,7 @@ const Header2 = ({ content = {}, white, app, showButton,bg }) => {
       padding={{ lg: 10, xs: 5, md: 10, sm: 5 }}
       paddingLeft={{ lg: 15, xs: 5, md: 10, sm: 5 }}
       paddingRight={{ lg: 15, xs: 5, md: 10, sm: 5 }}
-      mt={2}
+      mt={!bg && 2}
       justifyContent="center"
       alignItems="center"  style={{
         backgroundImage: bg ? `url(${bgimage})` : "none",
