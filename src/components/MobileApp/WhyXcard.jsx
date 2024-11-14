@@ -45,13 +45,16 @@ const WhyXcard = () => {
     <Grid
       container
       spacing={4}
-      padding={{ xs: 5, md: 10,sm:5}} mt={2}
+      padding={{ xs: 5, md: 10, sm: 5 }}
+      paddingLeft={{ xs: 5, md: 15, sm: 5 }}
+      paddingRight={{ xs: 5, md: 15, sm: 5 }}
+      mt={2}
       justifyContent="center"
       alignItems="center"
     >
       <Grid item md={6} sm={6} display={"flex"} justifyContent={"center"}>
         <Stack spacing={2}>
-          <Typography fontSize={{xs: "32px", md: "44px"}}  fontWeight={700}>
+          <Typography fontSize={{ xs: "32px", md: "44px" }} fontWeight={700}>
             Why Choose Xcard?
           </Typography>
 
@@ -91,8 +94,8 @@ const WhyXcard = () => {
           </List>
         </Stack>
       </Grid>{" "}
-      <Grid item md={6}  sm={6} display={"flex"} justifyContent={"flex-start"}>
-      <Box
+      <Grid item md={6} sm={6} display={"flex"} justifyContent={"flex-start"}>
+        <Box
           component="img"
           src={headerImage2}
           alt="background"

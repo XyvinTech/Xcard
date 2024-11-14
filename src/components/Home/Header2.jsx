@@ -2,9 +2,13 @@ import { Grid, Stack, Typography, Skeleton, Box } from "@mui/material";
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import StyledButton from "../../ui/StyledButton";
+import { useNavigate } from "react-router-dom";
+import { button } from "framer-motion/client";
+import bgimage from "../../assets/images/Frame.png";
 
-const Header2 = ({ content = {}, white, app }) => {
-  const { image, title, subtitle } = content;
+const Header2 = ({ content = {}, white, app, showButton,bg }) => {
+  const { image, title, subtitle,buttonPath } = content;
+  const navigate = useNavigate();
   const fadeIn = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.8 } },
@@ -17,15 +21,39 @@ const Header2 = ({ content = {}, white, app }) => {
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: false });
-
+  const handleButtonClick = () => {
+    if (buttonPath) {
+      navigate(buttonPath);
+    }
+    if (buttonPath === "knowMore") {
+    navigate("/", { replace: true });
+    setTimeout(() => {
+      const featuresElement = document.getElementById("LearnMore");
+      featuresElement?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+    }
+    if (buttonPath === "app") {
+      navigate("/products/app", { replace: true });
+      setTimeout(() => {
+        const featuresElement = document.getElementById("getInTouch");
+        featuresElement?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }
   return (
     <Grid
       container
       spacing={2}
       padding={{ lg: 10, xs: 5, md: 10, sm: 5 }}
+      paddingLeft={{ lg: 15, xs: 5, md: 10, sm: 5 }}
+      paddingRight={{ lg: 15, xs: 5, md: 10, sm: 5 }}
       mt={2}
       justifyContent="center"
-      alignItems="center"
+      alignItems="center"  style={{
+        backgroundImage: bg ? `url(${bgimage})` : "none",
+        backgroundPosition: bg ? "center" : "initial",
+        backgroundSize: bg ? "100% 100%" : "initial",
+      }}
     >
       <Grid item md={6} sm={6} display={"flex"} justifyContent={"flex-start"}>
         {image ? (
@@ -40,7 +68,7 @@ const Header2 = ({ content = {}, white, app }) => {
               src={image}
               alt="background"
               sx={{
-                objectFit: "fill",
+                objectFit: "contain",
                 width: {
                   xs: "100%",
                   lg: "539px",
@@ -87,7 +115,7 @@ const Header2 = ({ content = {}, white, app }) => {
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
             >
-              <Typography variant="h4" color={white && "#5E5E5E"}>
+              <Typography variant="h4" color={white ? "#5E5E5E" : "#f2f2f2"}>
                 {subtitle}
               </Typography>
             </motion.div>
@@ -97,12 +125,20 @@ const Header2 = ({ content = {}, white, app }) => {
 
           {white && !app && (
             <Stack width={"fit-content"}>
-              <StyledButton name={"Know More"} />
+              <StyledButton name={"Know More"}  onClick={handleButtonClick}/>
+            </Stack>
+          )}
+          {showButton && (
+            <Stack width={"fit-content"}>
+              <StyledButton
+                name={"Know More"}
+                onClick={handleButtonClick}
+              />
             </Stack>
           )}
           {app && (
             <Stack width={"fit-content"}>
-              <StyledButton name={"Try Now"} />
+              <StyledButton name={"Try Now"} onClick={handleButtonClick} />
             </Stack>
           )}
         </Stack>

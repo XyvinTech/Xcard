@@ -22,6 +22,7 @@ const Home = () => {
   const headerData = {
     image: headerImage2,
     title: "Xcard for Teams: Network Smarter, Together",
+    buttonPath: "/products/app",
     subtitle:
       "Empower your team to network smarter. Manage digital business cards effortlessly.",
   };
@@ -30,6 +31,7 @@ const Home = () => {
     title: "Elevate Your Professional Presence.",
     subtitle: "Reimagine the way you network and connect.",
     button: "Shop Now",
+    buttonPath: "/products",
   };
   const data = [
     {
@@ -67,14 +69,14 @@ const Home = () => {
       <Box
         sx={{
           mt: 10,
-          backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%), url(https://via.placeholder.com/330x330)`,
+          backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
         <Header content={mainContent} isHome />
         <HomeHeader />
-        <div id="features"style={{ paddingTop: "10px" }}>
+        <div id="features" style={{ paddingTop: "10px" }}>
           {" "}
           <Header3
             data={data}
@@ -96,13 +98,15 @@ const Home = () => {
       </Box>
       <Box
         sx={{
-          backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%), url(https://via.placeholder.com/330x330)`,
+          backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
         <HelpComponent />
-        <GetInTouch />
+        <div id="LearnMore" style={{ paddingTop: "20px" }}>
+          <GetInTouch />
+        </div>
       </Box>
     </>
   );

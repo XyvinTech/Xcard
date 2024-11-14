@@ -44,6 +44,8 @@ const XcardTeams = () => {
       container
       spacing={2}
       padding={{ xs: 5, md: 10, sm: 5 }}
+      paddingLeft={{  xs: 5, md: 15, sm: 5 }}
+      paddingRight={{ xs: 5, md: 15, sm: 5 }}
       mt={10}
       justifyContent="center"
       alignItems="center"

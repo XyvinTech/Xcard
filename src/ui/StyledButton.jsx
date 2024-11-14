@@ -12,9 +12,9 @@ const StyledButton = ({ name, secondary , onClick}) => {
           objectFit: "cover",
           borderRadius: "44px",
           padding: "10px 32px",
-          border: secondary ? "1px solid #A6A074": "none",
+          border: secondary ? "1px solid #D4B55B": "none",
           fontSize: "16px",
-          color: secondary ? "#A6A074" : "rgba(0, 0, 0, 1)",
+          color: secondary ? "#D4B55B" : "rgba(0, 0, 0, 1)",
           textTransform: "none",
         }}
         onClick={onClick}

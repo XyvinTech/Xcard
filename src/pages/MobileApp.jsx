@@ -19,6 +19,7 @@ import Header2 from "../components/Home/Header2";
 import XcardTeams from "../components/Team/XcardTeams";
 import Header4 from "../components/Header4";
 import HelpComponent from "../components/HelpComponent";
+import { button } from "framer-motion/client";
 const MobileApp = () => {
   const { pathname } = useLocation();
   const mainContent = {
@@ -26,7 +27,8 @@ const MobileApp = () => {
     title: "Your Digital Business Card in Your Pocket",
     subtitle: "Take your digital business card with you wherever you go.",
     des: "Download the Xcard mobile app for easy access and effortless networking.",
-    button: "Try Now",
+    button: "Know More",
+    buttonPath:"app"
   };
   const Networkdata = [
     {
@@ -83,6 +85,7 @@ const MobileApp = () => {
     title: "Connect Your Team, Connect with Clients",
     subtitle: "Streamline team collaboration and communication.",
     button: "Try Now",
+    buttonPath:"app"
   };
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -92,12 +95,12 @@ const MobileApp = () => {
       <Box
         sx={{
           mt: 10,
-          backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%), url(https://via.placeholder.com/330x330)`,
+          backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <Header content={mainContent} isMobile />
+        <Header content={mainContent} />
         <Header3
           title={"Network Anytime, Anywhere"}
           data={data}
@@ -124,8 +127,10 @@ const MobileApp = () => {
           <XcardTeams />
         </Box>
         <Header4 />
-        <HelpComponent />
-        <GetInTouch />
+        <HelpComponent />{" "}
+        <div id="getInTouch" style={{ paddingTop: "20px" }}>
+          <GetInTouch />
+        </div>
       </Box>
     </>
   );

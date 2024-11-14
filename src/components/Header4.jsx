@@ -1,15 +1,26 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import image from "../assets/images/Header4.webp";
 import img1 from "../assets/images/money.png";
 import img2 from "../assets/images/tree.png";
 import Custom from "../ui/Custom";
 
 const Header4 = () => {
+  const [slider1Value, setSlider1Value] = useState(100);
+  const [slider2Value, setSlider2Value] = useState(100);
+
+  const conversionRate = 2.5;
+  const treeConversionFactor = 3125;
+
+  const bottomLine = slider1Value * slider2Value * conversionRate;
+  const treesSaved = Math.floor(bottomLine / treeConversionFactor);
+
   return (
     <Grid
       container
       padding={{ xs: 5, md: 10, sm: 5 }}
+      paddingLeft={{ xs: 5, md: 15, sm: 5 }}
+      paddingRight={{ xs: 5, md: 15, sm: 5 }}
       height={{ xs: "auto", md: "750px" }}
       // bgcolor={"#000000"}
       style={{
@@ -53,12 +64,20 @@ const Header4 = () => {
         >
           <Stack spacing={2} pt={2}>
             {" "}
-            <Custom />
-            <Custom />
+            <Custom
+              value={slider1Value}
+              onChange={(e, val) => setSlider1Value(val)}
+              data={"Amount of Employees"}
+            />
+            <Custom
+              value={slider2Value}
+              onChange={(e, val) => setSlider2Value(val)}
+              data={"Printing Cost"}
+            />
           </Stack>
 
           <Stack
-            spacing={{ xs: 2, md: 10 }}
+            spacing={{ xs: 2, md: 12 }}
             direction="row"
             justifyContent="center"
             alignItems="center"
@@ -90,7 +109,7 @@ const Header4 = () => {
                 fontSize={{ xs: "18px", md: "32px" }}
                 fontWeight={700}
               >
-                Rs. 25000
+                Rs. {bottomLine.toLocaleString()}
               </Typography>
               <Typography variant={{ xs: "8px", md: "h6" }}>
                 Savings per year
@@ -123,7 +142,7 @@ const Header4 = () => {
                 fontSize={{ xs: "18px", md: "32px" }}
                 fontWeight={700}
               >
-                8
+                {treesSaved}
               </Typography>
               <Typography variant={{ xs: "8px", md: "h6" }}>
                 Savings per year

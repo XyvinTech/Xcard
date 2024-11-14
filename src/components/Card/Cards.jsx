@@ -29,6 +29,8 @@ const Cards = () => {
       container
       spacing={2}
       padding={{ xs: 5, md: 10, sm: 5 }}
+      paddingRight={{ xs: 5, md: 15, sm: 5 }}
+      paddingLeft={{ xs: 5, md: 15, sm: 5 }}
       mt={2}
       justifyContent="flex-start"
     >
@@ -45,7 +47,8 @@ const Cards = () => {
           variant="h5"
           width={{ xs: "100%", md: "50%" }}
           mx={"auto"}
-          mt={2}mb={2}
+          mt={2}
+          mb={2}
           color="#000"
           textAlign={"center"}
         >

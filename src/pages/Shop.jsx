@@ -25,6 +25,7 @@ const Shop = () => {
       "Say goodbye to manual contact entry. Tap, share, and connect seamlessly.",
 
     button: "Buy Now",
+    buttonPath: "shop",
   };
   const data = [
     {
@@ -62,7 +63,7 @@ const Shop = () => {
       <Box
         sx={{
           mt: 10,
-          backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%), url(https://via.placeholder.com/330x330)`,
+          backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -82,7 +83,9 @@ const Shop = () => {
         >
           <Cards />
         </Box>
-        <GetInTouch />
+        <div id="getInTouch" style={{ paddingTop: "20px" }}>
+          <GetInTouch />
+        </div>
       </Box>
     </>
   );

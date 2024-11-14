@@ -12,6 +12,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import StyledButton from "./StyledButton";
 import { Collapse } from "@mui/material";
+import logo from "../assets/images/Logo.webp";
 
 const pages = [
   { name: "Home", path: "/" },
@@ -73,13 +74,7 @@ function Navbar() {
     >
       <Container maxWidth="xl">
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Typography
-            sx={{ display: { xs: "none", md: "flex" } }}
-            fontSize={{ xs: "24px", md: "32px" }}
-            fontWeight={600}
-          >
-            xCard
-          </Typography>
+         <Box component={"img"} src={logo} alt="logo" width={"160px"} height={"36px"}display={{ xs: "none", md: "flex" }} />
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -232,14 +227,10 @@ function Navbar() {
               </Collapse>
             </Menu>
           </Box>
-          <Typography
-            sx={{ display: { xs: "flex", md: "none" } }}
-            fontSize={{ xs: "24px", md: "32px" }}
-            fontWeight={600}
-          >
-            xCard
-          </Typography>
+        
+          <Box component={"img"} display={{ xs: "flex", md: "none" }} src={logo} alt="logo" width={"160px"} height={"36px"} />
           <Box
+          
             sx={{
               flexGrow: 1,
               display: { xs: "none", md: "flex" },
@@ -333,7 +324,7 @@ function Navbar() {
             </Menu>
           </Box>
           <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
-            <StyledButton name={"Buy Now"} />
+            <StyledButton name={"Buy Now"}  onClick={() => navigate("/products")}/>
           </Box>
         </Toolbar>
       </Container>

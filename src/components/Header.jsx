@@ -6,9 +6,11 @@ import App from "../assets/images/Home/AppStore.webp";
 import buttonimage from "../assets/images/Button.png";
 import Play from "../assets/images/Home/PlayStore.webp";
 import image1 from "../assets/images/Home/image1.webp";
+import { useNavigate } from "react-router-dom";
+import brochurePdf from "../assets/Buziness-Connect.pdf";
 
-const Header = ({ content = {}, isHome, isMobile, shop, support }) => {
-  const { image, title, subtitle, des, button } = content;
+const Header = ({ content = {}, isHome, isMobile, shop, support, white }) => {
+  const { image, title, subtitle, des, button, buttonPath } = content;
 
   const fadeIn = {
     hidden: { opacity: 0 },
@@ -27,12 +29,60 @@ const Header = ({ content = {}, isHome, isMobile, shop, support }) => {
     hidden: { x: -100, opacity: 0 },
     visible: { x: 0, opacity: 1, transition: { duration: 1, ease: "easeOut" } },
   };
-
+  const navigate = useNavigate();
+  const handleButtonClick = () => {
+    if (buttonPath) {
+      navigate(buttonPath);
+    }
+    if (buttonPath === "shop") {
+      navigate("/products/card", { replace: true });
+      setTimeout(() => {
+        const featuresElement = document.getElementById("getInTouch");
+        featuresElement?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+    if (buttonPath === "app") {
+      navigate("/products/app", { replace: true });
+      setTimeout(() => {
+        const featuresElement = document.getElementById("getInTouch");
+        featuresElement?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+    if (buttonPath === "restaurant") {
+      navigate("/products/restaurant", { replace: true });
+      setTimeout(() => {
+        const featuresElement = document.getElementById("restaurant");
+        featuresElement?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+    if (buttonPath === "qr") {
+      navigate("/products/qrstand", { replace: true });
+      setTimeout(() => {
+        const featuresElement = document.getElementById("getInTouch");
+        featuresElement?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  };
+  const handleButtonMore = () => {
+    navigate("/", { replace: true });
+    setTimeout(() => {
+      const featuresElement = document.getElementById("LearnMore");
+      featuresElement?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = brochurePdf;
+    link.download = "Brochure.pdf";
+    link.click();
+  };
   return (
     <Grid
       container
       spacing={2}
       padding={{ xs: 5, md: 10, sm: 5 }}
+      paddingLeft={{ xs: 5, md: 15, sm: 5 }}
+      paddingRight={{ xs: 5, md: 15, sm: 5 }}
       display={"flex"}
       justifyContent="center"
       alignItems="center"
@@ -50,6 +100,7 @@ const Header = ({ content = {}, isHome, isMobile, shop, support }) => {
                 fontSize={{ xs: "32px", md: isHome ? "84px" : "50px" }}
                 lineHeight={{ xs: "40px", md: isHome ? "100px" : "60px" }}
                 fontWeight={700}
+                color={white && "#000"}
               >
                 {title}
               </Typography>
@@ -64,7 +115,9 @@ const Header = ({ content = {}, isHome, isMobile, shop, support }) => {
               animate={inView ? "visible" : "hidden"}
               variants={fadeIn}
             >
-              <Typography variant="h4">{subtitle}</Typography>
+              <Typography variant="h4" color={white ? "#000" : "#f2f2f2"}>
+                {subtitle}
+              </Typography>
             </motion.div>
           ) : (
             <Skeleton variant="text" width={250} height={40} />
@@ -82,8 +135,12 @@ const Header = ({ content = {}, isHome, isMobile, shop, support }) => {
 
           {isMobile ? (
             <Stack direction={"row"} spacing={2} pt={2}>
-              <StyledButton name={"Know More"} />
-              <StyledButton name={"Download Brochure"} secondary />
+              <StyledButton name={"Know More"} onClick={handleButtonClick} />
+              <StyledButton
+                name={"Download Brochure"}
+                secondary
+                onClick={handleDownload}
+              />
             </Stack>
           ) : (
             <Stack direction={"row"} spacing={2}>
@@ -116,13 +173,18 @@ const Header = ({ content = {}, isHome, isMobile, shop, support }) => {
               ) : (
                 <>
                   {button ? (
-                    <StyledButton name={button} />
+                    <StyledButton name={button} onClick={handleButtonClick} />
                   ) : (
                     <Skeleton variant="rectangular" width={120} height={40} />
                   )}
 
                   {isHome && (
-                    <Typography variant="h6" padding={"10px"}>
+                    <Typography
+                      variant="h6"
+                      padding={"10px"}
+                      style={{ cursor: "pointer" }}
+                      onClick={handleButtonMore}
+                    >
                       Learn More
                     </Typography>
                   )}
@@ -153,16 +215,16 @@ const Header = ({ content = {}, isHome, isMobile, shop, support }) => {
               src={image}
               alt="rotating image"
               sx={{
-                objectFit: "cover",
+                objectFit: "contain",
                 width: {
                   xs: shop ? "100%" : "100%",
-                  lg: shop ? "337px" : "539px",
+                  lg: shop ? "337px" : "479px",
                   md: shop ? "100%" : "100%",
                   sm: shop ? "100%" : "100%",
                 },
                 height: {
                   xs: shop ? "auto" : "auto",
-                  lg: shop ? "414px" : "514px",
+                  lg: shop ? "414px" : "479px",
                   md: shop ? "100%" : "100%",
                   sm: shop ? "100%" : "100%",
                 },
@@ -193,7 +255,6 @@ const Header = ({ content = {}, isHome, isMobile, shop, support }) => {
                 zIndex: 1,
               }}
             />
-            {/* give animation */}
             <motion.div
               ref={ref}
               initial="hidden"

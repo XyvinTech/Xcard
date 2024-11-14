@@ -7,6 +7,8 @@ import Shop from '../pages/Shop';
 import Support from '../pages/Support';
 import QRStand from '../pages/QRStand';
 import Restaurant from '../pages/Restaurant';
+import Products from '../pages/Products';
+import ThankPage from '../pages/ThankPage';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,13 @@ const router = createBrowserRouter([
     element: <Layout />, 
     children: [
       { path: '', element: <Team /> },
+    ],
+  },
+  {
+    path: '/products',
+    element: <Layout />, 
+    children: [
+      { path: '', element: <Products /> },
     ],
   },
   {
@@ -56,6 +65,13 @@ const router = createBrowserRouter([
     element: <Layout />, 
     children: [
       { path: '', element: <Support /> },
+    ],
+  },
+  {
+    path: '/thank',
+    element: <Layout />, 
+    children: [
+      { path: '', element: <ThankPage /> },
     ],
   },
 ]);

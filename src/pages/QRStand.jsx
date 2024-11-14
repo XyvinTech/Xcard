@@ -12,6 +12,7 @@ const QRStand = () => {
     image: header,
     title: "Connect Effortlessly with Business Connect",
     subtitle: "Upgrade your networking game today. Order your QR Stand now.",
+    buttonPath: "qr",
   };
 
   useEffect(() => {
@@ -22,7 +23,7 @@ const QRStand = () => {
       <Box
         sx={{
           mt: 10,
-          backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%), url(https://via.placeholder.com/330x330)`,
+          backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -33,10 +34,11 @@ const QRStand = () => {
             backgroundColor: "#FAFAFA",
           }}
         >
-          <DigitalPortfolio />{" "}
-          <QRStands/>
-        </Box>
-        <GetInTouch />{" "}
+          <DigitalPortfolio /> <QRStands />
+        </Box>{" "}
+        <div id="getInTouch" style={{ paddingTop: "20px" }}>
+          <GetInTouch />{" "}
+        </div>
       </Box>
     </>
   );

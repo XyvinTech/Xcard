@@ -27,6 +27,8 @@ const HomeHeader = ({ white }) => {
       container
       spacing={2}
       padding={{ lg: 10, xs: 5, md: 10, sm: 5 }}
+      paddingLeft={{ lg: 15, xs: 5, md: 10, sm: 5 }}
+      paddingRight={{ lg: 15, xs: 5, md: 10, sm: 5 }}
       mt={2}
       justifyContent="center"
       alignItems="center"
@@ -41,12 +43,12 @@ const HomeHeader = ({ white }) => {
       >
         {image ? (
           <>
-           <motion.div
+            <motion.div
               ref={ref}
               variants={slideIn}
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
-              style={{ zIndex: 2, position: "absolute"}}
+              style={{ zIndex: 2, position: "absolute" }}
             >
               <Box
                 component="img"
@@ -56,13 +58,12 @@ const HomeHeader = ({ white }) => {
                   objectFit: "fill",
                   width: { xs: "90%", sm: "80%", md: "70%", lg: "406px" },
                   height: { xs: "auto", lg: "254px" },
-                  top:150,
+                  top: 150,
                   left: { xs: 60, sm: 60, md: 80, lg: 150 },
                   position: "relative",
                 }}
               />
             </motion.div>
-
 
             <motion.div
               ref={ref}
@@ -124,7 +125,7 @@ const HomeHeader = ({ white }) => {
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
             >
-              <Typography variant="h4" color={white && "#5E5E5E"}>
+              <Typography variant="h4" color={white ? "#5E5E5E" :"#f2f2f2"}>
                 {subtitle}
               </Typography>
             </motion.div>

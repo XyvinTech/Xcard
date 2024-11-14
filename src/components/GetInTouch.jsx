@@ -3,12 +3,15 @@ import StyledInput from "../ui/StyledInput";
 import StyledButton from "../ui/StyledButton";
 import { Controller, useForm } from "react-hook-form";
 import { sendEmail } from "../api/sendEmail";
+import { useNavigate } from "react-router-dom";
 
 const GetInTouch = () => {
+  const navigate = useNavigate();
   const { control, handleSubmit, reset } = useForm();
   const onSubmit = async (data) => {
     try {
       await sendEmail(data);
+      navigate("/thank");
       reset();
     } catch (error) {
       console.log(error);

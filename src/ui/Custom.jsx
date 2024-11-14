@@ -1,13 +1,7 @@
-import React, { useState } from "react";
+import React  from "react";
 import { Box, Typography, Slider } from "@mui/material";
 
-const Custom = () => {
-  const [value, setValue] = useState(100);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
+const Custom = ({ value, onChange , data}) => {
   return (
     <Box
       sx={{
@@ -21,16 +15,16 @@ const Custom = () => {
       <Box
         sx={{
           width: {
-            xs: 150, 
-            md: 300, 
-            lg: 400
+            xs: 150,
+            md: 300,
+            lg: 400,
           },
           position: "relative",
         }}
-      >
+      ><Typography fontWeight={400}>{data}</Typography>
         <Slider
           value={value}
-          onChange={handleChange}
+          onChange={onChange}
           aria-labelledby="custom-slider"
           sx={{
             color: "transparent",
@@ -63,8 +57,8 @@ const Custom = () => {
       <Box
         sx={{
           width: {
-            xs: 60, // width for extra-small screens
-            md: 100, // width for medium and larger screens
+            xs: 60, 
+            md: 100, 
           },
           height: 46,
           pt: 1.5,

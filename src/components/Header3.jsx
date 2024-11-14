@@ -16,7 +16,13 @@ const Header3 = ({ data, title, subtitle, white }) => {
   };
 
   return (
-    <Box padding={{ xs: 5, md: 10, sm: 5 }} mt={2} ref={ref}>
+    <Box
+      padding={{ xs: 5, md: 10, sm: 5 }}
+      paddingLeft={{ xs: 5, md: 15, sm: 5 }}
+      paddingRight={{ xs: 5, md: 15, sm: 5 }}
+      mt={2}
+      ref={ref}
+    >
       <>
         {title ? (
           <motion.div
@@ -49,7 +55,7 @@ const Header3 = ({ data, title, subtitle, white }) => {
               width={{ xs: "100%", md: "50%" }}
               mx={"auto"}
               mt={2}
-              color={white && "black"}
+              color={white ? "black" : "#f2f2f2"}
               textAlign={"center"}
             >
               {subtitle}
@@ -122,7 +128,7 @@ const Header3 = ({ data, title, subtitle, white }) => {
                       <Typography
                         variant="h5"
                         textAlign="center"
-                        color={white && "black"}
+                        color={white ? "black" : "#f2f2f2"}
                       >
                         {item.subtitle}
                       </Typography>

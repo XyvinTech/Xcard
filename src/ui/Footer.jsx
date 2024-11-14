@@ -1,26 +1,20 @@
 import { Box, Divider, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
 import SubscribeCard from "./SubscribeCard";
-import Logo from "../assets/images/Logo.png";
+import Logo from "../assets/images/Logo.webp";
 import facebook from "../assets/images/Footer/facebook.webp";
 import twitter from "../assets/images/Footer/twitter.webp";
 import instagram from "../assets/images/Footer/instagram.webp";
 import linkedin from "../assets/images/Footer/linkedin.webp";
 import { Link, useNavigate } from "react-router-dom";
 
-const companyItems = [
-  "About Us",
-  "Blog",
-  "Support",
-  "Privacy Policy",
-  "Terms & Conditions",
-];
+const companyItems = ["About Us", "Blog", "Support"];
 
 const quickLinks = [
-  { label: "Features", href: "#features", isScroll: true }, // Mark as scroll
-  { label: "Team", href: "/team" },
-  { label: "Mobile App", href: "/mobile-app" },
-  { label: "Shop", href: "/shop" },
+  { label: "NFC Card", href: "/products/card" },
+  { label: "Mobile App", href: "/products/app" },
+  { label: "QR Stand", href: "/products/qrstand" },
+  { label: "Restaurant", href: "/products/restaurant" },
 ];
 
 const socialIcons = [
@@ -54,8 +48,8 @@ const Footer = () => {
             src={Logo}
             alt="logo"
             objectFit="fill"
-            width={"99px"}
-            height={"48px"}
+            width={"160px"}
+            height={"36px"}
           />
           <Typography variant="h5">
             The all-in-one business card for the modern professional. Network
@@ -75,7 +69,7 @@ const Footer = () => {
           </Stack>
           <Stack spacing={2}>
             <Typography variant="h3">Quick Links</Typography>
-            {quickLinks.map((item, index) => (
+            {quickLinks.map((item, index) =>
               item.isScroll ? (
                 <Typography
                   key={index}
@@ -99,7 +93,7 @@ const Footer = () => {
                   </Typography>
                 </Link>
               )
-            ))}
+            )}
           </Stack>
         </Stack>
       </Grid>
@@ -116,7 +110,7 @@ const Footer = () => {
             {socialIcons.map((icon, index) => (
               <Box
                 key={index}
-                component="img" 
+                component="img"
                 src={icon.src}
                 alt={icon.alt}
                 sx={{
