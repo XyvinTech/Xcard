@@ -134,7 +134,7 @@ const Header = ({ content = {}, isHome, isMobile, shop, support, white }) => {
           )}
 
           {isMobile ? (
-            <Stack direction={"row"} spacing={2} pt={2}>
+            <Stack direction={{xs: "column", md: "row"}} spacing={2} pt={2} >
               <StyledButton name={"Know More"} onClick={handleButtonClick} />
               <StyledButton
                 name={"Download Brochure"}

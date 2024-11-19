@@ -62,7 +62,7 @@ const Header4 = () => {
           justifyContent={"center"}
           alignItems="center"
         >
-          <Stack spacing={2} pt={2}>
+          <Stack spacing={{ xs: 6, md: 2}}  pt={{ xs: 4, md: 2}}>
             {" "}
             <Custom
               value={slider1Value}
