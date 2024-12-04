@@ -145,6 +145,12 @@ const Footer = () => {
               />
             ))}
           </Stack>{" "} */}
+          <Stack spacing={2} direction={"row"}>
+            <Typography>
+              <span style={{opacity:0.5}}>Powered By </span><Link style={{ textDecoration: "none",cursor:"pointer",color:"#fff" }}to={"https://skybertech.ae"}>Skybertech</Link> <span style={{ color: "gold" }}>|</span>{" "}
+              <span style={{opacity:0.5}}> Developed By</span><Link style={{ textDecoration: "none",cursor:"pointer",color:"#fff" }}to={"https://xyvin.com"}> Xyvin</Link>
+            </Typography>
+          </Stack>
         </Stack>
       </Grid>
     </Grid>
