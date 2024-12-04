@@ -7,8 +7,15 @@ import twitter from "../assets/images/Footer/twitter.webp";
 import instagram from "../assets/images/Footer/instagram.webp";
 import linkedin from "../assets/images/Footer/linkedin.webp";
 import { Link, useNavigate } from "react-router-dom";
-
-const companyItems = ["About Us", "Blog", "Support"];
+const companyItems = [
+  {
+    label: "Blog",
+  },
+  {
+    label: "Support",
+    href: "/support",
+  },
+];
 
 const quickLinks = [
   { label: "NFC Card", href: "/products/card" },
@@ -62,9 +69,16 @@ const Footer = () => {
           <Stack spacing={2}>
             <Typography variant="h3">Company</Typography>
             {companyItems.map((item, index) => (
-              <Typography key={index} variant="h6" color="text.secondary">
-                {item}
-              </Typography>
+              <Link
+                key={index}
+                to={item?.href}
+                style={{ textDecoration: "none" }}
+              >
+                {" "}
+                <Typography key={index} variant="h6" color="text.secondary">
+                  {item.label}
+                </Typography>
+              </Link>
             ))}
           </Stack>
           <Stack spacing={2}>
@@ -105,8 +119,8 @@ const Footer = () => {
       </Grid>{" "}
       <Grid item xs={12}>
         <Stack padding={2} direction={"row"} justifyContent={"space-between"}>
-          <Typography>© 2023. All rights reserved.</Typography>
-          <Stack spacing={2} direction={"row"}>
+          <Typography>© 2024. All rights reserved.</Typography>
+          {/* <Stack spacing={2} direction={"row"}>
             {socialIcons.map((icon, index) => (
               <Box
                 key={index}
@@ -130,7 +144,7 @@ const Footer = () => {
                 }}
               />
             ))}
-          </Stack>{" "}
+          </Stack>{" "} */}
         </Stack>
       </Grid>
     </Grid>
