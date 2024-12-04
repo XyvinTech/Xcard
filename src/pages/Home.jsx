@@ -9,7 +9,7 @@ import HelpComponent from "../components/HelpComponent";
 import GetInTouch from "../components/GetInTouch";
 import Testimonial from "../components/Home/Testimonial";
 import ClientsPage from "../components/Home/ClientsPage";
-import header from "../assets/images/Home/image2.png";
+import header from "../assets/images/Home/image2.webp";
 import img1 from "../assets/images/Home/img1.png";
 import img2 from "../assets/images/Home/img2.png";
 import img3 from "../assets/images/Home/img3.png";
@@ -21,7 +21,7 @@ const Home = () => {
 
   const headerData = {
     image: headerImage2,
-    title: "Xcard for Teams: Network Smarter, Together",
+    title: "Business Connect for Teams: Network Smarter, Together",
     buttonPath: "/products/app",
     subtitle:
       "Empower your team to network smarter. Manage digital business cards effortlessly.",

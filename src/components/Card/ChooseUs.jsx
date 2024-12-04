@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import image1 from "../../assets/images/Home/mob.png";
+import image1 from "../../assets/images/Home/mob.webp";
 import scan from "../../assets/images/Home/image3.png";
 import icon from "../../assets/images/Button.png";
 import image from "../../assets/images/net.webp";

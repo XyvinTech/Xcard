@@ -7,10 +7,6 @@ import img1 from "../assets/images/MobileApp/img7.webp";
 import img2 from "../assets/images/MobileApp/img8.webp";
 import img3 from "../assets/images/MobileApp/img9.webp";
 import img4 from "../assets/images/MobileApp/img10.webp";
-import netImg1 from "../assets/images/Team/team1.webp";
-import netImg2 from "../assets/images/Team/team2.webp";
-import netImg3 from "../assets/images/Team/team3.webp";
-import netImg4 from "../assets/images/Team/team4.webp";
 import Header3 from "../components/Header3";
 import WhyXcard from "../components/MobileApp/WhyXcard";
 import GetInTouch from "../components/GetInTouch";
@@ -19,43 +15,16 @@ import Header2 from "../components/Home/Header2";
 import XcardTeams from "../components/Team/XcardTeams";
 import Header4 from "../components/Header4";
 import HelpComponent from "../components/HelpComponent";
-import { button } from "framer-motion/client";
+import UniteComponent from "../components/MobileApp/UniteComponent";
 const MobileApp = () => {
   const { pathname } = useLocation();
   const mainContent = {
     image: header,
-    title: "Your Digital Business Card in Your Pocket",
-    subtitle: "Take your digital business card with you wherever you go.",
-    des: "Download the Xcard mobile app for easy access and effortless networking.",
-    button: "Know More",
-    buttonPath:"app"
+    title: "Unlock the Power of Collaboration and Growth",
+    subtitle:
+      "The Community Business Development App bridges associations, organizations, and communities to foster meaningful connections and accelerate progress.",
   };
-  const Networkdata = [
-    {
-      image: netImg1,
-      title: "Centralized Management",
-      subtitle:
-        "Manage your team's digital business cards from a single dashboard.",
-    },
-    {
-      image: netImg2,
-      title: "Enhanced Collaboration",
-      subtitle:
-        "Share contacts, leads, and collaborate seamlessly within your team.",
-    },
-    {
-      image: netImg3,
-      title: "Advanced Analytics",
-      subtitle:
-        "Track team performance, identify trends, and optimize your strategy.",
-    },
-    {
-      image: netImg4,
-      title: "Offline access",
-      subtitle:
-        "Access your digital business cards and network even without an internet connection.",
-    },
-  ];
+ 
   const data = [
     {
       image: img1,
@@ -82,10 +51,11 @@ const MobileApp = () => {
 
   const headerData = {
     image: header1,
-    title: "Connect Your Team, Connect with Clients",
-    subtitle: "Streamline team collaboration and communication.",
+    title: "Community Business Development App  ",
+    subtitle:
+      "The Community Business Development App is a versatile platform designed to empower associations, organizations, and communities by enhancing networking, streamlining communication, and fostering business growth. With a wide range of features, this app helps members connect, collaborate, and engage more effectively, while providing administrators with tools for efficient management.  ",
     button: "Try Now",
-    buttonPath:"app"
+    buttonPath: "app",
   };
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -100,15 +70,7 @@ const MobileApp = () => {
           backgroundPosition: "center",
         }}
       >
-        <Header content={mainContent} />
-        <Header3
-          title={"Network Anytime, Anywhere"}
-          data={data}
-          subtitle={
-            "Stay connected and network efficiently, no matter where you are."
-          }
-        />
-        <WhyXcard />
+        <Header content={mainContent} isApp />
         <Box
           sx={{
             backgroundColor: "#FAFAFA",
@@ -116,14 +78,16 @@ const MobileApp = () => {
         >
           {" "}
           <Header2 content={headerData} white app />
-          <Header3
-            white
-            title={"Network Together, Achieve More"}
-            data={Networkdata}
-            subtitle={
-              "Equip your team with the tools they need to connect with potential clients and partners more efficiently."
-            }
-          />
+          <Box
+            sx={{
+              mt: 10,
+              backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%)`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+           <UniteComponent/>
+          </Box>
           <XcardTeams />
         </Box>
         <Header4 />

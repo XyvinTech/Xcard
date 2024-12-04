@@ -70,10 +70,10 @@ const Shop = () => {
       >
         <Header content={mainContent} support /> <ChooseUs />
         <Header3
-          title={"How Xcard Works"}
+          title={"How Business Connect Works"}
           data={data}
           subtitle={
-            "Discover how easy it is to use Xcard and start networking smarter."
+            "Discover how easy it is to use Business Connect and start networking smarter."
           }
         />{" "}
         <Box

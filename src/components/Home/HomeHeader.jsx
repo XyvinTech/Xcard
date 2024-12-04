@@ -2,7 +2,7 @@ import { Grid, Stack, Typography, Skeleton, Box } from "@mui/material";
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import headerImage from "../../assets/images/Home/image3.png";
-import mobile from "../../assets/images/Home/mob.png";
+import mobile from "../../assets/images/Home/mob.webp";
 import StyledButton from "../../ui/StyledButton";
 
 const HomeHeader = ({ white }) => {

@@ -175,7 +175,7 @@ const Header = ({ content = {}, isHome, isMobile, shop, support, white }) => {
                   {button ? (
                     <StyledButton name={button} onClick={handleButtonClick} />
                   ) : (
-                    <Skeleton variant="rectangular" width={120} height={40} />
+                    null
                   )}
 
                   {isHome && (

@@ -9,33 +9,35 @@ import {
   Box,
 } from "@mui/material";
 import React from "react";
-import headerImage2 from "../../assets/images/Home/Header3.webp";
+import headerImage2 from "../../assets/images/MobileApp/Team.webp";
 import icon from "../../assets/images/Team/Ellipse.png";
 
 const XcardTeams = () => {
   const features = [
     {
-      title: "Enhanced Collaboration",
+      title: "Networking Simplified",
       description1:
-        "Manage all team members' digital business cards from a single dashboard.",
-      description2: "Easily share and collaborate on contacts and leads.",
+        "Helps members connect with the right people and opportunities within their community.",
     },
     {
-      title: "Consistent Branding",
+      title: "Enhanced Visibility",
       description1:
-        "Ensure all team members use consistent branding guidelines.",
-      description2:
-        "Allow teams to customize their digital business cards with their unique branding.",
+        "Profiles and product listings boost visibility and enable effective promotion.",
+     
     },
     {
-      title: "Improved Efficiency",
+      title: "Efficient Communication",
       description1:
-        "Save time and effort by automating the process of sharing contact information.",
-      description2: "Monitor team activity and identify areas for improvement.",
+        "Seamless tools for messaging and notifications ensure timely updates and collaboration. ",
+    
     },
     {
-      title: "Cost-Effective",
-      description1: "Save money on printing and distribution costs.",
+      title: "Event Engagement",
+      description1: "Keeps members informed and actively participating in community events.",
+    },
+    {
+      title: "Administrative Ease",
+      description1: "Robust tools for managing members, events, and data make administration effortless.",
     },
   ];
 
@@ -46,7 +48,7 @@ const XcardTeams = () => {
       padding={{ xs: 5, md: 10, sm: 5 }}
       paddingLeft={{  xs: 5, md: 15, sm: 5 }}
       paddingRight={{ xs: 5, md: 15, sm: 5 }}
-      mt={10}
+     
       justifyContent="center"
       alignItems="center"
     >
@@ -78,7 +80,7 @@ const XcardTeams = () => {
             color="#000"
             fontWeight={700}
           >
-            Why Choose Xcard for Teams?
+            Key Benifits
           </Typography>
 
           <List>
@@ -106,9 +108,7 @@ const XcardTeams = () => {
                       <Typography variant="h5" mt={1} color="text.secondary">
                         {feature?.description1}
                       </Typography>
-                      <Typography variant="h5" mt={1} color="text.secondary">
-                        {feature?.description2}
-                      </Typography>
+                    
                     </>
                   }
                 />
