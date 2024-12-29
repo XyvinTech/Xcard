@@ -46,7 +46,7 @@ const Testimonial = ({ loading }) => {
       padding={{ xs: 5, md: 10, sm: 5 }}
       paddingLeft={{ xs: 5, md: 15, sm: 5 }}
       paddingRight={{ xs: 5, md: 15, sm: 5 }}
-      mt={10}
+      // mt={10}
     >
       <Typography
         fontSize={{ xs: "32px", md: "44px" }}

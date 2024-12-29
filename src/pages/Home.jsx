@@ -92,7 +92,7 @@ const Home = () => {
       >
         {" "}
         <Header2 content={headerData} white />
-        <ClientsPage />
+        {/* <ClientsPage /> */}
         <Testimonial />
         <Header4 />{" "}
       </Box>
