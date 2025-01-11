@@ -43,7 +43,7 @@ const People = () => {
           fontWeight={700}
           textAlign={"center"}
         >
-          The People Behind Business Connect
+          The People Behind Buziness Connect
         </Typography>
 
         <Typography
@@ -53,7 +53,7 @@ const People = () => {
           mx={"auto"}
           textAlign={"center"}
         >
-          Discover the passionate individuals driving Business Connect's mission to
+          Discover the passionate individuals driving Buziness Connect's mission to
           revolutionize networking.
         </Typography>
       </>

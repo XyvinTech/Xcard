@@ -10,7 +10,7 @@ const QRStand = () => {
   const { pathname } = useLocation();
   const mainContent = {
     image: header,
-    title: "Connect Effortlessly with Business Connect",
+    title: "Connect Effortlessly with Buziness Connect",
     subtitle: "Upgrade your networking game today. Order your QR Stand now.",
     buttonPath: "qr",
   };

@@ -31,38 +31,35 @@ const Header = ({ content = {}, isHome, isMobile, shop, support, white }) => {
   };
   const navigate = useNavigate();
   const handleButtonClick = () => {
-    if (buttonPath) {
-      navigate(buttonPath);
+    if (!buttonPath) return;
+    if (buttonPath === "amazon") {
+      window.location.href = "https://www.amazon.in/dp/B0CNKJMNNX";
+      return;
     }
-    if (buttonPath === "shop") {
-      navigate("/products/card", { replace: true });
+
+    const internalPaths = {
+      shop: "/products/card",
+      app: "/products/app",
+      restaurant: "/products/restaurant",
+      qr: "/products/qrstand",
+    };
+    if (internalPaths[buttonPath]) {
+      navigate(internalPaths[buttonPath], { replace: true });
+      const scrollTargets = {
+        shop: "getInTouch",
+        app: "getInTouch",
+        restaurant: "restaurant",
+        qr: "getInTouch",
+      };
       setTimeout(() => {
-        const featuresElement = document.getElementById("getInTouch");
-        featuresElement?.scrollIntoView({ behavior: "smooth" });
-      }, 100);
-    }
-    if (buttonPath === "app") {
-      navigate("/products/app", { replace: true });
-      setTimeout(() => {
-        const featuresElement = document.getElementById("getInTouch");
-        featuresElement?.scrollIntoView({ behavior: "smooth" });
-      }, 100);
-    }
-    if (buttonPath === "restaurant") {
-      navigate("/products/restaurant", { replace: true });
-      setTimeout(() => {
-        const featuresElement = document.getElementById("restaurant");
-        featuresElement?.scrollIntoView({ behavior: "smooth" });
-      }, 100);
-    }
-    if (buttonPath === "qr") {
-      navigate("/products/qrstand", { replace: true });
-      setTimeout(() => {
-        const featuresElement = document.getElementById("getInTouch");
-        featuresElement?.scrollIntoView({ behavior: "smooth" });
+        const targetElement = document.getElementById(
+          scrollTargets[buttonPath]
+        );
+        targetElement?.scrollIntoView({ behavior: "smooth" });
       }, 100);
     }
   };
+
   const handleButtonMore = () => {
     navigate("/", { replace: true });
     setTimeout(() => {
@@ -134,7 +131,7 @@ const Header = ({ content = {}, isHome, isMobile, shop, support, white }) => {
           )}
 
           {isMobile ? (
-            <Stack direction={{xs: "column", md: "row"}} spacing={2} pt={2} >
+            <Stack direction={{ xs: "column", md: "row" }} spacing={2} pt={2}>
               <StyledButton name={"Know More"} onClick={handleButtonClick} />
               <StyledButton
                 name={"Download Brochure"}
@@ -174,9 +171,7 @@ const Header = ({ content = {}, isHome, isMobile, shop, support, white }) => {
                 <>
                   {button ? (
                     <StyledButton name={button} onClick={handleButtonClick} />
-                  ) : (
-                    null
-                  )}
+                  ) : null}
 
                   {isHome && (
                     <Typography

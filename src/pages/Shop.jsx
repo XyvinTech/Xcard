@@ -25,7 +25,7 @@ const Shop = () => {
       "Say goodbye to manual contact entry. Tap, share, and connect seamlessly.",
 
     button: "Buy Now",
-    buttonPath: "shop",
+    buttonPath: "amazon",
   };
   const data = [
     {
@@ -70,10 +70,10 @@ const Shop = () => {
       >
         <Header content={mainContent} support /> <ChooseUs />
         <Header3
-          title={"How Business Connect Works"}
+          title={"How Buziness Connect Works"}
           data={data}
           subtitle={
-            "Discover how easy it is to use Business Connect and start networking smarter."
+            "Discover how easy it is to use Buziness Connect and start networking smarter."
           }
         />{" "}
         <Box

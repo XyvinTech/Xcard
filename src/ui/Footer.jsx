@@ -33,7 +33,7 @@ const socialIcons = [
 
 const Footer = () => {
   const navigate = useNavigate();
-
+  const currentYear = new Date().getFullYear();
   const scrollToFeatures = () => {
     navigate("/", { replace: true });
     setTimeout(() => {
@@ -119,7 +119,7 @@ const Footer = () => {
       </Grid>{" "}
       <Grid item xs={12}>
         <Stack padding={2} direction={"row"} justifyContent={"space-between"}>
-          <Typography>© 2024. All rights reserved.</Typography>
+          <Typography>© {currentYear}. All rights reserved.</Typography>
           {/* <Stack spacing={2} direction={"row"}>
             {socialIcons.map((icon, index) => (
               <Box

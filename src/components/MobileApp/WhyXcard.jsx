@@ -32,7 +32,7 @@ const WhyXcard = () => {
       description1:
         "By eliminating the need for paper business cards, you're contributing to a more sustainable planet.",
       description2:
-        "Business Connect is committed to environmental sustainability and responsible business practices",
+        "Buziness Connect is committed to environmental sustainability and responsible business practices",
     },
     {
       title: "Easy of Use",
@@ -55,7 +55,7 @@ const WhyXcard = () => {
       <Grid item md={6} sm={6} display={"flex"} justifyContent={"center"}>
         <Stack spacing={2}>
           <Typography fontSize={{ xs: "32px", md: "44px" }} fontWeight={700}>
-            Why Choose Business Connect?
+            Why Choose Buziness Connect?
           </Typography>
 
           <List>

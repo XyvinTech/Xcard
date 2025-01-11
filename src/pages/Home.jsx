@@ -21,7 +21,7 @@ const Home = () => {
 
   const headerData = {
     image: headerImage2,
-    title: "Business Connect for Teams: Network Smarter, Together",
+    title: "Buziness Connect for Teams: Network Smarter, Together",
     buttonPath: "/products/app",
     subtitle:
       "Empower your team to network smarter. Manage digital business cards effortlessly.",
@@ -31,7 +31,7 @@ const Home = () => {
     title: "Elevate Your Professional Presence.",
     subtitle: "Reimagine the way you network and connect.",
     button: "Shop Now",
-    buttonPath: "/products",
+    buttonPath: "amazon",
   };
   const data = [
     {
