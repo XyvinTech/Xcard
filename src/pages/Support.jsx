@@ -31,7 +31,7 @@ const Support = () => {
         }}
       >
         <Header content={mainContent} support  shop/>
-        <People/>
+        {/* <People/> */}
         <Blog/>
         <GetInTouch />
       </Box>

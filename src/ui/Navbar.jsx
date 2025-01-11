@@ -16,7 +16,7 @@ import logo from "../assets/images/Logo.webp";
 
 const pages = [
   { name: "Home", path: "/" },
-  { name: "Features", path: "#features" },
+  // { name: "Features", path: "#features" },
   { name: "Products", path: "/products" },
   { name: "Support", path: "/support" },
 ];
