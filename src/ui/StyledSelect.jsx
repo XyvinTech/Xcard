@@ -43,7 +43,7 @@ const StyledSelect = ({
       position: "absolute",
       backgroundColor: "#292929",
       color: "#ffffff",
-      fontSize: "12px",
+      fontSize: "14px",
 
       zIndex: 1000,
     }),
@@ -54,7 +54,7 @@ const StyledSelect = ({
     placeholder: (provided) => ({
       ...provided,
       color: "#8E8E8E",
-      fontSize: "12px",
+      fontSize: "14px",
     }),
   };
 
