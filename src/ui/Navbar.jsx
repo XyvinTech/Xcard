@@ -78,6 +78,8 @@ function Navbar() {
           <Box
             component={"img"}
             src={logo}
+            sx={{ cursor: "pointer" }}
+            onClick={() => navigate("/")}
             alt="logo"
             width={"160px"}
             height={"36px"}
@@ -239,6 +241,8 @@ function Navbar() {
           <Box
             component={"img"}
             display={{ xs: "flex", md: "none" }}
+            sx={{ cursor: "pointer" }}
+            onClick={() => navigate("/")}
             src={logo}
             alt="logo"
             width={"160px"}

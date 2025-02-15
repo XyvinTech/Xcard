@@ -4,6 +4,7 @@ import StyledButton from "../ui/StyledButton";
 import { Controller, useForm } from "react-hook-form";
 import { sendEmail } from "../api/sendEmail";
 import { useNavigate } from "react-router-dom";
+import StyledSelect from "../ui/StyledSelect";
 
 const GetInTouch = () => {
   const navigate = useNavigate();
@@ -43,13 +44,35 @@ const GetInTouch = () => {
           <Grid item md={12} xs={12}>
             <>
               {" "}
-              <Typography mb={1}>Subject</Typography>
+              <Typography mb={1}>Product</Typography>
               <Controller
                 name="subject"
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
-                  <StyledInput placeholder="Enter Subject" {...field} />
+                  <StyledSelect
+                    options={[
+                      { value: "Digital Profiles", label: "Digital Profiles" },
+                      {
+                        value: "NFC Business Card",
+                        label: "NFC Business Card",
+                      },
+                      {
+                        value: "Digital Catalogue",
+                        label: "Digital Catalogue",
+                      },
+                      {
+                        value: "Digital Restaurant Menu",
+                        label: "Digital Restaurant Menu",
+                      },
+                      {
+                        value: "Membership Management System",
+                        label: "Membership Management System",
+                      },
+                    ]}
+                    placeholder="Choose product"
+                    {...field}
+                  />
                 )}
               />
             </>
@@ -57,26 +80,29 @@ const GetInTouch = () => {
           <Grid item md={6} xs={12}>
             <>
               {" "}
-              <Typography mb={1}>First Name</Typography>{" "}
+              <Typography mb={1}>Full Name</Typography>{" "}
               <Controller
-                name="firstName"
+                name="fullName"
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
-                  <StyledInput placeholder="Enter Your First Name" {...field} />
+                  <StyledInput placeholder="Enter Your Full Name" {...field} />
                 )}
               />
             </>
           </Grid>
           <Grid item md={6} xs={12}>
             <>
-              <Typography mb={1}>Last Name</Typography>{" "}
+              <Typography mb={1}>Phone Number</Typography>{" "}
               <Controller
-                name="lastName"
+                name="phone"
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
-                  <StyledInput placeholder="Enter Your Last Name" {...field} />
+                  <StyledInput
+                    placeholder="Enter Your Phone Number"
+                    {...field}
+                  />
                 )}
               />
             </>{" "}

@@ -20,9 +20,9 @@ const Shop = () => {
   const { pathname } = useLocation();
   const mainContent = {
     image: header,
-    title: "Upgrade to Smart Business Cards",
+    title: "Connect Your Team,Connect with Clients",
     subtitle:
-      "Say goodbye to manual contact entry. Tap, share, and connect seamlessly.",
+      "Streamline team collaboration and communication.",
 
     button: "Buy Now",
   };
