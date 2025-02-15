@@ -8,11 +8,25 @@ import {
   ListItemText,
   Box,
 } from "@mui/material";
-import React from "react";
+import React, { useRef } from "react";
 import headerImage2 from "../../assets/images/MobileApp/Header7.webp";
 import icon from "../../assets/images/Button.png";
-
+import image1 from "../../assets/images/Home/mob.webp";
+import scan from "../../assets/images/Home/image3.png";
+import {motion, useInView } from "framer-motion";
 const WhyXcard = () => {
+  const ref = useRef(null);
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.8 } },
+  };
+
+  const slideIn = {
+    hidden: { x: -100, opacity: 0 },
+    visible: { x: 0, opacity: 1, transition: { duration: 1 } },
+  };
+
+  const inView = useInView(ref, { once: false });
   const features = [
     {
       title: "Save Money and Time",
@@ -94,25 +108,69 @@ const WhyXcard = () => {
           </List>
         </Stack>
       </Grid>{" "}
-      <Grid item md={6} sm={6} display={"flex"} justifyContent={"flex-start"}>
+      <Grid item lg={5} sm={12} display="flex" justifyContent="center">
         <Box
-          component="img"
-          src={headerImage2}
-          alt="background"
           sx={{
-            objectFit: "fill",
-            width: {
-              xs: "100%",
-              lg: "306px",
-              md: "100%",
-            },
-            height: {
-              xs: "auto",
-              lg: "459px",
-              md: "100%",
-            },
+            transform: "rotate(330deg)",
+            transformOrigin: "center",
+            display: "flex",
+            flexDirection: "column",justifyContent: "center",
+            alignItems: "center",
           }}
-        />
+        >
+          <motion.div
+            ref={ref}
+            variants={slideIn}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            style={{ zIndex: 2, position: "absolute" }}
+          >
+            <Box
+              component="img"
+              src={image1}
+              alt="mobile image"
+              sx={{
+                objectFit: "fill",
+                width: { xs: "70%", sm: "80%", md: "70%", lg: "312px" },
+                height: { xs: "auto", lg: "195px" },
+                // top: { xs: 60, sm: 60, md: 80, lg: 150 },
+                left: { xs: 60, sm: 100, md: 80, lg: 150 },
+                
+                position: "relative",
+              }}
+            />
+          </motion.div>
+
+          <motion.div
+            ref={ref}
+            variants={fadeIn}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            style={{ zIndex: 1 }}
+          >
+            <Box
+              component="img"
+              src={scan}
+              alt="background"
+              sx={{
+                ml:{xs:4},
+                objectFit: "fill",
+                width: {
+                  xs: "50%",
+                  lg: "227px",
+                  md: "100%",
+                  sm: "90%",
+                },
+                height: {
+                  xs: "auto",
+                  lg: "468px",
+                  md: "100%",
+                  sm: "90%",
+                },
+              }}
+            />
+          </motion.div>
+        </Box>
       </Grid>
     </Grid>
   );

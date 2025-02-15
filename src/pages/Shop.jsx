@@ -25,7 +25,6 @@ const Shop = () => {
       "Say goodbye to manual contact entry. Tap, share, and connect seamlessly.",
 
     button: "Buy Now",
-    buttonPath: "amazon",
   };
   const data = [
     {
@@ -68,7 +67,7 @@ const Shop = () => {
           backgroundPosition: "center",
         }}
       >
-        <Header content={mainContent} support /> <ChooseUs />
+        <Header content={mainContent} isHome head bg/> <ChooseUs />
         <Header3
           title={"How Buziness Connect Works"}
           data={data}

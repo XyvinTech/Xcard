@@ -22,10 +22,11 @@ const pages = [
 ];
 
 const productSubpages = [
-  { name: "Mobile App", path: "/products/app" },
-  { name: "NFC Card", path: "/products/card" },
-  { name: "QR Stand", path: "/products/qrstand" },
-  { name: "Restaurant", path: "/products/restaurant" },
+  { name: "Digital Profiles", path: "/products/profile" },
+  { name: "NFC Business Card", path: "/products/card" },
+  { name: "Digital Catalogue", path: "/products/qrstand" },
+  { name: "Digital Restaurant Menu", path: "/products/restaurant" },
+  { name: "Membership Management System", path: "/products/membership" },
 ];
 
 function Navbar() {
@@ -74,7 +75,14 @@ function Navbar() {
     >
       <Container maxWidth="xl">
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-         <Box component={"img"} src={logo} alt="logo" width={"160px"} height={"36px"}display={{ xs: "none", md: "flex" }} />
+          <Box
+            component={"img"}
+            src={logo}
+            alt="logo"
+            width={"160px"}
+            height={"36px"}
+            display={{ xs: "none", md: "flex" }}
+          />
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -227,10 +235,16 @@ function Navbar() {
               </Collapse>
             </Menu>
           </Box>
-        
-          <Box component={"img"} display={{ xs: "flex", md: "none" }} src={logo} alt="logo" width={"160px"} height={"36px"} />
+
           <Box
-          
+            component={"img"}
+            display={{ xs: "flex", md: "none" }}
+            src={logo}
+            alt="logo"
+            width={"160px"}
+            height={"36px"}
+          />
+          <Box
             sx={{
               flexGrow: 1,
               display: { xs: "none", md: "flex" },
@@ -324,7 +338,10 @@ function Navbar() {
             </Menu>
           </Box>
           <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
-            <StyledButton name={"Buy Now"}  onClick={() => navigate("/products")}/>
+            <StyledButton
+              name={"Contact us!"}
+              onClick={() => navigate("/products")}
+            />
           </Box>
         </Toolbar>
       </Container>

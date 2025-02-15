@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import React, { useEffect } from "react";
 import GetInTouch from "../components/GetInTouch";
 import Header from "../components/Header";
-import header from "../assets/images/QR/stand.webp";
+import header from "../assets/images/QR/QRStand.webp";
 import { useLocation } from "react-router-dom";
 import DigitalPortfolio from "../components/QR/DigitalPortfolio";
 import QRStands from "../components/QR/QRStands";
@@ -28,7 +28,7 @@ const QRStand = () => {
           backgroundPosition: "center",
         }}
       >
-        <Header content={mainContent} isMobile />
+        <Header content={mainContent} isMobile bg />
         <Box
           sx={{
             backgroundColor: "#FAFAFA",

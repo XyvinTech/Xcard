@@ -3,10 +3,7 @@ import React, { useEffect } from "react";
 import Header from "../components/Header";
 import header from "../assets/images/MobileApp/Header6.webp";
 import header1 from "../assets/images/Team/Header5.webp";
-import img1 from "../assets/images/MobileApp/img7.webp";
-import img2 from "../assets/images/MobileApp/img8.webp";
-import img3 from "../assets/images/MobileApp/img9.webp";
-import img4 from "../assets/images/MobileApp/img10.webp";
+
 import Header3 from "../components/Header3";
 import WhyXcard from "../components/MobileApp/WhyXcard";
 import GetInTouch from "../components/GetInTouch";
@@ -25,29 +22,7 @@ const MobileApp = () => {
       "The Community Business Development App bridges associations, organizations, and communities to foster meaningful connections and accelerate progress.",
   };
  
-  const data = [
-    {
-      image: img1,
-      title: "Easy to Use",
-      subtitle: "Enjoy a user-friendly interface and intuitive navigation.",
-    },
-    {
-      image: img2,
-      title: "Always Accessible",
-      subtitle:
-        "Access your digital business card and network anytime, anywhere.",
-    },
-    {
-      image: img3,
-      title: "Instant Sharing",
-      subtitle: " Share your contact information with a simple tap.",
-    },
-    {
-      image: img4,
-      title: "Lead Generation",
-      subtitle: "Capture leads and nurture them for conversions.",
-    },
-  ];
+ 
 
   const headerData = {
     image: header1,
@@ -70,8 +45,8 @@ const MobileApp = () => {
           backgroundPosition: "center",
         }}
       >
-        <Header content={mainContent} isApp />
-        <Box
+        <Header content={mainContent} isApp bg />
+        <Box mt={25}
           sx={{
             backgroundColor: "#FAFAFA",
           }}

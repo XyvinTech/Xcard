@@ -32,7 +32,7 @@ const Products = () => {
   const headerData = {
     image: header,
     title: "Upgrade to Smart Business Cards",
-    buttonPath: "/products/app",
+    buttonPath: "/products/membership",
     subtitle:
       "Say goodbye to manual contact entry. Tap, share, and connect seamlessly.",
   };

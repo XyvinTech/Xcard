@@ -19,7 +19,7 @@ const companyItems = [
 
 const quickLinks = [
   { label: "NFC Card", href: "/products/card" },
-  { label: "Mobile App", href: "/products/app" },
+  { label: "Mobile App", href: "/products/membership" },
   { label: "QR Stand", href: "/products/qrstand" },
   { label: "Restaurant", href: "/products/restaurant" },
 ];

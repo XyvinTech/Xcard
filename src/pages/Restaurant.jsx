@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Header from "../components/Header";
 import { Box } from "@mui/material";
 import GetInTouch from "../components/GetInTouch";
-import header from "../assets/images/Restaurant/Header.webp";
+import header from "../assets/images/Restaurant/Rest.webp";
 import { useLocation } from "react-router-dom";
 import Elevate from "../components/Restaurant/Elevate";
 const Restaurant = () => {
@@ -30,10 +30,11 @@ const Restaurant = () => {
           backgroundPosition: "center",
         }}
       >
-        <Header content={mainContent} />
+        <Header content={mainContent} bg />
         <Box
           sx={{
             backgroundColor: "#FAFAFA",
+            mt:10
           }}
         >
           <Elevate />

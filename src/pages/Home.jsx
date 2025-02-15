@@ -22,7 +22,7 @@ const Home = () => {
   const headerData = {
     image: headerImage2,
     title: "Buziness Connect for Teams: Network Smarter, Together",
-    buttonPath: "/products/app",
+    buttonPath: "/products/membership",
     subtitle:
       "Empower your team to network smarter. Manage digital business cards effortlessly.",
   };
@@ -30,8 +30,8 @@ const Home = () => {
     image: header,
     title: "Elevate Your Professional Presence.",
     subtitle: "Reimagine the way you network and connect.",
-    button: "Shop Now",
-    buttonPath: "amazon",
+    button: "Buy Now",
+   
   };
   const data = [
     {

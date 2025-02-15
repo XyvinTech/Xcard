@@ -8,8 +8,20 @@ import Play from "../assets/images/Home/PlayStore.webp";
 import image1 from "../assets/images/Home/image1.webp";
 import { useNavigate } from "react-router-dom";
 import brochurePdf from "../assets/Buziness-Connect.pdf";
+import amazon from "../assets/images/Home/amazon.png";
+import flipkart from "../assets/images/Home/flipkart.png";
 
-const Header = ({ content = {}, isHome, isMobile, shop, support, white }) => {
+const Header = ({
+  content = {},
+  isHome,
+  isMobile,
+  shop,
+  support,
+  white,
+  head,
+  bg
+  
+}) => {
   const { image, title, subtitle, des, button, buttonPath } = content;
 
   const fadeIn = {
@@ -32,14 +44,14 @@ const Header = ({ content = {}, isHome, isMobile, shop, support, white }) => {
   const navigate = useNavigate();
   const handleButtonClick = () => {
     if (!buttonPath) return;
-    if (buttonPath === "amazon") {
-      window.location.href = "https://www.amazon.in/dp/B0CNKJMNNX";
-      return;
-    }
+    // if (buttonPath === "amazon") {
+    //   window.location.href = "https://www.amazon.in/dp/B0CNKJMNNX";
+    //   return;
+    // }
 
     const internalPaths = {
       shop: "/products/card",
-      app: "/products/app",
+      app: "/products/membership",
       restaurant: "/products/restaurant",
       qr: "/products/qrstand",
     };
@@ -80,6 +92,7 @@ const Header = ({ content = {}, isHome, isMobile, shop, support, white }) => {
       padding={{ xs: 5, md: 10, sm: 5 }}
       paddingLeft={{ xs: 5, md: 15, sm: 5 }}
       paddingRight={{ xs: 5, md: 15, sm: 5 }}
+      marginBottom={bg ? 20 : 5}
       display={"flex"}
       justifyContent="center"
       alignItems="center"
@@ -94,8 +107,11 @@ const Header = ({ content = {}, isHome, isMobile, shop, support, white }) => {
               variants={slideIn}
             >
               <Typography
-                fontSize={{ xs: "32px", md: isHome ? "84px" : "50px" }}
-                lineHeight={{ xs: "40px", md: isHome ? "100px" : "60px" }}
+                fontSize={{
+                  xs: "32px",
+                  md: isHome && head ? "50px" : isHome ? "84px" : head ? "50px" : "50px",
+                }}
+                lineHeight={{ xs: "40px", md: isHome && head ? "60px": isHome ? "100px" : "60px" }}
                 fontWeight={700}
                 color={white && "#000"}
               >
@@ -168,22 +184,53 @@ const Header = ({ content = {}, isHome, isMobile, shop, support, white }) => {
                   </motion.div>
                 </Stack>
               ) : (
-                <>
-                  {button ? (
-                    <StyledButton name={button} onClick={handleButtonClick} />
-                  ) : null}
-
-                  {isHome && (
-                    <Typography
-                      variant="h6"
-                      padding={"10px"}
-                      style={{ cursor: "pointer" }}
-                      onClick={handleButtonMore}
-                    >
-                      Learn More
-                    </Typography>
-                  )}
-                </>
+                <Box
+                display="flex"
+                flexDirection={{ xs: "column", md: "row" }} // Column on xs, Row on md+
+                alignItems={{ xs: "center", md: "flex-start" }}
+                gap={2}
+                padding="10px"
+              >
+                {button && (
+                  <StyledButton name={button} onClick={handleButtonClick} />
+                )}
+              
+                {isHome && (
+                  <Box
+                    display="flex"
+                    flexDirection="row"
+                    alignItems="center"
+                    gap={1}
+                  >
+                    <Typography variant="h6">Available on:</Typography>
+                    <Box
+                      component="img"
+                      src={amazon}
+                      width="39px"
+                      height="39px"
+                      alt="Amazon"
+                      sx={{ cursor: "pointer" }}
+                      onClick={() =>
+                        (window.location.href =
+                          "https://www.amazon.in/dp/B0CNKJMNNX")
+                      }
+                    />
+                    <Box
+                      component="img"
+                      src={flipkart}
+                      width="20px"
+                      height="25px"
+                      alt="Flipkart"
+                      sx={{ cursor: "pointer" }}
+                      onClick={() =>
+                        (window.location.href =
+                          "https://www.flipkart.com/buzinessconnect-nil-card-display-stand/p/itmf432721b54316?pid=CYDH7VYYVHCX5KQT")
+                      }
+                    />
+                  </Box>
+                )}
+              </Box>
+              
               )}
             </Stack>
           )}
@@ -228,11 +275,13 @@ const Header = ({ content = {}, isHome, isMobile, shop, support, white }) => {
           </motion.div>
         ) : (
           <>
+          {!bg && (
             <Box
               component="img"
               src={image1}
               display={shop ? "none" : "block"}
               alt="background"
+              
               sx={{
                 objectFit: "fill",
                 width: {
@@ -248,55 +297,60 @@ const Header = ({ content = {}, isHome, isMobile, shop, support, white }) => {
                   sm: "100%",
                 },
                 zIndex: 1,
+               
               }}
             />
-            <motion.div
-              ref={ref}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              variants={slideAnimation}
-              style={{
-                position: "absolute",
-                transform: "translate(-50%, -50%)",
-                zIndex: 2,
-                top: {
-                  xs: "10%",
-                  sm: "10%",
-                  md: "8%",
-                  lg: "6%",
-                  xl: "5%",
+          )}
+        
+          <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            variants={slideAnimation}
+            style={{
+              position: "absolute",
+              transform: "translate(-50%, -50%)",
+              zIndex: 2,
+              top: {
+                xs: "10%",
+                sm: "10%",
+                md: "8%",
+                lg: "6%",
+                xl: "5%",
+              },
+              left: {
+                xs: "15%",
+                sm: "10%",
+                md: "10%",
+                lg: "8%",
+                xl: "7%",
+              },
+            }}
+          >
+            <Box
+              component="img"
+              src={image}
+              mt={bg ? 20 : 0}
+              alt="rotating image"
+              sx={{
+                objectFit: "fill",
+                width: {
+                  xs: "200px",
+                  lg: "100%",
+                  md: "100%",
+                  sm: "200px",
                 },
-                left: {
-                  xs: "15%",
-                  sm: "10%",
-                  md: "10%",
-                  lg: "8%",
-                  xl: "7%",
+                height: {
+                  xs: "auto",
+                  lg: "400px",
+                  md: "100%",
+                  sm: "100%",
                 },
               }}
-            >
-              <Box
-                component="img"
-                src={image}
-                alt="rotating image"
-                sx={{
-                  objectFit: "cover",
-                  width: {
-                    xs: "200px",
-                    lg: "100%",
-                    md: "100%",
-                    sm: "200px",
-                  },
-                  height: {
-                    xs: "auto",
-                    lg: "400px",
-                    md: "100%",
-                    sm: "100%",
-                  },
-                }}
-              />
-            </motion.div>
-          </>
+            />
+          </motion.div>
+        </>
+        
         )}
       </Grid>
     </Grid>
