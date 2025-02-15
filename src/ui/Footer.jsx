@@ -1,6 +1,6 @@
 import { Box, Divider, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
-import SubscribeCard from "./SubscribeCard";
+import phone from "../assets/images/phone.png";
 import Logo from "../assets/images/Logo.webp";
 import facebook from "../assets/images/Footer/facebook.webp";
 import twitter from "../assets/images/Footer/twitter.webp";
@@ -18,17 +18,26 @@ const companyItems = [
 ];
 
 const quickLinks = [
-  { label: "NFC Card", href: "/products/card" },
-  { label: "Mobile App", href: "/products/membership" },
-  { label: "QR Stand", href: "/products/qrstand" },
-  { label: "Restaurant", href: "/products/restaurant" },
+  { label: "Digital Profiles", href: "/products/profile" },
+  { label: "NFC Business Card", href: "/products/card" },
+  { label: "Digital Catalogue", href: "/products/qrstand" },
+  { label: "Digital Restaurant Menu", href: "/products/restaurant" },
+  { label: "Membership Management System", href: "/products/membership" },
 ];
 
 const socialIcons = [
-  { src: facebook, alt: "Facebook" },
-  { src: twitter, alt: "Twitter" },
-  { src: instagram, alt: "Instagram" },
-  { src: linkedin, alt: "LinkedIn" },
+  {
+    src: facebook,
+    alt: "Facebook",
+    link: "https://www.facebook.com/profile.php?id=61566585337105&mibextid=ZbWKwL",
+  },
+  { src: twitter, alt: "Twitter", link: "https://www.twitter.com" },
+  {
+    src: instagram,
+    alt: "Instagram",
+    link: "https://www.instagram.com/buzinessconnect/?hl=en",
+  },
+  { src: linkedin, alt: "LinkedIn", link: "https://www.linkedin.com" },
 ];
 
 const Footer = () => {
@@ -61,6 +70,17 @@ const Footer = () => {
           <Typography variant="h5">
             The all-in-one business card for the modern professional. Network
             smarter, connect deeper, and grow your business faster.
+          </Typography>
+          <Typography variant="body1" fontWeight={600}>
+            <img
+              src={phone}
+              alt="logo"
+              objectFit="fill"
+              width={"15px"}
+              style={{ paddingRight: "5px" }}
+              height={"15px"}
+            />{" "}
+            +917592888111, +9197156788 3132
           </Typography>
         </Stack>
       </Grid>
@@ -118,33 +138,24 @@ const Footer = () => {
         <Divider sx={{ borderColor: "#A7A7A7", mt: 2 }} />
       </Grid>{" "}
       <Grid item xs={12}>
-        <Stack padding={2} direction={"row"} justifyContent={"space-between"}>
+        <Stack padding={2} direction={{ xs: "column", md: "row" }} justifyContent={"space-between"}spacing={{xs:2,md:0}}>
           <Typography>© {currentYear}. All rights reserved.</Typography>
-          {/* <Stack spacing={2} direction={"row"}>
+          <Stack spacing={2} direction={"row"}>
             {socialIcons.map((icon, index) => (
               <Box
                 key={index}
                 component="img"
                 src={icon.src}
                 alt={icon.alt}
+                onClick={() => (window.location.href = icon.link)}
                 sx={{
                   cursor: "pointer",
-                  width: {
-                    xs: "18px",
-                    md: "18px",
-                    sm: "18px",
-                    lg: "24px",
-                  },
-                  height: {
-                    xs: "18px",
-                    md: "18px",
-                    sm: "18px",
-                    lg: "24px",
-                  },
+                  width: { xs: "18px", md: "18px", sm: "18px", lg: "24px" },
+                  height: { xs: "18px", md: "18px", sm: "18px", lg: "24px" },
                 }}
               />
             ))}
-          </Stack>{" "} */}
+          </Stack>{" "}
           <Stack spacing={2} direction={"row"}>
             <Typography>
               <span style={{ opacity: 0.5 }}>Powered By </span>
@@ -154,7 +165,8 @@ const Footer = () => {
                   cursor: "pointer",
                   color: "#fff",
                 }}
-                to={"https://skybertech.ae"}target="_blank"
+                to={"https://skybertech.ae"}
+                target="_blank"
               >
                 Skybertech
               </Link>{" "}
@@ -166,7 +178,8 @@ const Footer = () => {
                   cursor: "pointer",
                   color: "#fff",
                 }}
-                to={"https://xyvin.com"}target="_blank"
+                to={"https://xyvin.com"}
+                target="_blank"
               >
                 {" "}
                 Xyvin
