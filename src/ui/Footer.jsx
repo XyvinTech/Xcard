@@ -80,7 +80,7 @@ const Footer = () => {
               style={{ paddingRight: "5px" }}
               height={"15px"}
             />{" "}
-            +917592888111, +9197156788 3132
+            +917592888111, +97156788 3132
           </Typography>
         </Stack>
       </Grid>
@@ -165,7 +165,7 @@ const Footer = () => {
                   cursor: "pointer",
                   color: "#fff",
                 }}
-                to={"https://skybertech.ae"}
+                to={"https://skybertech.com"}
                 target="_blank"
               >
                 Skybertech
