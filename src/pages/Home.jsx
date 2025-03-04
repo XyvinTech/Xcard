@@ -30,6 +30,7 @@ const Home = () => {
           title: "Elevate Your Professional Presence.",
           subtitle: "Reimagine the way you network and connect.",
           button: "Buy Now",
+          buttonPath: "home",
         },
         isHome: true,
       },
@@ -43,6 +44,7 @@ const Home = () => {
           subtitle:
             "Say goodbye to manual contact entry. Tap, share, and connect seamlessly.",
           button: "Buy Now",
+          buttonPath: "home",
         },
         isHome: true,
         head: true,
@@ -55,9 +57,9 @@ const Home = () => {
         content: {
           image: card,
           title: "Connect Your Team,Connect with Clients",
-          subtitle:
-            "Streamline team collaboration and communication.",
+          subtitle: "Streamline team collaboration and communication.",
           button: "Buy Now",
+          buttonPath: "home",
         },
         isHome: true,
         head: true,
@@ -70,7 +72,8 @@ const Home = () => {
         content: {
           image: qr,
           title: "Connect Effortlessly with Buziness Connect",
-          subtitle: "Upgrade your networking game today. Order your QR Stand now.",
+          subtitle:
+            "Upgrade your networking game today. Order your QR Stand now.",
           buttonPath: "qr",
         },
         isMobile: true,
@@ -90,7 +93,7 @@ const Home = () => {
         bg: true,
       },
     },
-    
+
     {
       component: Header,
       props: {
@@ -115,7 +118,7 @@ const Home = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentHeaderIndex((prevIndex) => (prevIndex + 1) % headers.length);
-    }, 4000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, []);
@@ -124,17 +127,27 @@ const Home = () => {
   const currentProps = headers[currentHeaderIndex].props;
 
   return (
-    <>
+    <Box bgcolor="#fafafa">
       <Box
         sx={{
           mt: 10,
           backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%)`,
           backgroundSize: "cover",
+          backgroundPosition: "contain",
+        }}
+      >
+        <CurrentHeader {...currentProps} />{" "}
+      </Box>{" "}
+      <Box bgcolor={"#fafafa"}>
+        <HomeHeader white />{" "}
+      </Box>
+      <Box
+        sx={{
+          backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%)`,
+          backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <CurrentHeader {...currentProps} />
-        <HomeHeader />
         <div id="features" style={{ paddingTop: "10px" }}>
           <Header3
             data={[
@@ -184,7 +197,7 @@ const Home = () => {
           <GetInTouch />
         </div>
       </Box>
-    </>
+    </Box>
   );
 };
 

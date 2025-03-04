@@ -48,12 +48,13 @@ const Header = ({
     //   window.location.href = "https://www.amazon.in/dp/B0CNKJMNNX";
     //   return;
     // }
-
+console.log("ss",buttonPath)
     const internalPaths = {
       shop: "/products/card",
       app: "/products/membership",
       restaurant: "/products/restaurant",
       qr: "/products/qrstand",
+      home:"/"
     };
     if (internalPaths[buttonPath]) {
       navigate(internalPaths[buttonPath], { replace: true });
@@ -62,6 +63,7 @@ const Header = ({
         app: "getInTouch",
         restaurant: "restaurant",
         qr: "getInTouch",
+        home:"LearnMore"
       };
       setTimeout(() => {
         const targetElement = document.getElementById(
