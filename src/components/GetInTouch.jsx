@@ -71,6 +71,10 @@ const GetInTouch = () => {
                           value: "Membership Management System",
                           label: "Membership Management System",
                         },
+                        {
+                          value: "Franchise Partnership Request",
+                          label: "Franchise Partnership Request",
+                        },
                       ]}
                       placeholder="Choose product"
                       {...field}
@@ -162,7 +166,12 @@ const GetInTouch = () => {
               width: "65px",
               height: "65px",
               cursor: "pointer",
+              position: "fixed", 
+              bottom: "20px", 
+              right: "20px", 
+              zIndex: 1000, 
             }}
+        
             onClick={() =>
               (window.location.href = "https://wa.me/+917592888111")
             }

@@ -4,27 +4,38 @@ import StyledAccordion from "../ui/StyledAccordion";
 const accordionData = [
   {
     id: "panel1",
-    title: "How do I create a digital business card?",
+    title: "How do NFC cards and QR stands work?",
     content:
-      "Simply follow the on-screen instructions to customize your digital business card and add your contact information.",
+      "NFC cards use tap-to-connect technology, while QR stands allow users to scan a code to access digital profiles instantly.",
   },
   {
     id: "panel2",
-    title: "Can I use my digital business card offline?",
+    title: "Can I update my digital profile after purchasing an NFC card or QR stand?",
     content:
-      "Simply follow the on-screen instructions to customize your digital business card and add your contact information.",
+      "Yes! You can edit your details in real-time without needing to replace your card or stand.",
   },
   {
     id: "panel3",
-    title: "Can I customize the design of my digital business card?",
+    title: "Do I need an app to use these products?",
     content:
-      "Simply follow the on-screen instructions to customize your digital business card and add your contact information.",
+      "No, users can access your digital profile via a web link—no app required.",
   },
   {
     id: "panel4",
-    title: "What is the cost of using the platform?",
+    title: "Are these solutions eco-friendly?",
     content:
-      "Simply follow the on-screen instructions to customize your digital business card and add your contact information.",
+      "Absolutely! NFC cards and QR stands reduce the need for printed materials, making them a sustainable choice.",
+  },
+  {
+    id: "panel5",
+    title: "Can I customize my NFC card or QR stand?",
+    content:
+      "Yes, we offer full branding customization, including logos, colors, and designs.",
+  },  {
+    id: "panel6",
+    title: "Is there a setup or subscription fee?",
+    content:
+      "We provide flexible pricing options, with one-time purchases and optional subscription-based premium features.",
   },
 ];
 const HelpComponent = () => {
