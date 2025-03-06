@@ -178,11 +178,11 @@ const Footer = () => {
                   cursor: "pointer",
                   color: "#fff",
                 }}
-                to={"https://xyvin.com"}
+                to={"https://www.acutendeavors.com/"}
                 target="_blank"
               >
                 {" "}
-                Xyvin
+                Acute Endeavors
               </Link>
             </Typography>
           </Stack>
