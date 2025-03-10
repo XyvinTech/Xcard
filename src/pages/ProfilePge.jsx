@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header3 from "../components/Header3";
 import img1 from "../assets/images/MobileApp/img7.webp";
 import img2 from "../assets/images/MobileApp/img8.webp";
@@ -9,7 +9,9 @@ import header from "../assets/images/products/Profile.webp";
 
 import WhyXcard from "../components/MobileApp/WhyXcard";
 import Header from "../components/Header";
+import { useLocation } from "react-router-dom";
 const ProfilePge = () => {
+   const { pathname } = useLocation();
   const data = [
     {
       image: img1,
@@ -40,6 +42,9 @@ const ProfilePge = () => {
       "Say goodbye to manual contact entry. Tap, share, and connect seamlessly.",
     button: "Buy Now",
   };
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
   return (
     <>
       <Box
