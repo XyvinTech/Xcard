@@ -134,6 +134,7 @@ const Home = () => {
           backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%)`,
           backgroundSize: "cover",
           backgroundPosition: "contain",
+          pb:10
         }}
       >
         <CurrentHeader {...currentProps} />{" "}
