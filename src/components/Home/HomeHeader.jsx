@@ -1,11 +1,14 @@
 import { Grid, Stack, Typography, Skeleton, Box } from "@mui/material";
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import headerImage from "../../assets/images/Home/image3.png";
-import mobile from "../../assets/images/Home/mob.webp";
+import headerImage from "../../assets/images/Home/image4.webp";
+import amazon from "../../assets/images/Home/amazon.png";
+import flipkart from "../../assets/images/Home/flipkart.png";
 import StyledButton from "../../ui/StyledButton";
+import { useNavigate } from "react-router-dom";
 
 const HomeHeader = ({ white }) => {
+  const navigate=useNavigate();
   const fadeIn = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.8 } },
@@ -19,8 +22,9 @@ const HomeHeader = ({ white }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: false });
   const image = headerImage;
-  const title = "Reimagine Networking. Connect with Confidence.";
-  const subtitle = "The way you network will never be the same.";
+  const title = "Business Connect for Teams: Network Smarter, Together";
+  const subtitle =
+    "Empower your team to network smarter. Manage digital business cards effortlessly.";
 
   return (
     <Grid
@@ -48,28 +52,6 @@ const HomeHeader = ({ white }) => {
               variants={slideIn}
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
-              style={{ zIndex: 2, position: "absolute" }}
-            >
-              <Box
-                component="img"
-                src={mobile}
-                alt="mobile image"
-                sx={{
-                  objectFit: "fill",
-                  width: { xs: "90%", sm: "80%", md: "70%", lg: "406px" },
-                  height: { xs: "auto", lg: "254px" },
-                  top: 150,
-                  left: { xs: 60, sm: 60, md: 80, lg: 150 },
-                  position: "relative",
-                }}
-              />
-            </motion.div>
-
-            <motion.div
-              ref={ref}
-              variants={fadeIn}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
               style={{ zIndex: 1 }}
             >
               <Box
@@ -80,7 +62,7 @@ const HomeHeader = ({ white }) => {
                   objectFit: "fill",
                   width: {
                     xs: "90%",
-                    lg: "272px",
+                    lg: "585px",
                     md: "100%",
                     sm: "100%",
                   },
@@ -125,7 +107,7 @@ const HomeHeader = ({ white }) => {
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
             >
-              <Typography variant="h4" color={white ? "#5E5E5E" :"#f2f2f2"}>
+              <Typography variant="h4" color={white ? "#5E5E5E" : "#f2f2f2"}>
                 {subtitle}
               </Typography>
             </motion.div>
@@ -135,7 +117,45 @@ const HomeHeader = ({ white }) => {
 
           {white && (
             <Stack width={"fit-content"}>
-              <StyledButton name={"Know More"} />
+              <Box
+                display="flex"
+                flexDirection="row"
+                alignItems="center"
+                gap={1}
+              >
+                <StyledButton
+                  name={"Read More"}
+                  onClick={() => navigate("/support")}
+                />
+
+                <Typography variant="h6" color="#8E8E8E">
+                  Available on:
+                </Typography>
+                <Box
+                  component="img"
+                  src={amazon}
+                  width="39px"
+                  height="39px"
+                  alt="Amazon"
+                  sx={{ cursor: "pointer" }}
+                  onClick={() =>
+                    (window.location.href =
+                      "https://www.amazon.in/dp/B0CNKJMNNX")
+                  }
+                />
+                <Box
+                  component="img"
+                  src={flipkart}
+                  width="20px"
+                  height="25px"
+                  alt="Flipkart"
+                  sx={{ cursor: "pointer" }}
+                  onClick={() =>
+                    (window.location.href =
+                      "https://www.flipkart.com/buzinessconnect-nil-card-display-stand/p/itmf432721b54316?pid=CYDH7VYYVHCX5KQT")
+                  }
+                />
+              </Box>
             </Stack>
           )}
         </Stack>

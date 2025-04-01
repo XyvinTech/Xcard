@@ -48,7 +48,6 @@ const Header = ({
     //   window.location.href = "https://www.amazon.in/dp/B0CNKJMNNX";
     //   return;
     // }
-console.log("ss",buttonPath)
     const internalPaths = {
       shop: "/products/card",
       app: "/products/membership",

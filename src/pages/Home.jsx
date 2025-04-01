@@ -18,6 +18,11 @@ import rest from "../assets/images/Restaurant/Rest.webp";
 import { useLocation } from "react-router-dom";
 import HomeHeader from "../components/Home/HomeHeader";
 import profile from "../assets/images/products/Profile.webp";
+import XcardDigitalProfile from "../components/Home/XcardDigitalProfile";
+import NFCCard from "../components/Home/NFCCard";
+import ProductQR from "../components/Home/ProductQR";
+import ProductRestaurant from "../components/Home/ProductRestaurant";
+import ProductMember from "../components/Home/ProductMember";
 const Home = () => {
   const { pathname } = useLocation();
 
@@ -118,7 +123,7 @@ const Home = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentHeaderIndex((prevIndex) => (prevIndex + 1) % headers.length);
-    }, 8000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
@@ -139,6 +144,18 @@ const Home = () => {
       >
         <CurrentHeader {...currentProps} />{" "}
       </Box>{" "}
+      <Box bgcolor={"#fafafa"}>
+        <XcardDigitalProfile/>
+      </Box>
+      <Box
+        sx={{
+          backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <NFCCard/>
+      </Box>  
       <Box bgcolor={"#fafafa"}>
         <HomeHeader white />{" "}
       </Box>
@@ -181,6 +198,21 @@ const Home = () => {
             subtitle="Our NFC business cards offer more than just contact sharing. Experience the benefits of a digital business card that empowers your professional network."
           />
         </div>
+      </Box>
+      <Box bgcolor={"#fafafa"}>
+        <ProductQR/>
+      </Box>
+      <Box
+        sx={{
+          backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <ProductRestaurant/>
+      </Box> 
+      <Box bgcolor={"#fafafa"}>
+        <ProductMember/>
       </Box>
       <Box sx={{ backgroundColor: "#FAFAFA" }}>
         <Testimonial />
