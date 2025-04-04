@@ -143,7 +143,7 @@ const DigitalPortfolio = () => {
         md={3}
         sm={6}
         lg={3}
-        xs={6}
+        xs={12}
         display={"flex"}
         justifyContent={"center"}
       >
@@ -186,7 +186,7 @@ const DigitalPortfolio = () => {
         md={3}
         sm={6}
         lg={3}
-        xs={6}
+        xs={12}
         display={"flex"}
         justifyContent={"flex-start"}
       >
