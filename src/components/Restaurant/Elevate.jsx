@@ -112,13 +112,13 @@ const Elevate = () => {
                   xs: "50%",
                   lg: "356px",
                   md: "100%",
-                  sm: "auto",
+                  sm: "90%",
                 },
                 height: {
                   xs: "auto",
                   lg: "510px",
                   md: "100%",
-                  sm: "auto",
+                  sm: "90%",
                 },
               }}
             />
