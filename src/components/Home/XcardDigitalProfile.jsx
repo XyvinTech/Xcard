@@ -123,7 +123,7 @@ const XcardDigitalProfile = () => {
         item
         md={3.5}
         sm={6}
-        xs={6}
+        xs={12}
         lg={3.5}
         display={"flex"}
         justifyContent={"center"}
@@ -160,7 +160,7 @@ const XcardDigitalProfile = () => {
         md={3.5}
         sm={6}
         lg={3.5}
-        xs={6}
+        xs={12}
         display={"flex"}
         justifyContent={"flex-start"}
       >
