@@ -64,7 +64,7 @@ const ProductQR = () => {
           Smart QR Display Stands
         </Typography>
       </Grid>
-      <Grid item lg={6} sm={12}   display={{ lg: "none", sm: "flex" }}   justifyContent="center">
+      <Grid item lg={6} sm={12}  md={6} xs={12}  display={{ lg: "none", sm: "flex" }}   justifyContent="center">
         <Box
           sx={{
             transformOrigin: "center",
@@ -100,6 +100,7 @@ const ProductQR = () => {
         md={6}
         sm={12}
         lg={6}
+        xs={12}
         display={"flex"}
         justifyContent={"center"}
       >

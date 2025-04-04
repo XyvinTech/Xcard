@@ -64,7 +64,7 @@ const NFCCard = () => {
           Tap-to-Connect NFC Cards
         </Typography>
       </Grid>
-      <Grid item lg={6} sm={12} display="flex" justifyContent="center">
+      <Grid item lg={6} sm={12} md={6} xs={12} display="flex" justifyContent="center">
         <Box
           sx={{
             transformOrigin: "center",
@@ -99,6 +99,7 @@ const NFCCard = () => {
         item
         md={6}
         sm={12}
+        xs={12}
         lg={6}
         display={"flex"}
         justifyContent={"center"}

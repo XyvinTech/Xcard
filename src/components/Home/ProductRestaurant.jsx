@@ -61,7 +61,7 @@ import {
 
           </Typography>
         </Grid>
-        <Grid item lg={6} sm={12} display="flex" justifyContent="center">
+        <Grid item lg={6} sm={12} md={6} xs={12} display="flex" justifyContent="center">
           <Box
             sx={{
               transformOrigin: "center",
@@ -97,6 +97,7 @@ import {
           md={6}
           sm={12}
           lg={6}
+          xs={12}
           display={"flex"}
           justifyContent={"center"}
         >
