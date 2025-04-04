@@ -7,15 +7,17 @@ import {
   ListItemIcon,
   ListItemText,
   Box,
+  Container,
 } from "@mui/material";
 import React, { useRef } from "react";
-import headerImage2 from "../../assets/images/MobileApp/Header7.webp";
 import icon from "../../assets/images/Button.png";
 import image1 from "../../assets/images/Home/mob.webp";
 import scan from "../../assets/images/Home/image3.png";
-import {motion, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+
 const WhyXcard = () => {
   const ref = useRef(null);
+  
   const fadeIn = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.8 } },
@@ -27,6 +29,7 @@ const WhyXcard = () => {
   };
 
   const inView = useInView(ref, { once: false });
+  
   const features = [
     {
       title: "Save Money and Time",
@@ -42,37 +45,49 @@ const WhyXcard = () => {
         "Maximize your networking efforts and drive business growth.",
     },
     {
-      title: "Environmental Benefits:",
+      title: "Environmental Benefits",
       description1:
         "By eliminating the need for paper business cards, you're contributing to a more sustainable planet.",
       description2:
         "Buziness Connect is committed to environmental sustainability and responsible business practices",
     },
     {
-      title: "Easy of Use",
+      title: "Ease of Use",
       description1:
         "Our user-friendly interface makes it simple to create and manage your digital business cards.",
     },
   ];
 
   return (
-    <Grid
-      container
-      spacing={4}
-      padding={{ xs: 5, md: 10, sm: 5 }}
-      paddingLeft={{ xs: 5, md: 15, sm: 5 }}
-      paddingRight={{ xs: 5, md: 15, sm: 5 }}
-      mt={2}
-      justifyContent="center"
-      alignItems="center"
-    >
-      <Grid item md={6} sm={6} display={"flex"} justifyContent={"center"}>
-        <Stack spacing={2}>
-          <Typography fontSize={{ xs: "32px", md: "44px" }} fontWeight={700}>
-            Why Choose Buziness Connect?
-          </Typography>
+    <Container maxWidth="xl">
+      <Grid
+        container
+        spacing={{ xs: 4, sm: 5, md: 6, lg: 8 }}
+        sx={{
+          py: { xs: 4, sm: 5, md: 6, lg: 8 },
+          px: { xs: 2, sm: 3, md: 4, lg: 5 },
+          mt: { xs: 2, sm: 3, md: 4 }
+        }}
+        justifyContent="center"
+        alignItems="center"
+      >
+        {/* Left section - Features */}
+        <Grid 
+          item 
+          xs={12} 
+          md={6} 
+          order={{ xs: 2, md: 1 }}
+        >
+          <Stack spacing={{ xs: 2, sm: 3, md: 4 }}>
+            <Typography 
+              fontSize={{ xs: "28px", sm: "32px", md: "38px", lg: "44px" }} 
+              fontWeight={700}
+              textAlign={{ xs: "center", md: "left" }}
+            >
+              Why Choose Buziness Connect?
+            </Typography>
 
-          <List>
+             <List>
             {features?.map((feature, index) => (
               <ListItem alignItems="flex-start" key={index}>
                 <ListItemIcon sx={{ minWidth: 24, marginTop: 1.5 }}>
@@ -106,49 +121,63 @@ const WhyXcard = () => {
               </ListItem>
             ))}
           </List>
-        </Stack>
-      </Grid>{" "}
-      <Grid item lg={5} sm={12} display="flex" justifyContent="center">
-        <Box
-          sx={{
-            transform: "rotate(330deg)",
-            transformOrigin: "center",
-            display: "flex",
-            flexDirection: "column",justifyContent: "center",
-            alignItems: "center",
+          </Stack>
+        </Grid>
+        
+        {/* Right section - Images */}
+        <Grid 
+          item 
+          xs={12} 
+          md={6} 
+          order={{ xs: 1, md: 2 }}
+          sx={{ 
+            display: "flex", 
+            justifyContent: "center",
+            mb: { xs: 4, md: 0 }
           }}
         >
-          <motion.div
+          <Box
             ref={ref}
-            variants={slideIn}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            style={{ zIndex: 2, position: "absolute" }}
+            sx={{
+              transform: { xs: "rotate(350deg)", sm: "rotate(350deg)" },
+              transformOrigin: "center",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              position: "relative",
+              height: { xs: "300px", sm: "350px", md: "400px", lg: "450px" },
+              width: { xs: "100%", sm: "80%", md: "100%" }
+            }}
           >
-            <Box
-              component="img"
-              src={image1}
-              alt="mobile image"
-              sx={{
-                objectFit: "fill",
-                width: { xs: "70%", sm: "80%", md: "70%", lg: "312px" },
-                height: { xs: "auto", lg: "195px" },
-                // top: { xs: 60, sm: 60, md: 80, lg: 150 },
-                left: { xs: 60, sm: 100, md: 80, lg: 150 },
-                
-                position: "relative",
-              }}
-            />
-          </motion.div>
+            <motion.div
+              variants={slideIn}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              style={{ zIndex: 2, position: "absolute" }}
+            >
+              <Box
+                component="img"
+                src={image1}
+                alt="mobile image"
+                sx={{
+                  objectFit: "contain",
+                  width: { xs: "140px", sm: "180px", md: "260px", lg: "300px" },
+                  height: "auto",
+                  position: "relative",
+                  top: { xs: "50px", sm: "60px", md: "70px", lg: "80px" },
+                  left: { xs: "30px", sm: "50px", md: "60px", lg: "100px" },
+                }}
+              />
+            </motion.div>
 
-          <motion.div
-            ref={ref}
-            variants={fadeIn}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            style={{ zIndex: 1 }}
-          >
-            <Box
+            <motion.div
+              variants={fadeIn}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              style={{ zIndex: 1 }}
+            >
+             <Box
               component="img"
               src={scan}
               alt="background"
@@ -169,10 +198,11 @@ const WhyXcard = () => {
                 },
               }}
             />
-          </motion.div>
-        </Box>
+            </motion.div>
+          </Box>
+        </Grid>
       </Grid>
-    </Grid>
+    </Container>
   );
 };
 
