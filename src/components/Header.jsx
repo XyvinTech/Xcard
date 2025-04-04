@@ -111,7 +111,7 @@ const Header = ({
               <Typography
                 fontSize={{
                   xs: "32px",
-                  md: isHome && head ? "50px" : isHome ? "84px" : head ? "50px" : "50px",
+                  md: isHome && head ? "50px" : isHome ? "74px" : head ? "50px" : "50px",
                   sm:"32px"
                 }}
                 lineHeight={{ xs: "40px", md: isHome && head ? "60px": isHome ? "100px" : "60px" }}
