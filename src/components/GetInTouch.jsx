@@ -6,9 +6,11 @@ import { sendEmail } from "../api/sendEmail";
 import { useNavigate } from "react-router-dom";
 import StyledSelect from "../ui/StyledSelect";
 import contactImage from "../assets/images/uim_whatsapp.png";
+
 const GetInTouch = () => {
   const navigate = useNavigate();
   const { control, handleSubmit, reset } = useForm();
+  
   const onSubmit = async (data) => {
     try {
       await sendEmail(data);
@@ -18,32 +20,37 @@ const GetInTouch = () => {
       console.log(error);
     }
   };
+  
   return (
-    <Box padding={{ xs: 5, md: 10 }} pb={0}>
-      <Grid container spacing={4} alignItems="flex-start">
-        <Grid item xs={12} md={7} lg={11}>
+    <Box sx={{ px: { xs: 2, sm: 3, md: 5, lg: 8 }, py: { xs: 4, sm: 5, md: 6, lg: 8 } }}>
+      <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
+       
+        <Grid item xs={12}>
           <Typography
-            fontSize={{ xs: "32px", md: "44px" }}
+            fontSize={{ xs: "28px", sm: "32px", md: "38px", lg: "44px" }}
             fontWeight={700}
-            textAlign={"center"}
+            textAlign="center"
+            mb={2}
           >
             Get in touch
           </Typography>
-          <Typography variant="h5" textAlign={"center"}>
+          <Typography 
+            variant="h5" 
+            textAlign="center"
+            fontSize={{ xs: "16px", sm: "18px", md: "20px", lg: "22px" }}
+            mb={{ xs: 3, sm: 4, md: 5 }}
+          >
             Please feel free to send us any questions, feedback or suggestions
             you might have.
-          </Typography>{" "}
+          </Typography>
+        </Grid>
+        
+        <Grid item xs={12} md={10} lg={8} sx={{ mx: "auto" }}>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <Grid
-              container
-              spacing={2}
-              justifyContent={"center"}
-              padding={{ xs: 0, md: 10, lg: 20 }}
-              paddingTop={{ xs: 5, md: 10, lg: 5 }}
-              paddingBottom={{ xs: 5, md: 0, lg: 5 }}
-            >
-              <Grid item md={12} xs={12}>
-                <Typography mb={1}>Product</Typography>
+            <Grid container spacing={{ xs: 2, sm: 3 }}>
+           
+              <Grid item xs={12}>
+                <Typography mb={1} fontSize={{ xs: "14px", sm: "16px" }}>Product</Typography>
                 <Controller
                   name="subject"
                   control={control}
@@ -51,30 +58,12 @@ const GetInTouch = () => {
                   render={({ field }) => (
                     <StyledSelect
                       options={[
-                        {
-                          value: "Digital Profiles",
-                          label: "Digital Profiles",
-                        },
-                        {
-                          value: "NFC Business Card",
-                          label: "NFC Business Card",
-                        },
-                        {
-                          value: "Digital Catalogue",
-                          label: "Digital Catalogue",
-                        },
-                        {
-                          value: "Digital Restaurant Menu",
-                          label: "Digital Restaurant Menu",
-                        },
-                        {
-                          value: "Membership Management System",
-                          label: "Membership Management System",
-                        },
-                        {
-                          value: "Franchise Partnership Request",
-                          label: "Franchise Partnership Request",
-                        },
+                        { value: "Digital Profiles", label: "Digital Profiles" },
+                        { value: "NFC Business Card", label: "NFC Business Card" },
+                        { value: "Digital Catalogue", label: "Digital Catalogue" },
+                        { value: "Digital Restaurant Menu", label: "Digital Restaurant Menu" },
+                        { value: "Membership Management System", label: "Membership Management System" },
+                        { value: "Franchise Partnership Request", label: "Franchise Partnership Request" },
                       ]}
                       placeholder="Choose product"
                       {...field}
@@ -82,8 +71,8 @@ const GetInTouch = () => {
                   )}
                 />
               </Grid>
-              <Grid item md={6} xs={12}>
-                <Typography mb={1}>Full Name</Typography>
+              <Grid item xs={12} sm={6}>
+                <Typography mb={1} fontSize={{ xs: "14px", sm: "16px" }}>Full Name</Typography>
                 <Controller
                   name="fullName"
                   control={control}
@@ -96,8 +85,10 @@ const GetInTouch = () => {
                   )}
                 />
               </Grid>
-              <Grid item md={6} xs={12}>
-                <Typography mb={1}>Phone Number</Typography>
+              
+              {/* Phone Field */}
+              <Grid item xs={12} sm={6}>
+                <Typography mb={1} fontSize={{ xs: "14px", sm: "16px" }}>Phone Number</Typography>
                 <Controller
                   name="phone"
                   control={control}
@@ -110,19 +101,25 @@ const GetInTouch = () => {
                   )}
                 />
               </Grid>
-              <Grid item md={12} xs={12}>
-                <Typography mb={1}>Email Address</Typography>
+              
+              {/* Email Field */}
+              <Grid item xs={12}>
+                <Typography mb={1} fontSize={{ xs: "14px", sm: "16px" }}>Email Address</Typography>
                 <Controller
                   name="emailAddress"
                   control={control}
                   defaultValue=""
                   render={({ field }) => (
-                    <StyledInput placeholder="Enter Email" {...field} />
+                    <StyledInput 
+                      placeholder="Enter Email" 
+                      {...field} 
+                    />
                   )}
                 />
               </Grid>
-              <Grid item md={12} xs={12}>
-                <Typography mb={1}>Message</Typography>
+              
+              <Grid item xs={12}>
+                <Typography mb={1} fontSize={{ xs: "14px", sm: "16px" }}>Message</Typography>
                 <Controller
                   name="message"
                   control={control}
@@ -131,57 +128,50 @@ const GetInTouch = () => {
                     <StyledInput
                       placeholder="Enter Message"
                       rows={5}
+                      multiline
                       {...field}
                     />
                   )}
                 />
               </Grid>
-              <Grid item md={12} xs={12}>
-                <Stack width={"100%"}>
-                  <StyledButton
-                    name={"Send Message"}
-                    type="submit"
-                    onClick={handleSubmit(onSubmit)}
-                  />
-                </Stack>
+              
+              <Grid item xs={12} sm={8} md={6} >
+                <StyledButton
+                  name="Send Message"
+                  type="submit"
+                  fullWidth
+                  onClick={handleSubmit(onSubmit)}
+                />
               </Grid>
             </Grid>
           </form>
         </Grid>
-
-        <Grid
-          item
-          xs={12}
-          md={5}
-          lg={1}
-          display="flex"
-          justifyContent="flex-end"
-          alignItems="flex-start"
-        >
-        <Box
-  component="img"
-  src={contactImage}
-  alt="Contact Us"
-  sx={{
-    width: "65px",
-    height: "65px",
-    cursor: "pointer",
-    position: "fixed",
-    bottom: "20px",
-    right: "20px",
-    zIndex: 1000,
-    animation: "blinking 1.5s infinite",
-    "@keyframes blinking": {
-      "0%": { opacity: 1 },
-      "50%": { opacity: 0.5 },
-      "100%": { opacity: 1 },
-    },
-  }}
-  onClick={() => (window.location.href = "https://wa.me/+917592888111")}
-/>
-
-        </Grid>
       </Grid>
+      
+      {/* WhatsApp Button */}
+      <Box
+        component="img"
+        src={contactImage}
+        alt="Contact Us"
+        sx={{
+          width: { xs: "50px", sm: "60px", md: "65px" },
+          height: { xs: "50px", sm: "60px", md: "65px" },
+          cursor: "pointer",
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          zIndex: 1000,
+          animation: "blinking 1.5s infinite",
+          "@keyframes blinking": {
+            "0%": { opacity: 1 },
+            "50%": { opacity: 0.5 },
+            "100%": { opacity: 1 },
+          },
+          boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
+          borderRadius: "50%",
+        }}
+        onClick={() => (window.location.href = "https://wa.me/+917592888111")}
+      />
     </Box>
   );
 };
