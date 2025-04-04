@@ -72,6 +72,8 @@ const ProductMember = () => {
         item
         lg={6}
         sm={12}
+        md={6}
+        xs={12}
         display={{ lg: "none", sm: "flex" }}
         justifyContent="center"
       >
@@ -110,6 +112,7 @@ const ProductMember = () => {
         md={6}
         sm={12}
         lg={6}
+        xs={12}
         display={"flex"}
         justifyContent={"center"}
       >
@@ -144,6 +147,8 @@ const ProductMember = () => {
         item
         lg={6}
         sm={12}
+        md={6}
+        xs={12}
         display={{ xs: "none", sm: "none" ,lg: "flex"}}
         justifyContent="center"
       >

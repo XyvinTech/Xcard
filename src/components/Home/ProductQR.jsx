@@ -131,7 +131,7 @@ const ProductQR = () => {
           </List>
         </Stack>
       </Grid>{" "}
-      <Grid item lg={6} sm={12}   display={{ xs: "none", lg: "flex" , sm: "none"}}   justifyContent="center">
+      <Grid item lg={6} sm={12}  xs={12} md={6} display={{ xs: "none", lg: "flex" , sm: "none"}}   justifyContent="center">
         <Box
           sx={{
             transformOrigin: "center",
