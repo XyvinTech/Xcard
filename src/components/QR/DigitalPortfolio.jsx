@@ -79,7 +79,7 @@ const DigitalPortfolio = () => {
           Digital Portfolio- Redefine the art of networking
         </Typography>
       </Grid>
-      <Grid item lg={5} sm={12} display={"flex"} justifyContent={"Flex-start"}>
+      <Grid item lg={5} sm={12} md={5} xs={12} display={"flex"} justifyContent={"Flex-start"}>
         <>
           <Box
             component="img"
@@ -143,6 +143,7 @@ const DigitalPortfolio = () => {
         md={3}
         sm={6}
         lg={3}
+        xs={6}
         display={"flex"}
         justifyContent={"center"}
       >
@@ -185,6 +186,7 @@ const DigitalPortfolio = () => {
         md={3}
         sm={6}
         lg={3}
+        xs={6}
         display={"flex"}
         justifyContent={"flex-start"}
       >
