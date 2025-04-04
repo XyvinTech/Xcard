@@ -19,9 +19,9 @@ const GetInTouch = () => {
     }
   };
   return (
-    <Box padding={{ xs: 5, md: 10 }} pb={0}>
+    <Box padding={{ xs: 5, md: 10, lg: 10, sm: 5 }} pb={0}>
       <Grid container spacing={4} alignItems="flex-start">
-        <Grid item xs={12} md={7} lg={11}>
+        <Grid item xs={12} md={7} lg={11} sm={12}>
           <Typography
             fontSize={{ xs: "32px", md: "44px" }}
             fontWeight={700}
@@ -158,28 +158,29 @@ const GetInTouch = () => {
           justifyContent="flex-end"
           alignItems="flex-start"
         >
-        <Box
-  component="img"
-  src={contactImage}
-  alt="Contact Us"
-  sx={{
-    width: "65px",
-    height: "65px",
-    cursor: "pointer",
-    position: "fixed",
-    bottom: "20px",
-    right: "20px",
-    zIndex: 1000,
-    animation: "blinking 1.5s infinite",
-    "@keyframes blinking": {
-      "0%": { opacity: 1 },
-      "50%": { opacity: 0.5 },
-      "100%": { opacity: 1 },
-    },
-  }}
-  onClick={() => (window.location.href = "https://wa.me/+917592888111")}
-/>
-
+          <Box
+            component="img"
+            src={contactImage}
+            alt="Contact Us"
+            sx={{
+              width: "65px",
+              height: "65px",
+              cursor: "pointer",
+              position: "fixed",
+              bottom: "20px",
+              right: "20px",
+              zIndex: 1000,
+              animation: "blinking 1.5s infinite",
+              "@keyframes blinking": {
+                "0%": { opacity: 1 },
+                "50%": { opacity: 0.5 },
+                "100%": { opacity: 1 },
+              },
+            }}
+            onClick={() =>
+              (window.location.href = "https://wa.me/+917592888111")
+            }
+          />
         </Grid>
       </Grid>
     </Box>
