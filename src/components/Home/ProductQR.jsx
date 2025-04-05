@@ -184,7 +184,7 @@ const ProductQR = () => {
           <Box display="flex" flexDirection="row" alignItems="center" gap={1}>
             <StyledButton
               name={"Read More"}
-              onClick={() => navigate("/products/digitalcatalogue")}
+              onClick={() => navigate("/products/digital-catalogue")}
             />
             <StyledButton name="See Demo" secondary />
 

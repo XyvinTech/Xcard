@@ -26,13 +26,16 @@ const companyItems = [
 ];
 
 const quickLinks = [
-  { label: "Digital Profiles", href: "/products/digitalprofile" },
-  { label: "NFC Business Card", href: "/products/businesscard" },
-  { label: "Digital Catalogue", href: "/products/digitalcatalogue" },
-  { label: "Digital Restaurant Menu", href: "/products/digitalrestaurantmenu" },
+  { label: "Digital Profiles", href: "/products/digital-profile" },
+  { label: "NFC Business Card", href: "/products/nfc-business-card" },
+  { label: "Digital Catalogue", href: "/products/digital-catalogue" },
+  {
+    label: "Digital Restaurant Menu",
+    href: "/products/digital-restaurant-menu",
+  },
   {
     label: "Membership Management System",
-    href: "/products/membershipmanagementsystem",
+    href: "/products/membership-management-system",
   },
 ];
 

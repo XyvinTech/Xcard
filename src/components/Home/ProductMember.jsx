@@ -188,7 +188,7 @@ const ProductMember = () => {
           <Box display="flex" flexDirection="row" alignItems="center" gap={1}>
             <StyledButton
               name={"Read More"}
-              onClick={() => navigate("/products/membershipmanagementsystem")}
+              onClick={() => navigate("/products/membership-management-system")}
             />
             <StyledButton name="See Demo" secondary />
 

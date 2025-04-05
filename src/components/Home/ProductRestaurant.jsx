@@ -148,7 +148,7 @@ const ProductRestaurant = () => {
           <Box display="flex" flexDirection="row" alignItems="center" gap={1}>
             <StyledButton
               name={"Read More"}
-              onClick={() => navigate("/products/digitalrestaurantmenu")}
+              onClick={() => navigate("/products/digital-restaurant-menu")}
             />
             <StyledButton name="See Demo" secondary />
 

@@ -28,27 +28,27 @@ const router = createBrowserRouter([
     children: [{ path: "", element: <Products /> }],
   },
   {
-    path: "/products/membershipmanagementsystem",
+    path: "/products/membership-management-system",
     element: <Layout />,
     children: [{ path: "", element: <MobileApp /> }],
   },
   {
-    path: "/products/digitalcatalogue",
+    path: "/products/digital-catalogue",
     element: <Layout />,
     children: [{ path: "", element: <QRStand /> }],
   },
   {
-    path: "/products/digitalprofile",
+    path: "/products/digital-profile",
     element: <Layout />,
     children: [{ path: "", element: <ProfilePge /> }],
   },
   {
-    path: "/products/businesscard",
+    path: "/products/nfc-business-card",
     element: <Layout />,
     children: [{ path: "", element: <Shop /> }],
   },
   {
-    path: "/products/digitalrestaurantmenu",
+    path: "/products/digital-restaurant-menu",
     element: <Layout />,
     children: [{ path: "", element: <Restaurant /> }],
   },

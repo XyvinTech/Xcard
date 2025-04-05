@@ -48,10 +48,10 @@ const Header = ({
     //   return;
     // }
     const internalPaths = {
-      shop: "/products/businesscard",
-      app: "/products/membershipmanagementsystem",
-      restaurant: "/products/digitalrestaurantmenu",
-      qr: "/products/digitalcatalogue",
+      shop: "/products/nfc-business-card",
+      app: "/products/membership-management-system",
+      restaurant: "/products/digital-restaurant-menu",
+      qr: "/products/digital-catalogue",
       home: "/",
     };
     if (internalPaths[buttonPath]) {

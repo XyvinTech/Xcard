@@ -20,25 +20,25 @@ const Products = () => {
     subtitle: "Take your digital business card with you wherever you go",
 
     button: "Know More",
-    buttonPath: "/products/businesscard",
+    buttonPath: "/products/nfc-business-card",
   };
   const mainContentData = {
     image: headerImg,
     title: "Your Restaurant, Reimagined",
     subtitle: "Upgrade your networking game today. Order your QR Stand now.",
-    buttonPath: "/products/digitalrestaurantmenu",
+    buttonPath: "/products/digital-restaurant-menu",
     button: "Know More",
   };
   const headerData = {
     image: header,
     title: "Upgrade to Smart Business Cards",
-    buttonPath: "/products/membershipmanagementsystem",
+    buttonPath: "/products/membership-management-system",
     subtitle:
       "Say goodbye to manual contact entry. Tap, share, and connect seamlessly.",
   };
   const qRData = {
     image: qr,
-    buttonPath: "/products/digitalcatalogue",
+    buttonPath: "/products/digital-catalogue",
     title: "Connect Effortlessly with Buziness Connect",
     subtitle: "Upgrade your networking game today. Order your QR Stand now.",
   };

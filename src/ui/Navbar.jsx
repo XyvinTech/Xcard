@@ -22,13 +22,16 @@ const pages = [
 ];
 
 const productSubpages = [
-  { name: "Digital Profiles", path: "/products/digitalprofile" },
-  { name: "NFC Business Card", path: "/products/businesscard" },
-  { name: "Digital Catalogue", path: "/products/digitalcatalogue" },
-  { name: "Digital Restaurant Menu", path: "/products/digitalrestaurantmenu" },
+  { name: "Digital Profiles", path: "/products/digital-profile" },
+  { name: "NFC Business Card", path: "/products/nfc-business-card" },
+  { name: "Digital Catalogue", path: "/products/digital-catalogue" },
+  {
+    name: "Digital Restaurant Menu",
+    path: "/products/digital-restaurant-menu",
+  },
   {
     name: "Membership Management System",
-    path: "/products/membershipmanagementsystem",
+    path: "/products/membership-management-system",
   },
 ];
 

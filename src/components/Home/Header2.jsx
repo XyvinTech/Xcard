@@ -33,12 +33,9 @@ const Header2 = ({ content = {}, white, app, showButton, bg }) => {
       }, 100);
     }
     if (buttonPath === "app") {
-      navigate(
-        "/products/membershipmanagementsystem",
-        {
-          replace: true,
-        }
-      );
+      navigate("/products/membership-management-system", {
+        replace: true,
+      });
       setTimeout(() => {
         const featuresElement = document.getElementById("getInTouch");
         featuresElement?.scrollIntoView({ behavior: "smooth" });
