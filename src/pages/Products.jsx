@@ -44,7 +44,13 @@ const Products = () => {
   };
   useEffect(() => {
     window.scrollTo(0, 0);
+  
+    const el = document.getElementById("get-in-touch");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
   }, [pathname]);
+  
   return (
     <>
       <Box
@@ -74,8 +80,8 @@ const Products = () => {
         }}
       >
         <Header2 content={qRData} showButton bg />
-        <HelpComponent />
-        <GetInTouch />
+        <HelpComponent />  <div id="get-in-touch"style={{ paddingTop: "20px" }}>
+        <GetInTouch /></div>
       </Box>
     </>
   );

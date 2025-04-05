@@ -64,7 +64,15 @@ const NFCCard = () => {
           Tap-to-Connect NFC Cards
         </Typography>
       </Grid>
-      <Grid item lg={6} sm={12} md={6} xs={12} display="flex" justifyContent="center">
+      <Grid
+        item
+        lg={6}
+        sm={12}
+        md={6}
+        xs={12}
+        display="flex"
+        justifyContent="center"
+      >
         <Box
           sx={{
             transformOrigin: "center",
@@ -121,7 +129,7 @@ const NFCCard = () => {
                 </ListItemIcon>
                 <ListItemText
                   primary={
-                    <Typography  variant="h6" fontWeight={600} color="#f2f2f2">
+                    <Typography variant="h6" fontWeight={600} color="#f2f2f2">
                       {feature?.description1}
                     </Typography>
                   }
@@ -139,7 +147,7 @@ const NFCCard = () => {
               name={"Read More"}
               onClick={() => navigate("/products/card")}
             />
-
+            <StyledButton name="See Demo" secondary />
             <Typography variant="h6" color="#8E8E8E">
               Available on:
             </Typography>

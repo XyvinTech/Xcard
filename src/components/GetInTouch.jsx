@@ -23,7 +23,7 @@ const GetInTouch = () => {
   
   return (
     <Box sx={{ px: { xs: 2, sm: 3, md: 5, lg: 8 }, py: { xs: 4, sm: 5, md: 6, lg: 8 } }}>
-      <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
+      <Grid container spacing={{ xs: 2, sm: 3, md: 4 }} mb={{ xs: 3, sm: 4, md: 5 }}>
        
         <Grid item xs={12}>
           <Typography
@@ -148,7 +148,6 @@ const GetInTouch = () => {
         </Grid>
       </Grid>
       
-      {/* WhatsApp Button */}
       <Box
         component="img"
         src={contactImage}

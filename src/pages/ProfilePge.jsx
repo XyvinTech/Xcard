@@ -10,6 +10,7 @@ import header from "../assets/images/products/Profile.webp";
 import WhyXcard from "../components/MobileApp/WhyXcard";
 import Header from "../components/Header";
 import { useLocation } from "react-router-dom";
+import GetInTouch from "../components/GetInTouch";
 const ProfilePge = () => {
    const { pathname } = useLocation();
   const data = [
@@ -65,6 +66,7 @@ const ProfilePge = () => {
           }
         />
         <WhyXcard />
+        <GetInTouch/>
       </Box>
     </>
   );

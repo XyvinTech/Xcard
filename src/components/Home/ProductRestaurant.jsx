@@ -136,6 +136,7 @@ import {
                 name={"Read More"}
                 onClick={() => navigate("/products/restaurant")}
               />
+            <StyledButton name="See Demo" secondary />
   
               <Typography variant="h6" color="#8E8E8E">
                 Available on:
