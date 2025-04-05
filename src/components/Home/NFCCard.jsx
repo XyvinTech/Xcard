@@ -145,7 +145,7 @@ const NFCCard = () => {
           <Box display="flex" flexDirection="row" alignItems="center" gap={1}>
             <StyledButton
               name={"Read More"}
-              onClick={() => navigate("/products/card")}
+              onClick={() => navigate("/products/businesscard")}
             />
             <StyledButton name="See Demo" secondary />
             <Typography variant="h6" color="#8E8E8E">

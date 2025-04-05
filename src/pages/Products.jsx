@@ -20,37 +20,37 @@ const Products = () => {
     subtitle: "Take your digital business card with you wherever you go",
 
     button: "Know More",
-    buttonPath: "/products/card",
+    buttonPath: "/products/businesscard",
   };
   const mainContentData = {
     image: headerImg,
     title: "Your Restaurant, Reimagined",
     subtitle: "Upgrade your networking game today. Order your QR Stand now.",
-    buttonPath: "/products/restaurant",
+    buttonPath: "/products/digitalrestaurantmenu",
     button: "Know More",
   };
   const headerData = {
     image: header,
     title: "Upgrade to Smart Business Cards",
-    buttonPath: "/products/membership",
+    buttonPath: "/products/membershipmanagementsystem",
     subtitle:
       "Say goodbye to manual contact entry. Tap, share, and connect seamlessly.",
   };
   const qRData = {
     image: qr,
-    buttonPath: "/products/qrstand",
+    buttonPath: "/products/digitalcatalogue",
     title: "Connect Effortlessly with Buziness Connect",
     subtitle: "Upgrade your networking game today. Order your QR Stand now.",
   };
   useEffect(() => {
     window.scrollTo(0, 0);
-  
+
     const el = document.getElementById("get-in-touch");
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
   }, [pathname]);
-  
+
   return (
     <>
       <Box
@@ -80,8 +80,10 @@ const Products = () => {
         }}
       >
         <Header2 content={qRData} showButton bg />
-        <HelpComponent />  <div id="get-in-touch"style={{ paddingTop: "20px" }}>
-        <GetInTouch /></div>
+        <HelpComponent />{" "}
+        <div id="get-in-touch" style={{ paddingTop: "20px" }}>
+          <GetInTouch />
+        </div>
       </Box>
     </>
   );

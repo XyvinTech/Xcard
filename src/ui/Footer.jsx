@@ -1,4 +1,11 @@
-import { Box, Container, Divider, Grid, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Divider,
+  Grid,
+  Stack,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import phone from "../assets/images/phone.png";
 import Logo from "../assets/images/Logo.webp";
@@ -19,11 +26,14 @@ const companyItems = [
 ];
 
 const quickLinks = [
-  { label: "Digital Profiles", href: "/products/profile" },
-  { label: "NFC Business Card", href: "/products/card" },
-  { label: "Digital Catalogue", href: "/products/qrstand" },
-  { label: "Digital Restaurant Menu", href: "/products/restaurant" },
-  { label: "Membership Management System", href: "/products/membership" },
+  { label: "Digital Profiles", href: "/products/digitalprofile" },
+  { label: "NFC Business Card", href: "/products/businesscard" },
+  { label: "Digital Catalogue", href: "/products/digitalcatalogue" },
+  { label: "Digital Restaurant Menu", href: "/products/digitalrestaurantmenu" },
+  {
+    label: "Membership Management System",
+    href: "/products/membershipmanagementsystem",
+  },
 ];
 
 const socialIcons = [
@@ -44,7 +54,7 @@ const socialIcons = [
 const Footer = () => {
   const navigate = useNavigate();
   const currentYear = new Date().getFullYear();
-  
+
   const scrollToFeatures = () => {
     navigate("/", { replace: true });
     setTimeout(() => {
@@ -62,73 +72,79 @@ const Footer = () => {
           sx={{
             pt: { xs: 6, sm: 8, md: 10 },
             pb: { xs: 4, sm: 5, md: 6 },
-            px: { xs: 2, sm: 3, md: 4 }
+            px: { xs: 2, sm: 3, md: 4 },
           }}
         >
           {/* Logo and Description Section */}
           <Grid item xs={12} sm={6} md={3} lg={3}>
-            <Stack spacing={{ xs: 2, sm: 3, md: 4 }} alignItems={{ xs: "center", sm: "flex-start" }}>
-              <Box 
+            <Stack
+              spacing={{ xs: 2, sm: 3, md: 4 }}
+              alignItems={{ xs: "center", sm: "flex-start" }}
+            >
+              <Box
                 component="img"
                 src={Logo}
                 alt="logo"
                 sx={{
                   width: { xs: "140px", sm: "150px", md: "160px" },
                   height: "auto",
-                  objectFit: "contain"
+                  objectFit: "contain",
                 }}
               />
-              <Typography 
-                sx={{ 
+              <Typography
+                sx={{
                   fontSize: { xs: "14px", sm: "15px", md: "16px" },
                   textAlign: { xs: "center", sm: "left" },
-                  color: "#f5f5f5"
+                  color: "#f5f5f5",
                 }}
               >
-                The all-in-one business card for the modern professional. Network
-                smarter, connect deeper, and grow your business faster.
+                The all-in-one business card for the modern professional.
+                Network smarter, connect deeper, and grow your business faster.
               </Typography>
-              <Typography 
-                sx={{ 
+              <Typography
+                sx={{
                   fontSize: { xs: "14px", sm: "15px", md: "16px" },
                   fontWeight: 600,
                   textAlign: { xs: "center", sm: "left" },
                   color: "#f5f5f5",
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: { xs: "center", sm: "flex-start" }
+                  justifyContent: { xs: "center", sm: "flex-start" },
                 }}
               >
-                <Box 
+                <Box
                   component="img"
                   src={phone}
                   alt="phone icon"
                   sx={{
                     width: "15px",
                     height: "15px",
-                    mr: 1
+                    mr: 1,
                   }}
                 />
                 +917592888111, +97156788 3132
               </Typography>
             </Stack>
           </Grid>
-          
+
           {/* Company and Quick Links Section */}
           <Grid item xs={12} sm={6} md={5} lg={5}>
-            <Stack 
-              direction={{ xs: "column", sm: "row" }} 
+            <Stack
+              direction={{ xs: "column", sm: "row" }}
               spacing={{ xs: 4, sm: 3, md: 4, lg: 8 }}
               justifyContent={{ xs: "center", sm: "flex-start" }}
               alignItems={{ xs: "center", sm: "flex-start" }}
             >
               {/* Company Links */}
-              <Stack spacing={2} alignItems={{ xs: "center", sm: "flex-start" }}>
-                <Typography 
-                  sx={{ 
+              <Stack
+                spacing={2}
+                alignItems={{ xs: "center", sm: "flex-start" }}
+              >
+                <Typography
+                  sx={{
                     fontSize: { xs: "18px", sm: "20px", md: "22px" },
                     fontWeight: 600,
-                    color: "#ffffff"
+                    color: "#ffffff",
                   }}
                 >
                   Company
@@ -139,11 +155,11 @@ const Footer = () => {
                     to={item?.href || "#"}
                     style={{ textDecoration: "none" }}
                   >
-                    <Typography 
-                      sx={{ 
+                    <Typography
+                      sx={{
                         fontSize: { xs: "14px", sm: "15px", md: "16px" },
-                        color: "#aaaaaa", 
-                        "&:hover": { color: "#ffffff" }
+                        color: "#aaaaaa",
+                        "&:hover": { color: "#ffffff" },
                       }}
                     >
                       {item.label}
@@ -151,14 +167,17 @@ const Footer = () => {
                   </Link>
                 ))}
               </Stack>
-              
+
               {/* Quick Links */}
-              <Stack spacing={2} alignItems={{ xs: "center", sm: "flex-start" }}>
-                <Typography 
-                  sx={{ 
+              <Stack
+                spacing={2}
+                alignItems={{ xs: "center", sm: "flex-start" }}
+              >
+                <Typography
+                  sx={{
                     fontSize: { xs: "18px", sm: "20px", md: "22px" },
                     fontWeight: 600,
-                    color: "#ffffff"
+                    color: "#ffffff",
                   }}
                 >
                   Quick Links
@@ -183,11 +202,11 @@ const Footer = () => {
                       to={item.href}
                       style={{ textDecoration: "none" }}
                     >
-                      <Typography 
-                        sx={{ 
+                      <Typography
+                        sx={{
                           fontSize: { xs: "14px", sm: "15px", md: "16px" },
                           color: "#aaaaaa",
-                          "&:hover": { color: "#ffffff" }
+                          "&:hover": { color: "#ffffff" },
                         }}
                       >
                         {item.label}
@@ -198,40 +217,40 @@ const Footer = () => {
               </Stack>
             </Stack>
           </Grid>
-          
+
           {/* Subscribe Card Section - Commented out in original */}
           {/* <Grid item xs={12} md={4}>
             <SubscribeCard />
           </Grid> */}
-          
+
           {/* Divider */}
           <Grid item xs={12}>
             <Divider sx={{ borderColor: "#A7A7A7", my: { xs: 2, sm: 3 } }} />
           </Grid>
-          
+
           {/* Footer Bottom Section */}
           <Grid item xs={12}>
-            <Stack 
-              direction={{ xs: "column", md: "row" }} 
+            <Stack
+              direction={{ xs: "column", md: "row" }}
               justifyContent="space-between"
               alignItems="center"
               spacing={{ xs: 3, md: 2 }}
               px={{ xs: 1, sm: 2 }}
             >
               {/* Copyright */}
-              <Typography 
-                sx={{ 
+              <Typography
+                sx={{
                   fontSize: { xs: "12px", sm: "14px" },
                   color: "#f5f5f5",
-                  textAlign: "center"
+                  textAlign: "center",
                 }}
               >
                 © {currentYear}. All rights reserved.
               </Typography>
-              
+
               {/* Social Icons */}
-              <Stack 
-                direction="row" 
+              <Stack
+                direction="row"
                 spacing={{ xs: 3, sm: 4 }}
                 justifyContent="center"
               >
@@ -245,20 +264,25 @@ const Footer = () => {
                     sx={{
                       cursor: "pointer",
                       width: { xs: "18px", sm: "20px", md: "22px", lg: "24px" },
-                      height: { xs: "18px", sm: "20px", md: "22px", lg: "24px" },
+                      height: {
+                        xs: "18px",
+                        sm: "20px",
+                        md: "22px",
+                        lg: "24px",
+                      },
                       transition: "transform 0.2s",
-                      "&:hover": { transform: "scale(1.2)" }
+                      "&:hover": { transform: "scale(1.2)" },
                     }}
                   />
                 ))}
               </Stack>
-              
+
               {/* Powered By Section */}
-              <Typography 
-                sx={{ 
+              <Typography
+                sx={{
                   fontSize: { xs: "12px", sm: "14px" },
                   color: "#f5f5f5",
-                  textAlign: "center"
+                  textAlign: "center",
                 }}
               >
                 <span style={{ opacity: 0.5 }}>Powered By </span>

@@ -22,11 +22,14 @@ const pages = [
 ];
 
 const productSubpages = [
-  { name: "Digital Profiles", path: "/products/profile" },
-  { name: "NFC Business Card", path: "/products/card" },
-  { name: "Digital Catalogue", path: "/products/qrstand" },
-  { name: "Digital Restaurant Menu", path: "/products/restaurant" },
-  { name: "Membership Management System", path: "/products/membership" },
+  { name: "Digital Profiles", path: "/products/digitalprofile" },
+  { name: "NFC Business Card", path: "/products/businesscard" },
+  { name: "Digital Catalogue", path: "/products/digitalcatalogue" },
+  { name: "Digital Restaurant Menu", path: "/products/digitalrestaurantmenu" },
+  {
+    name: "Membership Management System",
+    path: "/products/membershipmanagementsystem",
+  },
 ];
 
 function Navbar() {

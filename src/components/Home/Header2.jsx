@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { button } from "framer-motion/client";
 import bgimage from "../../assets/images/Frame.png";
 
-const Header2 = ({ content = {}, white, app, showButton,bg }) => {
-  const { image, title, subtitle,buttonPath } = content;
+const Header2 = ({ content = {}, white, app, showButton, bg }) => {
+  const { image, title, subtitle, buttonPath } = content;
   const navigate = useNavigate();
   const fadeIn = {
     hidden: { opacity: 0 },
@@ -26,20 +26,25 @@ const Header2 = ({ content = {}, white, app, showButton,bg }) => {
       navigate(buttonPath);
     }
     if (buttonPath === "knowMore") {
-    navigate("/", { replace: true });
-    setTimeout(() => {
-      const featuresElement = document.getElementById("LearnMore");
-      featuresElement?.scrollIntoView({ behavior: "smooth" });
-    }, 100);
+      navigate("/", { replace: true });
+      setTimeout(() => {
+        const featuresElement = document.getElementById("LearnMore");
+        featuresElement?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
     }
     if (buttonPath === "app") {
-      navigate("/products/membership", { replace: true });
+      navigate(
+        "/products/membershipmanagementsystem",
+        {
+          replace: true,
+        }
+      );
       setTimeout(() => {
         const featuresElement = document.getElementById("getInTouch");
         featuresElement?.scrollIntoView({ behavior: "smooth" });
       }, 100);
     }
-  }
+  };
   return (
     <Grid
       container
@@ -49,7 +54,8 @@ const Header2 = ({ content = {}, white, app, showButton,bg }) => {
       paddingRight={{ lg: 15, xs: 5, md: 10, sm: 5 }}
       mt={!bg && 2}
       justifyContent="center"
-      alignItems="center"  style={{
+      alignItems="center"
+      style={{
         backgroundImage: bg ? `url(${bgimage})` : "none",
         backgroundPosition: bg ? "center" : "initial",
         backgroundSize: bg ? "100% 100%" : "initial",
@@ -125,15 +131,12 @@ const Header2 = ({ content = {}, white, app, showButton,bg }) => {
 
           {white && !app && (
             <Stack width={"fit-content"}>
-              <StyledButton name={"Know More"}  onClick={handleButtonClick}/>
+              <StyledButton name={"Know More"} onClick={handleButtonClick} />
             </Stack>
           )}
           {showButton && (
             <Stack width={"fit-content"}>
-              <StyledButton
-                name={"Know More"}
-                onClick={handleButtonClick}
-              />
+              <StyledButton name={"Know More"} onClick={handleButtonClick} />
             </Stack>
           )}
           {app && (

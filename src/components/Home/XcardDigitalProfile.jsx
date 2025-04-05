@@ -197,7 +197,7 @@ const XcardDigitalProfile = () => {
           <Box display="flex" flexDirection="row" alignItems="center" gap={1}>
             <StyledButton
               name={"Read More"}
-              onClick={() => navigate("/products/profile")}
+              onClick={() => navigate("/products/digitalprofile")}
             />
             <StyledButton name="See Demo" secondary />
 

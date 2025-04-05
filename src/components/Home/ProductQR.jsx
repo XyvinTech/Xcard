@@ -64,7 +64,15 @@ const ProductQR = () => {
           Smart QR Display Stands
         </Typography>
       </Grid>
-      <Grid item lg={6} sm={12}  md={6} xs={12}  display={{ lg: "none", sm: "flex" }}   justifyContent="center">
+      <Grid
+        item
+        lg={6}
+        sm={12}
+        md={6}
+        xs={12}
+        display={{ lg: "none", sm: "flex" }}
+        justifyContent="center"
+      >
         <Box
           sx={{
             transformOrigin: "center",
@@ -78,7 +86,7 @@ const ProductQR = () => {
             ref={ref}
             variants={slideIn}
             initial="hidden"
-            animate={ "visible" }
+            animate={"visible"}
             //   style={{ zIndex: 2, position: "absolute" }}
           >
             <Box
@@ -131,7 +139,15 @@ const ProductQR = () => {
           </List>
         </Stack>
       </Grid>{" "}
-      <Grid item lg={6} sm={12}  xs={12} md={6} display={{ xs: "none", lg: "flex" , sm: "none"}}   justifyContent="center">
+      <Grid
+        item
+        lg={6}
+        sm={12}
+        xs={12}
+        md={6}
+        display={{ xs: "none", lg: "flex", sm: "none" }}
+        justifyContent="center"
+      >
         <Box
           sx={{
             transformOrigin: "center",
@@ -168,7 +184,7 @@ const ProductQR = () => {
           <Box display="flex" flexDirection="row" alignItems="center" gap={1}>
             <StyledButton
               name={"Read More"}
-              onClick={() => navigate("/products/qrstand")}
+              onClick={() => navigate("/products/digitalcatalogue")}
             />
             <StyledButton name="See Demo" secondary />
 

@@ -90,7 +90,7 @@ const ProductMember = () => {
             ref={ref}
             variants={slideIn}
             initial="hidden"
-            animate={"visible" }
+            animate={"visible"}
             //   style={{ zIndex: 2, position: "absolute" }}
           >
             <Box
@@ -149,7 +149,7 @@ const ProductMember = () => {
         sm={12}
         md={6}
         xs={12}
-        display={{ xs: "none", sm: "none" ,lg: "flex"}}
+        display={{ xs: "none", sm: "none", lg: "flex" }}
         justifyContent="center"
       >
         <Box
@@ -188,7 +188,7 @@ const ProductMember = () => {
           <Box display="flex" flexDirection="row" alignItems="center" gap={1}>
             <StyledButton
               name={"Read More"}
-              onClick={() => navigate("/products/membership")}
+              onClick={() => navigate("/products/membershipmanagementsystem")}
             />
             <StyledButton name="See Demo" secondary />
 
