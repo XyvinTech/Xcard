@@ -13,6 +13,7 @@ import facebook from "../assets/images/Footer/facebook.webp";
 import twitter from "../assets/images/Footer/twitter.webp";
 import instagram from "../assets/images/Footer/instagram.webp";
 import linkedin from "../assets/images/Footer/linkedin.webp";
+import youtube from "../assets/images/Footer/youtube.webp";
 import { Link, useNavigate } from "react-router-dom";
 
 const companyItems = [
@@ -52,6 +53,7 @@ const socialIcons = [
     link: "https://www.instagram.com/buzinessconnect/?hl=en",
   },
   { src: linkedin, alt: "LinkedIn", link: "https://www.linkedin.com" },
+  { src: youtube, alt: "YouTube", link: "https://www.youtube.com" },
 ];
 
 const Footer = () => {
@@ -78,7 +80,6 @@ const Footer = () => {
             px: { xs: 2, sm: 3, md: 4 },
           }}
         >
-          {/* Logo and Description Section */}
           <Grid item xs={12} sm={6} md={3} lg={3}>
             <Stack
               spacing={{ xs: 2, sm: 3, md: 4 }}
@@ -129,8 +130,6 @@ const Footer = () => {
               </Typography>
             </Stack>
           </Grid>
-
-          {/* Company and Quick Links Section */}
           <Grid item xs={12} sm={6} md={5} lg={5}>
             <Stack
               direction={{ xs: "column", sm: "row" }}
@@ -171,7 +170,6 @@ const Footer = () => {
                 ))}
               </Stack>
 
-              {/* Quick Links */}
               <Stack
                 spacing={2}
                 alignItems={{ xs: "center", sm: "flex-start" }}
@@ -226,12 +224,10 @@ const Footer = () => {
             <SubscribeCard />
           </Grid> */}
 
-          {/* Divider */}
           <Grid item xs={12}>
             <Divider sx={{ borderColor: "#A7A7A7", my: { xs: 2, sm: 3 } }} />
           </Grid>
 
-          {/* Footer Bottom Section */}
           <Grid item xs={12}>
             <Stack
               direction={{ xs: "column", md: "row" }}
@@ -240,7 +236,6 @@ const Footer = () => {
               spacing={{ xs: 3, md: 2 }}
               px={{ xs: 1, sm: 2 }}
             >
-              {/* Copyright */}
               <Typography
                 sx={{
                   fontSize: { xs: "12px", sm: "14px" },
@@ -251,7 +246,6 @@ const Footer = () => {
                 © {currentYear}. All rights reserved.
               </Typography>
 
-              {/* Social Icons */}
               <Stack
                 direction="row"
                 spacing={{ xs: 3, sm: 4 }}
@@ -266,7 +260,7 @@ const Footer = () => {
                     onClick={() => window.open(icon.link, "_blank")}
                     sx={{
                       cursor: "pointer",
-                      width: { xs: "18px", sm: "20px", md: "22px", lg: "24px" },
+                      width: { xs: "18px", sm: "20px", md: "22px", lg: "26px" },
                       height: {
                         xs: "18px",
                         sm: "20px",
@@ -279,8 +273,6 @@ const Footer = () => {
                   />
                 ))}
               </Stack>
-
-              {/* Powered By Section */}
               <Typography
                 sx={{
                   fontSize: { xs: "12px", sm: "14px" },
