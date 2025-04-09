@@ -76,7 +76,7 @@ const XcardDigitalProfile = () => {
           textAlign={"center"}
           color="#000"
         >
-          xCard Digital Profile
+          Digital Profile
           <br /> (No Physical Card Needed!)
         </Typography>
       </Grid>
