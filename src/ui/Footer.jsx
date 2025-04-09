@@ -46,14 +46,14 @@ const socialIcons = [
     alt: "Facebook",
     link: "https://www.facebook.com/profile.php?id=61566585337105&mibextid=ZbWKwL",
   },
-  { src: twitter, alt: "Twitter", link: "https://www.twitter.com" },
+  { src: twitter, alt: "Twitter", link: "https://x.com/BuzinesConnect" },
   {
     src: instagram,
     alt: "Instagram",
     link: "https://www.instagram.com/buzinessconnect/?hl=en",
   },
-  { src: linkedin, alt: "LinkedIn", link: "https://www.linkedin.com" },
-  { src: youtube, alt: "YouTube", link: "https://www.youtube.com" },
+  // { src: linkedin, alt: "LinkedIn", link: "https://www.linkedin.com" },
+  { src: youtube, alt: "YouTube", link: "https://www.youtube.com/@buzinessconnect" },
 ];
 
 const Footer = () => {
@@ -137,7 +137,6 @@ const Footer = () => {
               justifyContent={{ xs: "center", sm: "flex-start" }}
               alignItems={{ xs: "center", sm: "flex-start" }}
             >
-              {/* Company Links */}
               <Stack
                 spacing={2}
                 alignItems={{ xs: "center", sm: "flex-start" }}
