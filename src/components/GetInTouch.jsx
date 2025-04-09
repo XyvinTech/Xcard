@@ -50,7 +50,7 @@ const GetInTouch = () => {
             <Grid container spacing={{ xs: 2, sm: 3 }}>
            
               <Grid item xs={12}>
-                <Typography mb={1} fontSize={{ xs: "14px", sm: "16px" }}>Product</Typography>
+                <Typography mb={1} fontSize={{ xs: "14px", sm: "16px" }}>Product categories</Typography>
                 <Controller
                   name="subject"
                   control={control}
@@ -65,7 +65,7 @@ const GetInTouch = () => {
                         { value: "Community Management platform", label: "Community Management platform" },
                         { value: "Franchise Partnership Request", label: "Franchise Partnership Request" },
                       ]}
-                      placeholder="Choose product"
+                      placeholder="Select the products you'd like to enquire about. "
                       {...field}
                     />
                   )}
