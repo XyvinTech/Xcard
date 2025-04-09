@@ -180,40 +180,54 @@ const ProductQR = () => {
       </Grid>
       {/* <Grid item md={6} sm={6} display={"flex"} justifyContent={"end"}></Grid> */}
       <Grid item md={6} sm={6} display={"flex"} justifyContent={"start"}>
-        <Stack width={"fit-content"}>
-          <Box display="flex" flexDirection="row" alignItems="center" gap={1}>
-            <StyledButton
-              name={"Read More"}
-              onClick={() => navigate("/products/digital-catalogue")}
-            />
-            <StyledButton name="See Demo" secondary />
+        <Stack
+          width={{ xs: "100%", sm: "auto" }}
+          direction={{ xs: "column", sm: "row" }}
+          spacing={2}
+        >
+          <Box
+            display="flex"
+            flexDirection={{ xs: "column", sm: "row" }}
+            alignItems="center"
+            gap={{ xs: 2, sm: 2 }}
+            flexWrap="wrap"
+          >
+            <Box display="flex" flexDirection="row" gap={1} flexWrap="wrap">
+              <StyledButton
+                name="Read More"
+                onClick={() => navigate("/products/digital-catalogue")}
+              />
+              <StyledButton name="See Demo" secondary />
+            </Box>
+            <Box display="flex" alignItems="center" gap={1} flexWrap="wrap">
+              <Typography variant="h6" color="#8E8E8E" sx={{ mt: 0 }}>
+                Available on:
+              </Typography>
 
-            <Typography variant="h6" color="#8E8E8E">
-              Available on:
-            </Typography>
-            <Box
-              component="img"
-              src={amazon}
-              width="39px"
-              height="39px"
-              alt="Amazon"
-              sx={{ cursor: "pointer" }}
-              onClick={() =>
-                (window.location.href = "https://www.amazon.in/dp/B0CNKJMNNX")
-              }
-            />
-            <Box
-              component="img"
-              src={flipkart}
-              width="20px"
-              height="25px"
-              alt="Flipkart"
-              sx={{ cursor: "pointer" }}
-              onClick={() =>
-                (window.location.href =
-                  "https://www.flipkart.com/buzinessconnect-nil-card-display-stand/p/itmf432721b54316?pid=CYDH7VYYVHCX5KQT")
-              }
-            />
+              <Box
+                component="img"
+                src={amazon}
+                width="39px"
+                height="39px"
+                alt="Amazon"
+                sx={{ cursor: "pointer" }}
+                onClick={() =>
+                  (window.location.href = "https://www.amazon.in/dp/B0CNKJMNNX")
+                }
+              />
+              <Box
+                component="img"
+                src={flipkart}
+                width="20px"
+                height="25px"
+                alt="Flipkart"
+                sx={{ cursor: "pointer" }}
+                onClick={() =>
+                  (window.location.href =
+                    "https://www.flipkart.com/buzinessconnect-nil-card-display-stand/p/itmf432721b54316?pid=CYDH7VYYVHCX5KQT")
+                }
+              />
+            </Box>
           </Box>
         </Stack>
       </Grid>
