@@ -125,7 +125,7 @@ const HomeHeader = ({ white }) => {
               >
                 <StyledButton
                   name={"Read More"}
-                  onClick={() => navigate("/support")}
+                  onClick={() => navigate("/products/digital-profile")}
                 />
 
                 <Typography variant="h6" color="#8E8E8E">

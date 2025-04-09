@@ -63,7 +63,7 @@ const Testimonial = ({ loading }) => {
         textAlign={"center"}
         color="#000"
       >
-        Discover the impact our NFC business cards can have on your business.
+        Discover the impact our solutions can have on your business.
       </Typography>
       <Grid container spacing={3} pt={5} mt={{ xs: 2, md: 0 }}>
         {loading

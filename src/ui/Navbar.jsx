@@ -30,7 +30,7 @@ const productSubpages = [
     path: "/products/digital-restaurant-menu",
   },
   {
-    name: "Membership Management System",
+    name: "Community Management platform",
     path: "/products/membership-management-system",
   },
 ];

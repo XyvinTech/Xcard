@@ -62,7 +62,7 @@ const GetInTouch = () => {
                         { value: "NFC Business Card", label: "NFC Business Card" },
                         { value: "Digital Catalogue", label: "Digital Catalogue" },
                         { value: "Digital Restaurant Menu", label: "Digital Restaurant Menu" },
-                        { value: "Membership Management System", label: "Membership Management System" },
+                        { value: "Community Management platform", label: "Community Management platform" },
                         { value: "Franchise Partnership Request", label: "Franchise Partnership Request" },
                       ]}
                       placeholder="Choose product"

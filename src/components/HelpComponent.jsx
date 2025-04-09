@@ -16,9 +16,9 @@ const accordionData = [
   },
   {
     id: "panel3",
-    title: "Do I need an app to use these products?",
+    title: "Do others also need to install this app to view my profile?",
     content:
-      "No, users can access your digital profile via a web link—no app required.",
+      "No viewers can access your digital profile via a web link by or scanning your QR code - no app required",
   },
   {
     id: "panel4",
