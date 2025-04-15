@@ -6,6 +6,8 @@ import { sendEmail } from "../api/sendEmail";
 import { useNavigate } from "react-router-dom";
 import StyledSelect from "../ui/StyledSelect";
 import contactImage from "../assets/images/uim_whatsapp.png";
+import { sub } from "framer-motion/client";
+import { Subject } from "@mui/icons-material";
 
 const GetInTouch = () => {
   const navigate = useNavigate();
@@ -13,7 +15,11 @@ const GetInTouch = () => {
   
   const onSubmit = async (data) => {
     try {
-      await sendEmail(data);
+      const formData={
+        ...data,
+       subject:data?.subject?.map ((item) => item.value)
+      }
+            await sendEmail(formData);
       navigate("/thank");
       reset();
     } catch (error) {
@@ -57,6 +63,7 @@ const GetInTouch = () => {
                   defaultValue=""
                   render={({ field }) => (
                     <StyledSelect
+                    isMulti
                       options={[
                         { value: "Digital Profiles", label: "Digital Profiles" },
                         { value: "NFC Business Card", label: "NFC Business Card" },
