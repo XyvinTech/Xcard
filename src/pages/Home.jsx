@@ -23,9 +23,11 @@ import NFCCard from "../components/Home/NFCCard";
 import ProductQR from "../components/Home/ProductQR";
 import ProductRestaurant from "../components/Home/ProductRestaurant";
 import ProductMember from "../components/Home/ProductMember";
+
 const Home = () => {
   const { pathname } = useLocation();
 
+  // Define all header configurations
   const headers = [
     {
       component: Header,
@@ -98,7 +100,6 @@ const Home = () => {
         bg: true,
       },
     },
-
     {
       component: Header,
       props: {
@@ -115,6 +116,7 @@ const Home = () => {
   ];
 
   const [currentHeaderIndex, setCurrentHeaderIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -122,7 +124,17 @@ const Home = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentHeaderIndex((prevIndex) => (prevIndex + 1) % headers.length);
+      // Start transition
+      setIsTransitioning(true);
+      
+      // After a small delay, change the header
+      setTimeout(() => {
+        setCurrentHeaderIndex((prevIndex) => (prevIndex + 1) % headers.length);
+        // End transition after the new header is set
+        setTimeout(() => {
+          setIsTransitioning(false);
+        }, 100);
+      }, 300);
     }, 4000);
 
     return () => clearInterval(interval);
@@ -139,14 +151,26 @@ const Home = () => {
           backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%)`,
           backgroundSize: "cover",
           backgroundPosition: "contain",
-          pb:10
+          pb: 10,
+          position: "relative",
+          overflow: "hidden"
         }}
       >
-        <CurrentHeader {...currentProps} />{" "}
-      </Box>{" "}
-      <Box bgcolor={"#fafafa"}>
-        <XcardDigitalProfile/>
+        <Box
+          sx={{
+            opacity: isTransitioning ? 0 : 1,
+            transition: "opacity 300ms ease-in-out",
+            height: { xs: "700px", lg: "650px" }  // Fixed height to prevent jumps
+          }}
+        >
+          <CurrentHeader {...currentProps} />
+        </Box>
       </Box>
+      
+      <Box bgcolor={"#fafafa"}>
+        <XcardDigitalProfile />
+      </Box>
+      
       <Box
         sx={{
           backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%)`,
@@ -154,11 +178,13 @@ const Home = () => {
           backgroundPosition: "center",
         }}
       >
-        <NFCCard/>
-      </Box>  
-      <Box bgcolor={"#fafafa"}>
-        <HomeHeader white />{" "}
+        <NFCCard />
       </Box>
+      
+      <Box bgcolor={"#fafafa"}>
+        <HomeHeader white />
+      </Box>
+      
       <Box
         sx={{
           backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%)`,
@@ -199,9 +225,11 @@ const Home = () => {
           />
         </div>
       </Box>
+      
       <Box bgcolor={"#fafafa"}>
-        <ProductQR/>
+        <ProductQR />
       </Box>
+      
       <Box
         sx={{
           backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%)`,
@@ -209,15 +237,18 @@ const Home = () => {
           backgroundPosition: "center",
         }}
       >
-        <ProductRestaurant/>
-      </Box> 
-      <Box bgcolor={"#fafafa"}>
-        <ProductMember/>
+        <ProductRestaurant />
       </Box>
+      
+      <Box bgcolor={"#fafafa"}>
+        <ProductMember />
+      </Box>
+      
       <Box sx={{ backgroundColor: "#FAFAFA" }}>
         <Testimonial />
         <Header4 />
       </Box>
+      
       <Box
         sx={{
           backgroundImage: `linear-gradient(127deg, black 0%, #1E1E1E 100%)`,
