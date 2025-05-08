@@ -53,7 +53,11 @@ const socialIcons = [
     link: "https://www.instagram.com/buzinessconnect/?hl=en",
   },
   // { src: linkedin, alt: "LinkedIn", link: "https://www.linkedin.com" },
-  { src: youtube, alt: "YouTube", link: "https://www.youtube.com/@buzinessconnect" },
+  {
+    src: youtube,
+    alt: "YouTube",
+    link: "https://www.youtube.com/@buzinessconnect",
+  },
 ];
 
 const Footer = () => {
@@ -126,7 +130,7 @@ const Footer = () => {
                     mr: 1,
                   }}
                 />
-                +91 7592 888 111, +971 56788 3132
+            <span>+91{"  "}7592 888 111, +971 56788 3132</span>
               </Typography>
             </Stack>
           </Grid>

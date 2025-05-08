@@ -6,14 +6,17 @@ import img2 from "../assets/images/tree.png";
 import Custom from "../ui/Custom";
 
 const Header4 = () => {
-  const [slider1Value, setSlider1Value] = useState(100);
-  const [slider2Value, setSlider2Value] = useState(100);
+  const [slider1Value, setSlider1Value] = useState(100); 
+  const [slider2Value, setSlider2Value] = useState(100); 
 
+  const maxCost = 500; 
   const conversionRate = 2.5;
   const treeConversionFactor = 3125;
 
-  const bottomLine = slider1Value * slider2Value * conversionRate;
-  const treesSaved = Math.floor(bottomLine / treeConversionFactor);
+  const annualCost = slider1Value * slider2Value;
+  const maxAnnualCost = slider1Value * maxCost;
+  const bottomLine = (maxAnnualCost - annualCost) * conversionRate;
+  const treesSaved = Math.max(0, Math.floor(bottomLine / treeConversionFactor));
 
   return (
     <Grid
