@@ -1,42 +1,41 @@
 import { Box, Grid, Typography, Skeleton } from "@mui/material";
 import React from "react";
 import HomeCard from "../../ui/HomeCard";
-import person1 from "../../assets/images/Home/Testimonial/people1.webp";
-import person2 from "../../assets/images/Home/Testimonial/people2.webp";
-import person3 from "../../assets/images/Home/Testimonial/people3.webp";
-import person4 from "../../assets/images/Home/Testimonial/people4.webp";
+import person1 from "../../assets/images/partners/Suresh.jpg";
+import person2 from "../../assets/images/partners/Frame 13 1.png";
+import person3 from "../../assets/images/partners/Frame 40 (2).png";
+import person4 from "../../assets/images/partners/Frame 40 (1).png";
+import person5 from "../../assets/images/partners/Frame 40.png";
 const testimonials = [
   {
-    title: "“The Future of Business Cards”",
-    description:
-      "The NFC technology and customizable landing pages are a game-changer. It's the future of business cards.",
     img: person1,
-    name: "John Smith",
-    role: "CEO, Farrell",
+    name: "Suresh",
+    phone: "+971 56 788 3132",
+    location: "UAE",
   },
   {
-    title: "“A Quick Win for Networking”",
-    description:
-      "The ease of sharing contact information and generating leads has significantly boosted my business.",
-    img: person4,
-    name: "Amal Jackson",
-    role: "CEO, Grady and Sons",
-  },
-  {
-    title: "“A Must-Have for Modern Professionals”",
-    description:
-      "The customizable landing pages and lead generation features are top-notch.",
     img: person2,
-    name: "Priya Sony",
-    role: "CEO, Amber Glow",
+    name: "Dr Asaad Eltoum",
+    phone: "00971555277760",
+    location: "Saudi Arabia",
   },
   {
-    title: "“Simple, Effective, and Efficient”",
-    description:
-      "I love how easy it is to use this platform. The user interface is intuitive, and the features are powerful.",
+    img: person4,
+    name: "Mohammed Almortada",
+    phone: "00966558040673",
+    location: "Egypt",
+  },
+  {
     img: person3,
-    name: "Raj Gupta",
-    role: "CEO, Crystal Clear",
+    name: "Afsal",
+    phone: "+91 89434 36303",
+    location: "India",
+  },
+  {
+    img: person5,
+    name: "Abied Abdelgawe",
+    phone: "00249912200031",
+    location: "Sudan",
   },
 ];
 
@@ -44,9 +43,9 @@ const Testimonial = ({ loading }) => {
   return (
     <Box
       padding={{ xs: 5, md: 10, sm: 5 }}
-      // paddingLeft={{ xs: 5, md: 15, sm: 5 }}
-      // paddingRight={{ xs: 5, md: 15, sm: 5 }}
-      // mt={10}
+    // paddingLeft={{ xs: 5, md: 15, sm: 5 }}
+    // paddingRight={{ xs: 5, md: 15, sm: 5 }}
+    // mt={10}
     >
       <Typography
         fontSize={{ xs: "32px", md: "44px" }}
@@ -54,7 +53,7 @@ const Testimonial = ({ loading }) => {
         textAlign={"center"}
         color="#000"
       >
-        Hear from Our Satisfied Customers
+        Our Marketing Partners
       </Typography>
       <Typography
         variant="h5"
@@ -65,18 +64,18 @@ const Testimonial = ({ loading }) => {
       >
         Discover the impact our solutions can have on your business.
       </Typography>
-      <Grid container spacing={3} pt={5} mt={{ xs: 2, md: 0 }}>
+      <Grid container spacing={3} pt={5} mt={{ xs: 2, md: 0 }} justifyContent="center">
         {loading
-          ? Array.from({ length: 4 }).map((_, index) => (
-              <Grid item md={3} key={index}>
-                <HomeCard loading={true} />
-              </Grid>
-            ))
+          ? Array.from({ length: 5 }).map((_, index) => (
+            <Grid item lg={2.4} md={3} sm={6} xs={12} key={index} display="flex" justifyContent="center">
+              <HomeCard loading={true} />
+            </Grid>
+          ))
           : testimonials.map((testimonial, index) => (
-              <Grid item md={3} sm={6} key={index}>
-                <HomeCard data={testimonial} loading={false} />
-              </Grid>
-            ))}
+            <Grid item lg={2.4} md={3} sm={6} xs={12} key={index} display="flex" justifyContent="center">
+              <HomeCard data={testimonial} loading={false} />
+            </Grid>
+          ))}
       </Grid>
     </Box>
   );
