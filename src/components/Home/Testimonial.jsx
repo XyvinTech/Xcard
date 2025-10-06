@@ -10,7 +10,7 @@ const testimonials = [
   {
     img: person1,
     name: "Suresh",
-    phone: "+971 56 788 3132",
+    phone: "+971567883132",
     location: "UAE",
   },
   {
@@ -28,7 +28,7 @@ const testimonials = [
   {
     img: person3,
     name: "Afsal",
-    phone: "+91 89434 36303",
+    phone: "+918943436303",
     location: "India",
   },
   {
