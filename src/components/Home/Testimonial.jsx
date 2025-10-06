@@ -16,13 +16,13 @@ const testimonials = [
   {
     img: person2,
     name: "Dr Asaad Eltoum",
-    phone: "971555277760",
+    phone: "+971555277760",
     location: "Saudi Arabia",
   },
   {
     img: person4,
     name: "Mohammed Almortada",
-    phone: "966558040673",
+    phone: "+966558040673",
     location: "Egypt",
   },
   {
@@ -34,7 +34,7 @@ const testimonials = [
   {
     img: person5,
     name: "Abied Abdelgawe",
-    phone: "249912200031",
+    phone: "+249912200031",
     location: "Sudan",
   },
 ];
