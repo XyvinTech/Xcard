@@ -1,7 +1,7 @@
 import { Box, Grid, Typography, Skeleton } from "@mui/material";
 import React from "react";
 import HomeCard from "../../ui/HomeCard";
-import person1 from "../../assets/images/partners/Suresh.jpg";
+import person1 from "../../assets/images/partners/uday kumar.jpeg";
 import person2 from "../../assets/images/partners/Frame 13 1.png";
 import person3 from "../../assets/images/partners/Frame 40 (2).png";
 import person4 from "../../assets/images/partners/Frame 40 (1).png";
@@ -9,8 +9,8 @@ import person5 from "../../assets/images/partners/Frame 40.png";
 const testimonials = [
   {
     img: person1,
-    name: "Suresh",
-    phone: "+971567883132",
+    name: "Uday Kumar",
+    phone: "+971556188450",
     location: "UAE",
   },
   {
