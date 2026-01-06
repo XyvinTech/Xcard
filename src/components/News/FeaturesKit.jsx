@@ -64,8 +64,7 @@ const FeaturesKit = ({ data }) => {
                   sx={{
                     width: { xs: "100%", md: "90%" },
                     maxHeight: { xs: 300, md: 520 },
-                    objectFit: "contain",
-                    filter: "drop-shadow(0 20px 60px rgba(0,0,0,0.2))",
+                    objectFit: "contain"
                   }}
                 />
               </Box>
@@ -75,7 +74,7 @@ const FeaturesKit = ({ data }) => {
           <Grid item xs={12}>
             <Stack
               ref={textRef}
-              spacing={3}
+              spacing={2} 
               sx={{
                 maxWidth: "1400px",
                 mx: "auto",
@@ -93,7 +92,6 @@ const FeaturesKit = ({ data }) => {
                     fontWeight: 800,
                     color: "#000",
                     textTransform: "uppercase",
-                    textAlign: "left",
                   }}
                 >
                   {data.title}
@@ -104,7 +102,7 @@ const FeaturesKit = ({ data }) => {
                 sx={{
                   fontSize: { xs: 15, md: 17 },
                   color: "#444",
-                  lineHeight: 2,
+                  lineHeight: 1.7,
                   textAlign: "justify",
                 }}
               >
@@ -121,8 +119,6 @@ const FeaturesKit = ({ data }) => {
                     fontSize: { xs: 18, md: 22 },
                     fontWeight: 700,
                     color: "#000",
-                    textAlign: "left",
-                    mt: 2,
                   }}
                 >
                   {data.subtitle}
@@ -133,13 +129,14 @@ const FeaturesKit = ({ data }) => {
                 sx={{
                   fontSize: { xs: 15, md: 17 },
                   color: "#444",
-                  lineHeight: 2,
+                  lineHeight: 1.7,
                   textAlign: "justify",
                 }}
               >
                 {data.description}
               </Typography>
             </Stack>
+
           </Grid>
         </Grid>
       </Container>

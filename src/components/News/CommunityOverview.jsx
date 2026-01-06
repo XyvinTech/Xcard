@@ -3,20 +3,8 @@ import { Grid, Stack, Typography, Box, Container } from "@mui/material";
 import { motion, useInView } from "framer-motion";
 
 const CommunityOverview = ({ data }) => {
-  const textRef = useRef(null);
   const imageRef = useRef(null);
-
-  const textInView = useInView(textRef, { threshold: 0.1 });
   const imageInView = useInView(imageRef, { threshold: 0.1 });
-
-  const textAnimation = {
-    hidden: { x: -100, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: { duration: 1, ease: "easeOut" },
-    },
-  };
 
   const imageAnimation = {
     hidden: { x: 100, opacity: 0 },
@@ -31,7 +19,9 @@ const CommunityOverview = ({ data }) => {
     <Box
       sx={{
         backgroundColor: "#2B5FA8",
-        padding: { xs: 4, md: 8, lg: 10 },
+        py: { xs: 6, md: 10 },
+        overflow: "hidden",
+        width: "100%",
       }}
     >
       <Container maxWidth="xl">
@@ -39,29 +29,22 @@ const CommunityOverview = ({ data }) => {
 
           {/* TEXT */}
           <Grid item xs={12} md={6}>
-            <motion.div
-              ref={textRef}
-              initial="hidden"
-              animate={textInView ? "visible" : "hidden"}
-              variants={textAnimation}
-            >
-              <Stack spacing={3}>
-                <Typography
-                  sx={{
-                    fontSize: "18px",
-                    lineHeight: 1.7,
-                    color: "#FFFFFF",
-                    fontWeight: 400,
-                  }}
-                >
-                  {data.description}
-                </Typography>
-              </Stack>
-            </motion.div>
+            <Stack spacing={3} sx={{ px: { xs: 2, md: 0 } }} >
+              <Typography
+                sx={{
+                  fontSize: "18px",
+                  lineHeight: 1.7,
+                  color: "#FFFFFF",
+                  fontWeight: 400,
+                }}
+              >
+                {data.description}
+              </Typography>
+            </Stack>
           </Grid>
 
           {/* IMAGE */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} sx={{ overflow: "hidden" }}>
             <motion.div
               ref={imageRef}
               initial="hidden"
@@ -80,11 +63,11 @@ const CommunityOverview = ({ data }) => {
                   src={data.image}
                   alt="Community Overview"
                   sx={{
+                    maxWidth: "100%",
                     width: { xs: "100%", md: "90%" },
                     height: "auto",
                     maxHeight: { md: "600px" },
                     objectFit: "contain",
-                    filter: "drop-shadow(0 20px 60px rgba(0,0,0,0.5))",
                   }}
                 />
               </Box>

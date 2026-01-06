@@ -22,17 +22,18 @@ const CommunityDetails = ({ data }) => {
     <Box
       sx={{
         backgroundColor: "#2B5FA8",
-        py: { xs: 6, md: 10 },
+        py: { xs: 6, md: 8 },
       }}
     >
       <Container maxWidth="xl">
         <Stack
           ref={ref}
-          spacing={3}
+          spacing={2}
           sx={{
             maxWidth: "1400px",
             mx: "auto",
-            px: { xs: 2, md: 6 },
+            px: { xs: 3, md: 6 },
+            pb: { xs: 4, md: 8},
           }}
         >
           <motion.div
@@ -56,46 +57,49 @@ const CommunityDetails = ({ data }) => {
             sx={{
               fontSize: { xs: 14, md: 16 },
               color: "#FFFFFF",
-              lineHeight: 1.8,
+              lineHeight: 1.7,
               textAlign: "justify",
             }}
           >
             {data.description}
           </Typography>
 
-          <Typography
-            sx={{
-              fontSize: { xs: 16, md: 18 },
-              fontWeight: 700,
-              color: "#FFFFFF",
-              mt: 3,
-            }}
-          >
-            For more details, contact:
-          </Typography>
+          {/* CONTACT SECTION */}
+          <Stack spacing={0.5}>
+            <Typography
+              sx={{
+                fontSize: { xs: 16, md: 18 },
+                fontWeight: 700,
+                color: "#FFFFFF",
+              }}
+            >
+              For more details, contact:
+            </Typography>
 
-          <Typography
-            sx={{
-              fontSize: { xs: 16, md: 18 },
-              fontWeight: 700,
-              color: "#FFFFFF",
-            }}
-          >
-            {data.phone}
-          </Typography>
+            <Typography
+              sx={{
+                fontSize: { xs: 16, md: 18 },
+                fontWeight: 700,
+                color: "#FFFFFF",
+              }}
+            >
+              {data.phone}
+            </Typography>
 
-          <Typography
-            sx={{
-              fontSize: { xs: 16, md: 18 },
-              fontWeight: 700,
-              color: "#FFFFFF",
-            }}
-          >
-            {data.email}
-          </Typography>
+            <Typography
+              sx={{
+                fontSize: { xs: 16, md: 18 },
+                fontWeight: 700,
+                color: "#FFFFFF",
+              }}
+            >
+              {data.email}
+            </Typography>
+          </Stack>
         </Stack>
       </Container>
     </Box>
+
   );
 };
 
