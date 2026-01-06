@@ -10,7 +10,7 @@ import Restaurant from "../pages/Restaurant";
 import Products from "../pages/Products";
 import ThankPage from "../pages/ThankPage";
 import ProfilePge from "../pages/ProfilePge";
-
+import NewsDetails from "../pages/NewsDetails";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,7 +30,8 @@ const router = createBrowserRouter([
   {
     path: "/products/membership-management-system",
     element: <Layout />,
-    children: [{ path: "", element: <MobileApp /> }],
+    children: [{ path: "", element: <MobileApp /> },
+     { path: "news-details", element: <NewsDetails /> },]
   },
   {
     path: "/products/digital-catalogue",
