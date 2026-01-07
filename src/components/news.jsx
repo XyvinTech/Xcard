@@ -174,7 +174,7 @@ const NewsHero = ({ data }) => {
                             }}
                             onClick={handleDownload}
                         >
-                            Download PDF
+                            NEWS PUBLISHED
                         </Button>
                     </Box>
                 </Stack>
