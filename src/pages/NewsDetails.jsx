@@ -13,7 +13,7 @@ import CommunityOverview from "../components/News/CommunityOverview.jsx";
 import AdvertisingPromotion from "../components/News/AdvertisingPromotion.jsx";
 import ReportsAnalytics from "../components/News/ReportAnalytics.jsx";
 import CommunityDetails from "../components/News/CommunityDetails.jsx";
-import FeaturesKit from "../components/News/Featureskit.jsx";
+import FeatureKit from "../components/News/FeatureKit.jsx";
 const NewsDetails = () => {
   const { pathname } = useLocation();
 
@@ -77,7 +77,7 @@ const NewsDetails = () => {
 
         <CommunityOverview data={CommunityOverviewData} />
 
-        <FeaturesKit data={featuresKitData} />
+        <FeatureKit data={featuresKitData} />
 
         <AdvertisingPromotion data={advertisingPromotionData} />
 

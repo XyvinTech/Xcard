@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { Grid, Stack, Typography, Box, Container } from "@mui/material";
 import { motion, useInView } from "framer-motion";
 
-const FeaturesKit = ({ data }) => {
+const FeatureKit = ({ data }) => {
   const ref = useRef(null);
   const textRef = useRef(null);
   const inView = useInView(ref, { triggerOnce: true, threshold: 0.1 });
@@ -64,7 +64,7 @@ const FeaturesKit = ({ data }) => {
                   sx={{
                     width: { xs: "100%", md: "90%" },
                     maxHeight: { xs: 300, md: 520 },
-                    objectFit: "contain"
+                    objectFit: "contain",
                   }}
                 />
               </Box>
@@ -74,7 +74,7 @@ const FeaturesKit = ({ data }) => {
           <Grid item xs={12}>
             <Stack
               ref={textRef}
-              spacing={2} 
+              spacing={2}
               sx={{
                 maxWidth: "1400px",
                 mx: "auto",
@@ -136,7 +136,6 @@ const FeaturesKit = ({ data }) => {
                 {data.description}
               </Typography>
             </Stack>
-
           </Grid>
         </Grid>
       </Container>
@@ -144,4 +143,4 @@ const FeaturesKit = ({ data }) => {
   );
 };
 
-export default FeaturesKit;
+export default FeatureKit;
