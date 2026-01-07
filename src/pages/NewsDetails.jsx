@@ -1,6 +1,6 @@
 import bg from "../assets/images/news/newsbanner.png";
 import image from "../assets/images/news/imagenews.webp";
-import communityimage from "../assets/images/news/Community.webp";
+import communityimage from "../assets/images/news/community.webp";
 import featureimage from "../assets/images/news/featureskit.webp";
 import adimage from "../assets/images/news/advertisement.webp";
 import reportimage from "../assets/images/news/report.webp";
