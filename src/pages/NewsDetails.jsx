@@ -10,10 +10,10 @@ import { useLocation } from "react-router-dom";
 
 import NewsHero from "../components/news.jsx";
 import CommunityOverview from "../components/News/CommunityOverview.jsx";
-import FeaturesKit from "../components/News/Featureskit.jsx";
 import AdvertisingPromotion from "../components/News/AdvertisingPromotion.jsx";
 import ReportsAnalytics from "../components/News/ReportAnalytics.jsx";
 import CommunityDetails from "../components/News/CommunityDetails.jsx";
+import FeaturesKit from "../components/News/Featureskit.jsx";
 const NewsDetails = () => {
   const { pathname } = useLocation();
 
