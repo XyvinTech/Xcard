@@ -7,11 +7,11 @@ const CommunityOverview = ({ data }) => {
   const imageInView = useInView(imageRef, { threshold: 0.1 });
 
   const imageAnimation = {
-    hidden: { x: 100, opacity: 0 },
+    hidden: { x: 60, opacity: 0 }, // reduced for better balance
     visible: {
       x: 0,
       opacity: 1,
-      transition: { duration: 1, ease: "easeOut" },
+      transition: { duration: 0.8, ease: "easeOut" },
     },
   };
 
@@ -20,61 +20,64 @@ const CommunityOverview = ({ data }) => {
       sx={{
         backgroundColor: "#2B5FA8",
         py: { xs: 6, md: 10 },
-        overflow: "hidden",
-        width: "100%",
+        overflowX: "hidden",
       }}
     >
       <Container maxWidth="xl">
-        <Grid container spacing={4} alignItems="center">
+        {/* CENTERED CONTENT WRAPPER */}
+        <Box
+          sx={{
+            maxWidth: "1400px",
+            mx: "auto",
+            px: { xs: 2, md: 6 },
+          }}
+        >
+          <Grid container spacing={{ xs: 2, md: 4 }} alignItems="center">
+            {/* TEXT */}
+            <Grid item xs={12} md={6}>
+              <Stack spacing={3}>
+                <Typography
+                  sx={{
+                    fontSize: { xs: 15, md: 18 },
+                    lineHeight: 1.8,
+                    color: "#FFFFFF",
+                  }}
+                >
+                  {data.description}
+                </Typography>
+              </Stack>
+            </Grid>
 
-          {/* TEXT */}
-          <Grid item xs={12} md={6}>
-            <Stack spacing={3} sx={{ px: { xs: 2, md: 0 } }} >
-              <Typography
-                sx={{
-                  fontSize: "18px",
-                  lineHeight: 1.7,
-                  color: "#FFFFFF",
-                  fontWeight: 400,
-                }}
-              >
-                {data.description}
-              </Typography>
-            </Stack>
-          </Grid>
-
-          {/* IMAGE */}
-          <Grid item xs={12} md={6} sx={{ overflow: "hidden" }}>
-            <motion.div
-              ref={imageRef}
-              initial="hidden"
-              animate={imageInView ? "visible" : "hidden"}
-              variants={imageAnimation}
-            >
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
+            {/* IMAGE */}
+            <Grid item xs={12} md={6}>
+              <motion.div
+                ref={imageRef}
+                initial="hidden"
+                animate={imageInView ? "visible" : "hidden"}
+                variants={imageAnimation}
               >
                 <Box
-                  component="img"
-                  src={data.image}
-                  alt="Community Overview"
                   sx={{
-                    maxWidth: "100%",
-                    width: { xs: "100%", md: "90%" },
-                    height: "auto",
-                    maxHeight: { md: "600px" },
-                    objectFit: "contain",
+                    display: "flex",
+                    justifyContent: { xs: "center", md: "flex-start" },
                   }}
-                />
-              </Box>
-            </motion.div>
+                >
+                  <Box
+                    component="img"
+                    src={data.image}
+                    alt="Community Overview"
+                    sx={{
+                      width: "100%",
+                      maxWidth: { xs: "100%", md: 500 },
+                      objectFit: "contain",
+                    }}
+                  />
+                </Box>
+              </motion.div>
+            </Grid>
           </Grid>
 
-        </Grid>
+        </Box>
       </Container>
     </Box>
   );

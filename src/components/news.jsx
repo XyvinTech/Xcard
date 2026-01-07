@@ -34,18 +34,17 @@ const NewsHero = ({ data }) => {
         <Grid
             container
             spacing={2}
-            padding={{ xs: 3, md: 6, sm: 4 }}
-            paddingLeft={{ xs: 3, md: 8, sm: 4 }}
-            paddingRight={{ xs: 3, md: 8, sm: 4 }}
+            padding={{ xs: 3, sm: 4, md: 8 }}
             marginBottom={0}
             sx={{
                 minHeight: { lg: "600px" },
                 backgroundColor: "#FFFFFF",
                 backgroundImage: `url(${data.bannerImage})`,
-                backgroundSize: "contain",
+                backgroundSize: "cover",
                 backgroundPosition: "center",
-                backgroundRepeat: "repeat",
+                backgroundRepeat: "no-repeat",
                 position: "relative",
+                overflow: "hidden",
                 "&::before": {
                     content: '""',
                     position: "absolute",
@@ -54,27 +53,25 @@ const NewsHero = ({ data }) => {
                     right: 0,
                     bottom: 0,
                     backgroundImage: `repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 60px,
-            rgba(200, 200, 200, 0.1) 60px,
-            rgba(200, 200, 200, 0.1) 61px
-          ),
-          repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 60px,
-            rgba(200, 200, 200, 0.1) 60px,
-            rgba(200, 200, 200, 0.1) 61px
-          )`,
+          0deg,
+          transparent,
+          transparent 60px,
+          rgba(200, 200, 200, 0.1) 60px,
+          rgba(200, 200, 200, 0.1) 61px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 60px,
+          rgba(200, 200, 200, 0.1) 60px,
+          rgba(200, 200, 200, 0.1) 61px
+        )`,
                     pointerEvents: "none",
                     zIndex: 1,
                 },
             }}
-            display={"flex"}
-            justifyContent="center"
-            alignItems="center"
         >
+
 
             <Grid
                 item
