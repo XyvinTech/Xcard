@@ -1,6 +1,6 @@
 import bg from "../assets/images/news/newsbanner.png";
 import image from "../assets/images/news/imagenews.webp";
-import communityimage from "../assets/images/news/Community.webp";
+import communityimage from "../assets/images/news/community.webp";
 import featureimage from "../assets/images/news/featureskit.webp";
 import adimage from "../assets/images/news/advertisement.webp";
 import reportimage from "../assets/images/news/report.webp";
@@ -10,10 +10,10 @@ import { useLocation } from "react-router-dom";
 
 import NewsHero from "../components/news.jsx";
 import CommunityOverview from "../components/News/CommunityOverview.jsx";
-import FeaturesKit from "../components/News/Featureskit.jsx";
 import AdvertisingPromotion from "../components/News/AdvertisingPromotion.jsx";
 import ReportsAnalytics from "../components/News/ReportAnalytics.jsx";
 import CommunityDetails from "../components/News/CommunityDetails.jsx";
+import FeatureKit from "../components/News/FeatureKit.jsx";
 const NewsDetails = () => {
   const { pathname } = useLocation();
 
@@ -77,7 +77,7 @@ const NewsDetails = () => {
 
         <CommunityOverview data={CommunityOverviewData} />
 
-        <FeaturesKit data={featuresKitData} />
+        <FeatureKit data={featuresKitData} />
 
         <AdvertisingPromotion data={advertisingPromotionData} />
 
