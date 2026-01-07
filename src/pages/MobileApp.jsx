@@ -13,6 +13,7 @@ import XcardTeams from "../components/Team/XcardTeams";
 import Header4 from "../components/Header4";
 import HelpComponent from "../components/HelpComponent";
 import UniteComponent from "../components/MobileApp/UniteComponent";
+import NewsSection from "../components/MobileApp/NewsSection";
 const MobileApp = () => {
   const { pathname } = useLocation();
   const mainContent = {
@@ -53,6 +54,7 @@ const MobileApp = () => {
         >
           {" "}
           <Header2 content={headerData} white app />
+          <NewsSection /> 
           <Box
             sx={{
               mt: 10,

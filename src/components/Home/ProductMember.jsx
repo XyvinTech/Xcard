@@ -15,6 +15,7 @@ import icon from "../../assets/images/Team/Ellipse.png";
 import StyledButton from "../../ui/StyledButton";
 import amazon from "../../assets/images/Home/amazon.png";
 import flipkart from "../../assets/images/Home/flipkart.png";
+import brochurePdf from "../../assets/Community Mangement System Brochure.pdf";
 import { useNavigate } from "react-router-dom";
 const ProductMember = () => {
   const navigate = useNavigate();
@@ -49,6 +50,13 @@ const ProductMember = () => {
         "Automated Notifications & Payments – Simplify membership renewals & get notifications of events, renewals, updates etc & more!.",
     },
   ];
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = brochurePdf;
+    link.download = "CommunityManagementBrochure.pdf";
+    link.click();
+  };
 
   return (
     <Grid
@@ -198,12 +206,18 @@ const ProductMember = () => {
           >
             <Box display="flex" flexDirection="row" gap={1} flexWrap="wrap">
               <StyledButton
-                name="Read More"
+                name="See Demo"
                 onClick={() =>
                   navigate("/products/membership-management-system")
                 }
               />
-              <StyledButton name="See Demo" secondary />
+               {/* <StyledButton name="See Demo" secondary />*/}
+              
+              <StyledButton
+                name="Download Brochure"
+                secondary
+                onClick={handleDownload}
+              />
             </Box>
 
             <Box display="flex" alignItems="center" gap={1} flexWrap="wrap">

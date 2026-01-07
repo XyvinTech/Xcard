@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import StyledButton from "../../ui/StyledButton";
 import { useNavigate } from "react-router-dom";
 import { button } from "framer-motion/client";
+import brochurePdf from "../../assets/Community Mangement System Brochure.pdf";
 import bgimage from "../../assets/images/Frame.png";
 
 const Header2 = ({ content = {}, white, app, showButton, bg }) => {
@@ -42,6 +43,13 @@ const Header2 = ({ content = {}, white, app, showButton, bg }) => {
       }, 100);
     }
   };
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = brochurePdf;
+    link.download = "Community Mangement System Brochure.pdf";
+    link.click();
+  };
+
   return (
     <Grid
       container
@@ -138,7 +146,14 @@ const Header2 = ({ content = {}, white, app, showButton, bg }) => {
           )}
           {app && (
             <Stack width={"fit-content"}>
-              <StyledButton name={"Try Now"} onClick={handleButtonClick} />
+              <Box display="flex" flexDirection="row" gap={2} flexWrap="wrap">
+                <StyledButton name={"Try Now"} onClick={handleButtonClick} />
+                <StyledButton
+                  name="Download Brochure"
+                  secondary
+                  onClick={handleDownload}
+                />
+              </Box>
             </Stack>
           )}
         </Stack>
