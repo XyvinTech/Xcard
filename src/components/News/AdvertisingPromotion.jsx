@@ -7,7 +7,7 @@ const AdvertisingPromotion = ({ data }) => {
   const imageInView = useInView(imageRef, { threshold: 0.1 });
 
   const imageAnimation = {
-    hidden: { x: 60, opacity: 0 }, // reduced for balance
+    hidden: { x: 60, opacity: 0 },
     visible: {
       x: 0,
       opacity: 1,
@@ -24,10 +24,10 @@ const AdvertisingPromotion = ({ data }) => {
       }}
     >
       <Container maxWidth="xl">
-        {/* CENTERED CONTENT WRAPPER */}
+       
         <Box
           sx={{
-            maxWidth: "1500px", // 
+            maxWidth: "1500px",
             mx: "auto",
           }}
         >
@@ -41,7 +41,7 @@ const AdvertisingPromotion = ({ data }) => {
               <Stack
                 spacing={3}
                 sx={{
-                  maxWidth: 560, // 🔥 readable & centered
+                  maxWidth: 560, 
                   mx: "auto",
                 }}
               >
@@ -109,7 +109,7 @@ const AdvertisingPromotion = ({ data }) => {
                     alt="Advertising Promotion"
                     sx={{
                       width: "100%",
-                      maxWidth: 560, // 🔥 match text width
+                      maxWidth: 560,
                       objectFit: "contain",
                     }}
                   />

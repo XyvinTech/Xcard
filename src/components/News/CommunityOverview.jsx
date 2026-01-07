@@ -7,7 +7,7 @@ const CommunityOverview = ({ data }) => {
   const imageInView = useInView(imageRef, { threshold: 0.1 });
 
   const imageAnimation = {
-    hidden: { x: 60, opacity: 0 }, // reduced for better balance
+    hidden: { x: 60, opacity: 0 }, 
     visible: {
       x: 0,
       opacity: 1,
@@ -24,7 +24,7 @@ const CommunityOverview = ({ data }) => {
       }}
     >
       <Container maxWidth="xl">
-        {/* CENTERED CONTENT WRAPPER */}
+        
         <Box
           sx={{
             maxWidth: "1400px",
