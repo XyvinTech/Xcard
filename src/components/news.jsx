@@ -70,6 +70,9 @@ const NewsHero = ({ data }) => {
                     zIndex: 1,
                 },
             }}
+            display={"flex"}
+            justifyContent="center"
+            alignItems="center"
         >
 
 
@@ -171,7 +174,7 @@ const NewsHero = ({ data }) => {
                             }}
                             onClick={handleDownload}
                         >
-                            Download PDF
+                            NEWS PUBLISHED
                         </Button>
                     </Box>
                 </Stack>
